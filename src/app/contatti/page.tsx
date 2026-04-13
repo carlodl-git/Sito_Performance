@@ -1,9 +1,11 @@
 "use client";
 
-import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
-
 const WHATSAPP_NUMBER = "393314059134";
 const EMAIL = "info@montecchiaperformancecenter.it";
+const MAPS_EMBED_URL =
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2800.0!2d11.8!3d45.35!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477eda5e5b5b5b5b%3A0x0!2sMontecchia+Performance+Center!5e0!3m2!1sit!2sit!4v1700000000000!5m2!1sit!2sit";
+const MAPS_LINK =
+  "https://www.google.com/maps/search/?api=1&query=Montecchia+Performance+Center+Via+Montecchia+12+Selvazzano+Dentro+PD";
 
 export default function ContattiPage() {
   return (
@@ -30,8 +32,8 @@ export default function ContattiPage() {
                 <p className="font-medium text-primary">
                   Montecchia Performance Center
                 </p>
-                <p>Via Montecchia (o indirizzo reale)</p>
-                <p>35020 Padova (PD)</p>
+                <p>Via Montecchia, 12</p>
+                <p>35030 Selvazzano Dentro (PD)</p>
               </div>
               <div className="mt-8 space-y-4">
                 <p>
@@ -64,18 +66,34 @@ export default function ContattiPage() {
                 </p>
               </div>
               <div className="mt-8">
-                <p className="mb-2 font-medium text-primary">
-                  Mappa (placeholder)
-                </p>
-                <ImagePlaceholder
-                  aspect="video"
-                  label="Mappa Google / indirizzo"
-                  className="w-full rounded-xl"
-                />
+                <div className="overflow-hidden rounded-xl border border-neutral-200">
+                  <iframe
+                    src={MAPS_EMBED_URL}
+                    width="100%"
+                    height="300"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Montecchia Performance Center - Mappa"
+                  />
+                </div>
+                <a
+                  href={MAPS_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-accent"
+                >
+                  <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                  Apri in Google Maps
+                </a>
               </div>
             </div>
 
-            {/* Scrivici: WhatsApp + Email */}
+            {/* Scrivici */}
             <div>
               <h2 className="heading-section">Scrivici</h2>
               <p className="mt-4 text-neutral-600">
@@ -118,6 +136,24 @@ export default function ContattiPage() {
                     />
                   </svg>
                   Invia email
+                </a>
+              </div>
+
+              <div className="mt-12 rounded-xl border border-neutral-200 bg-neutral-50 p-6">
+                <h3 className="font-display text-lg font-semibold text-primary">
+                  Prenotazioni Golf Indoor
+                </h3>
+                <p className="mt-2 text-sm text-neutral-600">
+                  Per prenotare una sessione ai simulatori golf, utilizza il
+                  nostro sistema di booking online.
+                </p>
+                <a
+                  href="https://booking.montecchiaperformancecenter.it"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary mt-4 inline-flex text-sm"
+                >
+                  Prenota Golf Indoor
                 </a>
               </div>
             </div>

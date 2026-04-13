@@ -9,23 +9,23 @@ const servicesData: Record<
   nutrizionista: {
     title: "Nutrizionista",
     description:
-      "Piani alimentari personalizzati in base agli obiettivi: performance sportiva, composizione corporea, benessere generale. Consulenze per atleti e non, con follow-up e supporto continuativo. Integrazione con l'allenamento per massimizzare i risultati.",
-    professional: "Dott.ssa Elena Neri",
-    role: "Biologa Nutrizionista",
+      "Piani alimentari personalizzati in base agli obiettivi: performance sportiva, composizione corporea, benessere generale. Consulenze per atleti e non, con follow-up e supporto continuativo. Integrazione con l'allenamento per massimizzare i risultati. Nutrizionista ufficiale del Basket Mestre (Serie B), con competenze avanzate in nutrizione e integrazione applicata allo sport.",
+    professional: "Dott. Emanuele Veronese",
+    role: "Biologo Nutrizionista",
+  },
+  osteopata: {
+    title: "Osteopata",
+    description:
+      "Trattamenti osteopatici per la gestione del dolore, il recupero funzionale e la prevenzione degli infortuni. Valutazione posturale e terapia manuale per atleti e persone attive. Specializzazione in trattamento viscerale per pazienti con lipedema e linfedema. Collaborazione con il team di trainer per percorsi di recupero integrati.",
+    professional: "Dott. Pietro Bernuzzi",
+    role: "Osteopata",
   },
   fisioterapista: {
     title: "Fisioterapista",
     description:
       "Riabilitazione post-infortunio, prevenzione e mantenimento per atleti e persone attive. Valutazione funzionale, terapia manuale e esercizio terapeutico. Collaborazione con i trainer per programmi di recupero e performance.",
-    professional: "Dott. Paolo Martini",
+    professional: "Professionista del centro",
     role: "Fisioterapista",
-  },
-  massaggiatore: {
-    title: "Massaggiatore",
-    description:
-      "Massaggi sportivi, decontratturanti e rilassanti. Ideali post-allenamento o per chi lavora molte ore in tensione. Sessioni su appuntamento con professionisti qualificati.",
-    professional: "Simone Galli",
-    role: "Massaggiatore sportivo",
   },
 };
 
@@ -34,8 +34,8 @@ type Props = { params: Promise<{ slug: string }> };
 export function generateStaticParams() {
   return [
     { slug: "nutrizionista" },
+    { slug: "osteopata" },
     { slug: "fisioterapista" },
-    { slug: "massaggiatore" },
   ];
 }
 
@@ -79,16 +79,20 @@ export default async function ServizioPage({ params }: Props) {
               </div>
             </div>
             <div>
-              <ImagePlaceholder
-                aspect="square"
-                label={`Professionista - ${data.title}`}
-                className="w-full rounded-xl"
-              />
-              <div className="mt-6">
-                <p className="font-display text-xl font-semibold text-primary">
-                  {data.professional}
-                </p>
-                <p className="text-neutral-600">{data.role}</p>
+              <div className="flex h-48 w-full items-center justify-center rounded-xl bg-primary/10">
+                <div className="text-center">
+                  <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-primary/20 text-primary font-display font-semibold text-2xl">
+                    {data.professional
+                      .split(" ")
+                      .filter((w) => w !== "Dott." && w !== "Dott.ssa" && w !== "del" && w !== "centro")
+                      .map((n) => n[0])
+                      .join("")}
+                  </div>
+                  <p className="mt-4 font-display text-xl font-semibold text-primary">
+                    {data.professional}
+                  </p>
+                  <p className="text-neutral-600">{data.role}</p>
+                </div>
               </div>
             </div>
           </div>

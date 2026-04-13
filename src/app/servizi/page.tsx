@@ -5,20 +5,20 @@ const services = [
   {
     slug: "nutrizionista",
     title: "Nutrizionista",
-    short: "Piani alimentari personalizzati per sport e benessere.",
+    short: "Piani alimentari personalizzati per sport e benessere. Dott. Emanuele Veronese, Biologo Nutrizionista.",
     imageLabel: "Nutrizionista",
+  },
+  {
+    slug: "osteopata",
+    title: "Osteopata",
+    short: "Trattamenti osteopatici, valutazione posturale e recupero funzionale. Dott. Pietro Bernuzzi, Osteopata.",
+    imageLabel: "Osteopatia",
   },
   {
     slug: "fisioterapista",
     title: "Fisioterapista",
-    short: "Riabilitazione e prevenzione per atleti e non.",
+    short: "Riabilitazione post-infortunio, prevenzione e terapia manuale per atleti e persone attive.",
     imageLabel: "Fisioterapia",
-  },
-  {
-    slug: "massaggiatore",
-    title: "Massaggiatore",
-    short: "Massaggi sportivi e decontratturanti.",
-    imageLabel: "Massaggi",
   },
 ];
 
@@ -31,7 +31,7 @@ export default function ServiziPage() {
             Servizi
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-neutral-300">
-            Nutrizione, fisioterapia, massaggi e altri professionisti per
+            Nutrizione, osteopatia, fisioterapia e altri professionisti per
             completare il tuo percorso di performance e benessere.
           </p>
         </div>
@@ -70,14 +70,19 @@ export default function ServiziPage() {
 
       <section className="section-padding bg-neutral-50">
         <div className="container-narrow text-center">
-          <h2 className="heading-section">Altri servizi in arrivo</h2>
+          <h2 className="heading-section">Hai bisogno di altro?</h2>
           <p className="mt-4 text-neutral-600">
-            Stiamo ampliando l&apos;offerta con nuovi professionisti. Resta
-            aggiornato o contattaci per esigenze specifiche.
+            Il nostro team include anche trainer, maestri di golf e altri
+            professionisti. Contattaci per esigenze specifiche.
           </p>
-          <Link href="/contatti" className="btn-primary mt-8 inline-flex">
-            Contattaci
-          </Link>
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <Link href="/team" className="btn-primary">
+              Scopri il team
+            </Link>
+            <Link href="/contatti" className="btn-secondary">
+              Contattaci
+            </Link>
+          </div>
         </div>
       </section>
     </>

@@ -4,12 +4,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 
-const LOGO_PATH = "/logo.png";
-
 const navItems = [
   { href: "/", label: "Home" },
   { href: "/palestra", label: "Palestra" },
+  { href: "/golf-lab", label: "Golf Lab" },
   { href: "/servizi", label: "Servizi" },
+  { href: "/team", label: "Team" },
   { href: "/chi-siamo", label: "Chi Siamo" },
   { href: "/contatti", label: "Contatti" },
 ];
@@ -25,7 +25,7 @@ export function Header() {
           {!logoError && (
             <span className="relative block h-10 w-10 shrink-0 overflow-hidden sm:h-12 sm:w-12">
               <Image
-                src={LOGO_PATH}
+                src="/images/logo_performance.webp"
                 alt=""
                 fill
                 className="object-contain"
@@ -43,7 +43,7 @@ export function Header() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-8 lg:flex" aria-label="Principale">
+        <nav className="hidden items-center gap-6 xl:gap-8 lg:flex" aria-label="Principale">
           {navItems.map((item) => (
             <Link
               key={item.href}
@@ -57,9 +57,9 @@ export function Header() {
             href="https://booking.montecchiaperformancecenter.it"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-medium text-accent transition-colors hover:text-accent-light"
+            className="rounded-lg bg-accent/10 px-4 py-2 text-sm font-medium text-accent transition-colors hover:bg-accent/20"
           >
-            Golf Indoor
+            Prenota Golf
           </a>
         </nav>
 
@@ -112,10 +112,10 @@ export function Header() {
               href="https://booking.montecchiaperformancecenter.it"
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-lg px-4 py-3 text-sm font-medium text-accent hover:bg-neutral-50"
+              className="rounded-lg bg-accent/10 px-4 py-3 text-sm font-medium text-accent hover:bg-accent/20"
               onClick={() => setMobileOpen(false)}
             >
-              Golf Indoor →
+              Prenota Golf →
             </a>
           </nav>
         </div>
