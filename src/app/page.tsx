@@ -4,7 +4,9 @@ import type { Metadata } from "next";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 
 export const metadata: Metadata = {
-  title: "Montecchia Performance Center — Palestra & Golf Lab a Padova (Selvazzano)",
+  title: {
+    absolute: "Montecchia Performance Center — Palestra & Golf Lab a Padova (Selvazzano)",
+  },
   description:
     "Palestra, golf indoor, fisioterapia, osteopatia, nutrizione e personal training al Golf Club della Montecchia. Performance e benessere a Selvazzano Dentro (Padova).",
   alternates: {

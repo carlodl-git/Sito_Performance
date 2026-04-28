@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — Montecchia Performance Center",
+  title: "Privacy Policy",
   description:
     "Informativa sul trattamento dei dati personali ai sensi del Regolamento UE 2016/679 (GDPR). Titolare: Golf della Montecchia S.r.l.",
   alternates: {

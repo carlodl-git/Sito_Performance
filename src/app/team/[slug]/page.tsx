@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: "Profilo non trovato" };
   }
 
-  const title = `${member.name} — ${member.role} | Montecchia Performance Center`;
+  const title = `${member.name} — ${member.role}`;
   const description = member.shortDescription.slice(0, 155);
 
   return {

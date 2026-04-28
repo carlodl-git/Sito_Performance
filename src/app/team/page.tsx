@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { team, teamCategories } from "@/data/team";
 
 export const metadata: Metadata = {
-  title: "Il Team — Montecchia Performance Center",
+  title: "Il Team",
   description:
     "Oltre 13 professionisti tra trainer, maestri di golf, nutrizionisti e specialisti del benessere al servizio della tua performance. Scopri il team del Montecchia Performance Center.",
   alternates: {

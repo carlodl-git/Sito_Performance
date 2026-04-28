@@ -1,5 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Disabilita il redirect automatico Next.js per il trailing slash:
+  // così i nostri custom 301 (es. /about/ → /chi-siamo) sono diretti,
+  // senza una chain extra (/about/ → /about → /chi-siamo).
+  skipTrailingSlashRedirect: true,
+
   images: {
     remotePatterns: [
       { protocol: 'https', hostname: 'images.unsplash.com' },

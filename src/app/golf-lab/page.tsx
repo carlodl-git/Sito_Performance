@@ -3,7 +3,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Golf Lab — Simulatore Golf Indoor a Padova | Montecchia Performance Center",
+  title: "Golf Lab — Simulatore Golf Indoor a Padova",
   description:
     "Simulatore golf indoor TrackMan/CAPTO al Golf Club della Montecchia. Lezioni con maestri PGA, fitting, tornei, sessioni serali con bar. Padova, Selvazzano Dentro.",
   alternates: {

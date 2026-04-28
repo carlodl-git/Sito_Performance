@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: "Articolo non trovato" };
   }
 
-  const title = `${post.title} | Blog — Montecchia Performance Center`;
+  const title = `${post.title} | Blog`;
   const description = post.excerpt.slice(0, 155);
 
   return {

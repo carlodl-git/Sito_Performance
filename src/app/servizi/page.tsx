@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { services, serviceCategories } from "@/data/services";
 
 export const metadata: Metadata = {
-  title: "Servizi — Montecchia Performance Center (Padova)",
+  title: "Servizi",
   description:
     "Personal training, allenamento di gruppo, golf fitness, fisioterapia, osteopatia, nutrizione, pilates e yoga. Tutti i servizi del Montecchia Performance Center.",
   alternates: {

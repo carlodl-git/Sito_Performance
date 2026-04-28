@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contatti — Montecchia Performance Center (Padova)",
+  title: "Contatti",
   description:
     "Vieni a trovarci al Montecchia Performance Center, Via della Montecchia 12, Selvazzano Dentro (Padova). Telefono, email, mappa e form di contatto.",
   alternates: {

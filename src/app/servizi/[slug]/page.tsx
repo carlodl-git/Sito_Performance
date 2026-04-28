@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getService, getAllServiceSlugs, services } from "@/data/services";
@@ -18,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: "Servizio non trovato" };
   }
 
-  const title = `${service.title} — Montecchia Performance Center (Padova)`;
+  const title = `${service.title} — Padova (Selvazzano)`;
   const description = service.shortDescription.slice(0, 155);
 
   return {
@@ -78,8 +79,22 @@ export default async function ServizioPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
 
-      <section className="relative bg-brand py-24 sm:py-32">
-        <div className="container-narrow">
+      <section className="relative overflow-hidden bg-brand py-24 sm:py-32">
+        {service.image && (
+          <div className="absolute inset-0">
+            <Image
+              src={service.image.src}
+              alt={service.image.alt}
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover opacity-25"
+              unoptimized
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-brand via-brand/80 to-brand/40" />
+          </div>
+        )}
+        <div className="container-narrow relative">
           <Link
             href="/servizi"
             className="text-sm font-medium text-accent hover:text-accent-light"

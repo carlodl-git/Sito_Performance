@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 
 export const metadata: Metadata = {
-  title: "Chi Siamo — Montecchia Performance Center",
+  title: "Chi Siamo",
   description:
     "Il Montecchia Performance Center è una struttura di performance e benessere all'interno del Golf Club della Montecchia (Padova). La nostra storia, la mission, la struttura.",
   alternates: {

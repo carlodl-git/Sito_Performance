@@ -12,6 +12,7 @@ export type Service = {
   benefits?: string[];
   professional?: { name: string; role: string };
   relatedTeamSlugs?: string[];
+  image?: { src: string; alt: string };
 };
 
 export const services: Service[] = [
@@ -36,6 +37,10 @@ export const services: Service[] = [
       "Integrazione con osteopata, fisioterapista, nutrizionista del centro",
     ],
     relatedTeamSlugs: ["anna-simone", "sascha-antoniutti"],
+    image: {
+      src: "/wp-content/uploads/2016/05/personal-hydrogen.jpg",
+      alt: "Personal training al Montecchia Performance Center con Hydrogen Tecnogym",
+    },
   },
   {
     slug: "allenamento-di-gruppo",
@@ -55,6 +60,10 @@ export const services: Service[] = [
       "Calendario settimanale fisso",
       "Diversi format per evitare la monotonia",
     ],
+    image: {
+      src: "/wp-content/uploads/2016/04/img_training_gruppo.jpg",
+      alt: "Allenamento di gruppo al Montecchia Performance Center",
+    },
   },
   {
     slug: "mini-group-training",
@@ -74,6 +83,10 @@ export const services: Service[] = [
       "Costo intermedio tra Personal e Group Training",
       "Ideale per obiettivi specifici",
     ],
+    image: {
+      src: "/wp-content/uploads/2017/09/minigrouptraining.jpg",
+      alt: "Mini Group Training al Montecchia Performance Center",
+    },
   },
   {
     slug: "functional",
@@ -87,6 +100,10 @@ export const services: Service[] = [
       "Il Functional Training del Montecchia Performance Center è strutturato come circuit-training con esercizi a corpo libero, kettlebell, TRX, bilancieri e attrezzi instabili. L'obiettivo è sviluppare capacità motorie complete: forza relativa, mobilità articolare, equilibrio, coordinazione.",
       "Particolarmente efficace per chi pratica golf — la rotazione del busto, il controllo del baricentro e la stabilità del core sono trasferibili direttamente allo swing — ma adatto a tutti gli sport e alla popolazione generale.",
     ],
+    image: {
+      src: "/wp-content/uploads/2016/02/TRX_DSC1279-bassa-e1534854551358.jpg",
+      alt: "Functional training con TRX al Montecchia Performance Center",
+    },
   },
   {
     slug: "tone",
@@ -100,6 +117,10 @@ export const services: Service[] = [
       "Il Tone è una lezione di gruppo dedicata alla tonificazione muscolare. La struttura prevede una fase di attivazione, blocchi di esercizi a corpo libero o con piccoli sovraccarichi (manubri, elastici, palle mediche, step) e una fase di stretching finale.",
       "Adatto a tutti i livelli, con progressioni e varianti per gestire diversi gradi di intensità. Ottimo come complemento al Functional o come allenamento principale per chi cerca definizione muscolare e tono.",
     ],
+    image: {
+      src: "/wp-content/uploads/2016/02/push_power3.jpg",
+      alt: "Lezione di tonificazione al Montecchia Performance Center",
+    },
   },
   {
     slug: "functional-tone",
@@ -113,6 +134,10 @@ export const services: Service[] = [
       "La sessione alterna blocchi di Functional Training (movimento integrato, multi-articolare) a blocchi di Tone (tonificazione mirata di gruppi muscolari specifici). Il risultato è un allenamento bilanciato che lavora sia sulla forza funzionale sia sul tono muscolare.",
       "Format ideale per chi vuole un allenamento variato che eviti la monotonia, lavorando contemporaneamente su più qualità motorie.",
     ],
+    image: {
+      src: "/wp-content/uploads/2017/01/push_power.jpg",
+      alt: "Functional Tone al Montecchia Performance Center",
+    },
   },
 
   // ============== DISCIPLINE ==============
@@ -136,6 +161,10 @@ export const services: Service[] = [
       "Adatta a tutti i livelli, con varianti e progressioni",
     ],
     relatedTeamSlugs: ["chiara-destro"],
+    image: {
+      src: "/wp-content/uploads/2016/02/Chiara_yoga_parco-34.jpeg",
+      alt: "Pilates e Yoga con Chiara Destro al Montecchia Performance Center",
+    },
   },
 
   // ============== GOLF ==============
@@ -158,6 +187,10 @@ export const services: Service[] = [
       "Sviluppato in collaborazione con maestri PGA & TPI Level 3",
     ],
     relatedTeamSlugs: ["maria-paola-casati", "luca-pannone"],
+    image: {
+      src: "/wp-content/uploads/2017/04/img-trackman.jpg",
+      alt: "Fit for Golf — preparazione fisica per golfisti con Trackman",
+    },
   },
   {
     slug: "tpi-junior",
@@ -178,6 +211,10 @@ export const services: Service[] = [
       "Integrazione tecnica + fisica",
     ],
     relatedTeamSlugs: ["maria-paola-casati", "gionatan-baglioni"],
+    image: {
+      src: "/wp-content/uploads/2015/02/kvest.jpg",
+      alt: "TPI Junior — analisi swing con K-Vest al Montecchia Performance Center",
+    },
   },
 
   // ============== SALUTE & BENESSERE ==============
@@ -199,6 +236,10 @@ export const services: Service[] = [
       "Collaborazione diretta con i trainer del centro",
       "Approccio attivo: terapia manuale + esercizio terapeutico",
     ],
+    image: {
+      src: "/wp-content/uploads/2016/07/fisio.jpg",
+      alt: "Fisioterapia al Montecchia Performance Center",
+    },
   },
   {
     slug: "shiatsu",

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { getBlogPostsSorted } from "@/data/blog";
 
 export const metadata: Metadata = {
-  title: "Blog — Montecchia Performance Center",
+  title: "Blog",
   description:
     "Articoli su allenamento, golf, salute, nutrizione e benessere dal team del Montecchia Performance Center.",
   alternates: {
