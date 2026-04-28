@@ -10,6 +10,7 @@ const navItems = [
   { href: "/golf-lab", label: "Golf Lab" },
   { href: "/servizi", label: "Servizi" },
   { href: "/team", label: "Team" },
+  { href: "/blog", label: "Blog" },
   { href: "/chi-siamo", label: "Chi Siamo" },
   { href: "/contatti", label: "Contatti" },
 ];

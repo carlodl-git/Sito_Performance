@@ -1,6 +1,25 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
+
+export const metadata: Metadata = {
+  title: "Chi Siamo — Montecchia Performance Center",
+  description:
+    "Il Montecchia Performance Center è una struttura di performance e benessere all'interno del Golf Club della Montecchia (Padova). La nostra storia, la mission, la struttura.",
+  alternates: {
+    canonical: "https://www.montecchiaperformancecenter.it/chi-siamo",
+  },
+  openGraph: {
+    title: "Chi Siamo — Montecchia Performance Center",
+    description:
+      "Struttura di performance e benessere al Golf Club della Montecchia (Padova). Storia, mission, ambiente.",
+    url: "https://www.montecchiaperformancecenter.it/chi-siamo",
+    siteName: "Montecchia Performance Center",
+    locale: "it_IT",
+    type: "website",
+  },
+};
 
 export default function ChiSiamoPage() {
   return (

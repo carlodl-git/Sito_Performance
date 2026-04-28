@@ -1,6 +1,25 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
+
+export const metadata: Metadata = {
+  title: "Palestra a Padova (Selvazzano) — Montecchia Performance Center",
+  description:
+    "Palestra al Golf Club della Montecchia: personal training, allenamento di gruppo, functional, pilates, yoga. Macchinari professionali e team qualificato.",
+  alternates: {
+    canonical: "https://www.montecchiaperformancecenter.it/palestra",
+  },
+  openGraph: {
+    title: "Palestra a Padova (Selvazzano) — Montecchia Performance Center",
+    description:
+      "Personal training, allenamento di gruppo, functional, pilates, yoga al Golf Club della Montecchia.",
+    url: "https://www.montecchiaperformancecenter.it/palestra",
+    siteName: "Montecchia Performance Center",
+    locale: "it_IT",
+    type: "website",
+  },
+};
 
 export default function PalestraPage() {
   return (

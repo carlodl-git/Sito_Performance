@@ -1,52 +1,83 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
-
-const servicesData: Record<
-  string,
-  { title: string; description: string; professional: string; role: string }
-> = {
-  nutrizionista: {
-    title: "Nutrizionista",
-    description:
-      "Piani alimentari personalizzati in base agli obiettivi: performance sportiva, composizione corporea, benessere generale. Consulenze per atleti e non, con follow-up e supporto continuativo. Integrazione con l'allenamento per massimizzare i risultati. Nutrizionista ufficiale del Basket Mestre (Serie B), con competenze avanzate in nutrizione e integrazione applicata allo sport.",
-    professional: "Dott. Emanuele Veronese",
-    role: "Biologo Nutrizionista",
-  },
-  osteopata: {
-    title: "Osteopata",
-    description:
-      "Trattamenti osteopatici per la gestione del dolore, il recupero funzionale e la prevenzione degli infortuni. Valutazione posturale e terapia manuale per atleti e persone attive. Specializzazione in trattamento viscerale per pazienti con lipedema e linfedema. Collaborazione con il team di trainer per percorsi di recupero integrati.",
-    professional: "Dott. Pietro Bernuzzi",
-    role: "Osteopata",
-  },
-  fisioterapista: {
-    title: "Fisioterapista",
-    description:
-      "Riabilitazione post-infortunio, prevenzione e mantenimento per atleti e persone attive. Valutazione funzionale, terapia manuale e esercizio terapeutico. Collaborazione con i trainer per programmi di recupero e performance.",
-    professional: "Professionista del centro",
-    role: "Fisioterapista",
-  },
-};
+import type { Metadata } from "next";
+import { getService, getAllServiceSlugs, services } from "@/data/services";
+import { getTeamMember } from "@/data/team";
 
 type Props = { params: Promise<{ slug: string }> };
 
 export function generateStaticParams() {
-  return [
-    { slug: "nutrizionista" },
-    { slug: "osteopata" },
-    { slug: "fisioterapista" },
-  ];
+  return getAllServiceSlugs().map((slug) => ({ slug }));
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const service = getService(slug);
+
+  if (!service) {
+    return { title: "Servizio non trovato" };
+  }
+
+  const title = `${service.title} — Montecchia Performance Center (Padova)`;
+  const description = service.shortDescription.slice(0, 155);
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: "website",
+      url: `https://www.montecchiaperformancecenter.it/servizi/${service.slug}`,
+      siteName: "Montecchia Performance Center",
+      locale: "it_IT",
+    },
+    alternates: {
+      canonical: `https://www.montecchiaperformancecenter.it/servizi/${service.slug}`,
+    },
+  };
 }
 
 export default async function ServizioPage({ params }: Props) {
   const { slug } = await params;
-  const data = servicesData[slug];
+  const service = getService(slug);
 
-  if (!data) notFound();
+  if (!service) notFound();
+
+  const relatedMembers =
+    service.relatedTeamSlugs
+      ?.map((s) => getTeamMember(s))
+      .filter((m): m is NonNullable<typeof m> => Boolean(m)) ?? [];
+
+  const relatedServices = services
+    .filter((s) => s.category === service.category && s.slug !== service.slug)
+    .slice(0, 3);
+
+  // JSON-LD schema Service
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: service.title,
+    description: service.shortDescription,
+    provider: {
+      "@type": "Organization",
+      name: "Montecchia Performance Center",
+      url: "https://www.montecchiaperformancecenter.it/",
+    },
+    areaServed: {
+      "@type": "Place",
+      name: "Padova, Selvazzano Dentro",
+    },
+    url: `https://www.montecchiaperformancecenter.it/servizi/${service.slug}`,
+  };
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+
       <section className="relative bg-brand py-24 sm:py-32">
         <div className="container-narrow">
           <Link
@@ -55,11 +86,14 @@ export default async function ServizioPage({ params }: Props) {
           >
             ← Tutti i servizi
           </Link>
-          <h1 className="mt-4 font-display text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
-            {data.title}
+          <p className="mt-6 text-sm font-medium uppercase tracking-wide text-accent">
+            {service.category}
+          </p>
+          <h1 className="mt-2 font-display text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
+            {service.title}
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-neutral-300">
-            {data.role}: {data.professional}
+            {service.intro}
           </p>
         </div>
       </section>
@@ -69,35 +103,97 @@ export default async function ServizioPage({ params }: Props) {
           <div className="grid gap-12 lg:grid-cols-3">
             <div className="lg:col-span-2">
               <h2 className="heading-section">Il servizio</h2>
-              <p className="mt-4 text-lg text-neutral-600 leading-relaxed">
-                {data.description}
-              </p>
-              <div className="mt-8">
+              <div className="mt-6 space-y-4 text-lg text-neutral-700 leading-relaxed">
+                {service.body.map((paragraph, i) => (
+                  <p key={i}>{paragraph}</p>
+                ))}
+              </div>
+
+              {service.benefits && service.benefits.length > 0 && (
+                <div className="mt-10">
+                  <h3 className="font-display text-xl font-semibold text-primary">
+                    Benefici principali
+                  </h3>
+                  <ul className="mt-4 space-y-3">
+                    {service.benefits.map((b, i) => (
+                      <li key={i} className="flex gap-3 text-neutral-700">
+                        <span className="text-accent">✓</span>
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              <div className="mt-10">
                 <Link href="/contatti" className="btn-primary">
                   Richiedi informazioni
                 </Link>
               </div>
             </div>
-            <div>
-              <div className="flex h-48 w-full items-center justify-center rounded-xl bg-primary/10">
-                <div className="text-center">
-                  <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-primary/20 text-primary font-display font-semibold text-2xl">
-                    {data.professional
-                      .split(" ")
-                      .filter((w) => w !== "Dott." && w !== "Dott.ssa" && w !== "del" && w !== "centro")
-                      .map((n) => n[0])
-                      .join("")}
-                  </div>
-                  <p className="mt-4 font-display text-xl font-semibold text-primary">
-                    {data.professional}
-                  </p>
-                  <p className="text-neutral-600">{data.role}</p>
+
+            <aside className="space-y-8">
+              {relatedMembers.length > 0 && (
+                <div className="rounded-xl border border-neutral-200 bg-white p-6">
+                  <h3 className="font-display text-sm font-semibold uppercase tracking-wide text-primary">
+                    {relatedMembers.length === 1 ? "Professionista" : "Team"}
+                  </h3>
+                  <ul className="mt-4 space-y-4">
+                    {relatedMembers.map((m) => (
+                      <li key={m.slug}>
+                        <Link
+                          href={`/team/${m.slug}`}
+                          className="group flex items-center gap-3"
+                        >
+                          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary font-display font-semibold">
+                            {m.name
+                              .split(" ")
+                              .map((n) => n[0])
+                              .join("")}
+                          </div>
+                          <div>
+                            <p className="font-display text-sm font-semibold text-primary group-hover:text-accent">
+                              {m.name}
+                            </p>
+                            <p className="text-xs text-neutral-600">{m.role}</p>
+                          </div>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              </div>
-            </div>
+              )}
+            </aside>
           </div>
         </div>
       </section>
+
+      {relatedServices.length > 0 && (
+        <section className="section-padding bg-neutral-50">
+          <div className="container-narrow">
+            <h2 className="heading-section">Altri servizi — {service.category}</h2>
+            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {relatedServices.map((s) => (
+                <Link
+                  key={s.slug}
+                  href={`/servizi/${s.slug}`}
+                  className="flex flex-col rounded-xl border border-neutral-200 bg-white p-6 transition-shadow hover:shadow-md"
+                >
+                  <h3 className="font-display text-lg font-semibold text-primary">
+                    {s.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-neutral-600 leading-relaxed line-clamp-3">
+                    {s.shortDescription}
+                  </p>
+                  <span className="mt-4 text-sm font-medium text-accent">
+                    Scopri il servizio →
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
     </>
   );
 }

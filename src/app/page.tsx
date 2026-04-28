@@ -1,6 +1,49 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
+
+export const metadata: Metadata = {
+  title: "Montecchia Performance Center — Palestra & Golf Lab a Padova (Selvazzano)",
+  description:
+    "Palestra, golf indoor, fisioterapia, osteopatia, nutrizione e personal training al Golf Club della Montecchia. Performance e benessere a Selvazzano Dentro (Padova).",
+  alternates: {
+    canonical: "https://www.montecchiaperformancecenter.it/",
+  },
+  openGraph: {
+    title: "Montecchia Performance Center — Palestra & Golf Lab a Padova",
+    description:
+      "Palestra, golf indoor, fisioterapia, osteopatia, nutrizione e personal training al Golf Club della Montecchia (Selvazzano Dentro, Padova).",
+    url: "https://www.montecchiaperformancecenter.it/",
+    siteName: "Montecchia Performance Center",
+    locale: "it_IT",
+    type: "website",
+  },
+};
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "HealthAndBeautyBusiness",
+  name: "Montecchia Performance Center",
+  url: "https://www.montecchiaperformancecenter.it/",
+  description:
+    "Palestra, golf indoor, fisioterapia, osteopatia, nutrizione e personal training al Golf Club della Montecchia.",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Via della Montecchia 12",
+    addressLocality: "Selvazzano Dentro",
+    addressRegion: "PD",
+    postalCode: "35030",
+    addressCountry: "IT",
+  },
+  areaServed: {
+    "@type": "City",
+    name: "Padova",
+  },
+  sameAs: [
+    "https://www.montecchiaperformancecenter.it/",
+  ],
+};
 
 const WHATSAPP_LINK =
   "https://wa.me/393314059134?text=Ciao!%20Vorrei%20prenotare%20una%20prova%20gratuita";
@@ -24,6 +67,10 @@ function WhatsAppButton({ children, className = "" }: { children: React.ReactNod
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
       {/* Hero */}
       <section className="relative min-h-[85vh] flex flex-col justify-end overflow-hidden bg-brand">
         <div className="absolute inset-0">

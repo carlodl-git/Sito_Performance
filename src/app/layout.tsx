@@ -17,9 +17,30 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Montecchia Performance Center | Palestra & Servizi",
+  metadataBase: new URL("https://www.montecchiaperformancecenter.it"),
+  title: {
+    default: "Montecchia Performance Center — Palestra & Golf Lab a Padova",
+    template: "%s | Montecchia Performance Center",
+  },
   description:
-    "Centro di eccellenza per fitness, corsi, golf indoor e servizi di supporto. Scopri la palestra, i corsi e i professionisti del Montecchia Performance Center.",
+    "Palestra, golf indoor, fisioterapia, osteopatia, nutrizione e personal training al Golf Club della Montecchia. Performance e benessere a Selvazzano Dentro (Padova).",
+  openGraph: {
+    siteName: "Montecchia Performance Center",
+    locale: "it_IT",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  authors: [{ name: "Montecchia Performance Center" }],
 };
 
 export default function RootLayout({

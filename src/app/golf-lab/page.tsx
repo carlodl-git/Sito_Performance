@@ -1,5 +1,24 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Golf Lab — Simulatore Golf Indoor a Padova | Montecchia Performance Center",
+  description:
+    "Simulatore golf indoor TrackMan/CAPTO al Golf Club della Montecchia. Lezioni con maestri PGA, fitting, tornei, sessioni serali con bar. Padova, Selvazzano Dentro.",
+  alternates: {
+    canonical: "https://www.montecchiaperformancecenter.it/golf-lab",
+  },
+  openGraph: {
+    title: "Golf Lab — Simulatore Golf Indoor a Padova",
+    description:
+      "Simulatore golf indoor con maestri PGA, fitting, tornei, sessioni serali al Golf Club della Montecchia.",
+    url: "https://www.montecchiaperformancecenter.it/golf-lab",
+    siteName: "Montecchia Performance Center",
+    locale: "it_IT",
+    type: "website",
+  },
+};
 
 export default function GolfLabPage() {
   return (

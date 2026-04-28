@@ -109,9 +109,17 @@ export function Footer() {
             </p>
           </div>
         </div>
-        <div className="mt-16 border-t border-primary/30 pt-8 text-center text-sm text-neutral-400">
-          © {new Date().getFullYear()} Montecchia Performance Center. Tutti i
-          diritti riservati.
+        <div className="mt-16 border-t border-primary/30 pt-8 flex flex-col items-center gap-3 text-sm text-neutral-400 sm:flex-row sm:justify-between">
+          <p>
+            © {new Date().getFullYear()} Montecchia Performance Center. Tutti i
+            diritti riservati.
+          </p>
+          <Link
+            href="/privacy-policy"
+            className="hover:text-white transition-colors"
+          >
+            Privacy Policy
+          </Link>
         </div>
       </div>
     </footer>
