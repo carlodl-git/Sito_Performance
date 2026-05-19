@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
-import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 
 export const metadata: Metadata = {
   title: "Chi Siamo",
@@ -18,6 +17,7 @@ export const metadata: Metadata = {
     siteName: "Montecchia Performance Center",
     locale: "it_IT",
     type: "website",
+    images: ["/images/palestra-1.jpg"],
   },
 };
 
@@ -40,8 +40,8 @@ export default function ChiSiamoPage() {
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
             <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
               <Image
-                src="/images/performance.webp"
-                alt="Interno del Montecchia Performance Center"
+                src="/images/esterno.jpg"
+                alt="Esterno del Montecchia Performance Center"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -114,9 +114,9 @@ export default function ChiSiamoPage() {
           </p>
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { src: "/images/performance.webp", alt: "Simulatore golf indoor - vista struttura" },
-              { src: "/images/1484849991.jpg", alt: "Sala simulatori con postazioni multiple" },
-              { src: "/images/ridotta-4_Golf-Montecchia-P.jpg", alt: "Simulatore con proiezione" },
+              { src: "/images/palestra-1.jpg", alt: "Sala palestra principale" },
+              { src: "/images/golf-indoor-1.jpg", alt: "Golf Lab - postazioni simulatori" },
+              { src: "/images/yoga-esterno.jpg", alt: "Sessione yoga all'aperto" },
               { src: "/images/trackman_io_immagine.webp", alt: "Trackman in azione" },
             ].map((img) => (
               <div key={img.src} className="relative aspect-[4/3] overflow-hidden rounded-xl">

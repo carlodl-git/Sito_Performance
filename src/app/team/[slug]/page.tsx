@@ -30,6 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: `https://www.montecchiaperformancecenter.it/team/${member.slug}`,
       siteName: "Montecchia Performance Center",
       locale: "it_IT",
+      images: ["/images/palestra-1.jpg"],
     },
     alternates: {
       canonical: `https://www.montecchiaperformancecenter.it/team/${member.slug}`,

@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     siteName: "Montecchia Performance Center",
     locale: "it_IT",
     type: "website",
+    images: ["/images/palestra-1.jpg"],
   },
 };
 
@@ -115,8 +116,8 @@ export default function GolfLabPage() {
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
               <Image
-                src="/images/1484849991.jpg"
-                alt="Sala simulatori golf con piu' postazioni"
+                src="/images/golf-indoor-1.jpg"
+                alt="Postazioni simulatori golf indoor"
                 fill
                 className="object-cover"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -124,8 +125,8 @@ export default function GolfLabPage() {
             </div>
             <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
               <Image
-                src="/images/ridotta-4_Golf-Montecchia-P.jpg"
-                alt="Simulatore golf con schermo proiezione"
+                src="/images/golf-indoor-2.jpg"
+                alt="Simulatore golf con schermo di proiezione"
                 fill
                 className="object-cover"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"

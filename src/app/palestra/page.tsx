@@ -1,7 +1,29 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
-import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
+
+function courseColor(name: string) {
+  switch (name) {
+    case "Full Body Workout":
+    case "Core Stability & Upper Body (Postural)":
+    case "Tone up & Cardio":
+    case "Hatha Yoga":
+      return "bg-indigo-200 text-indigo-900 font-medium";
+    case "Fit for Golf":
+      return "bg-emerald-200 text-emerald-900 font-medium";
+    case "Pilates":
+      return "bg-fuchsia-200 text-fuchsia-900 font-medium";
+    case "Tonificazione Total Body":
+      return "bg-violet-200 text-violet-900 font-medium";
+    case "Step and Sculpt":
+      return "bg-red-200 text-red-900 font-medium";
+    case "Brucia Grassi":
+    case "Gambe Addome Glutei":
+      return "bg-amber-200 text-amber-900 font-medium";
+    default:
+      return "text-neutral-300";
+  }
+}
 
 export const metadata: Metadata = {
   title: "Palestra a Padova (Selvazzano)",
@@ -18,6 +40,7 @@ export const metadata: Metadata = {
     siteName: "Montecchia Performance Center",
     locale: "it_IT",
     type: "website",
+    images: ["/images/palestra-1.jpg"],
   },
 };
 
@@ -49,13 +72,26 @@ export default function PalestraPage() {
             e attenzione dedicata.
           </p>
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {[1, 2, 3, 4, 5, 6].map((i) => (
-              <ImagePlaceholder
-                key={i}
-                aspect="card"
-                label={`Galleria struttura ${i}`}
-                className="w-full"
-              />
+            {[
+              { src: "/images/palestra-1.jpg", alt: "Sala palestra principale" },
+              { src: "/images/palestra-2.jpg", alt: "Area pesi e macchinari" },
+              { src: "/images/palestra-3.jpg", alt: "Zona allenamento funzionale" },
+              { src: "/images/golf-indoor-1.jpg", alt: "Golf Lab indoor" },
+              { src: "/images/yoga-indoor.jpg", alt: "Sala yoga e pilates" },
+              { src: "/images/yoga-esterno.jpg", alt: "Yoga all'aperto" },
+            ].map((img) => (
+              <div
+                key={img.src}
+                className="relative aspect-[4/3] overflow-hidden rounded-xl"
+              >
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+              </div>
             ))}
           </div>
         </div>
@@ -76,29 +112,48 @@ export default function PalestraPage() {
                 desc: "Allenamento a corpo libero e con attrezzi per migliorare forza, mobilita' e coordinazione. Sessioni di gruppo ad alta intensita' adatte a tutti i livelli.",
                 instructor: "Anna Simone",
                 role: "Personal Trainer & Istruttrice Functional",
+                image: "/images/palestra-2.jpg",
               },
               {
-                name: "Yoga & Pilates",
-                desc: "Sessioni per flessibilita', respirazione e recupero attivo. Un approccio che unisce la precisione del Pilates alla consapevolezza dello Yoga.",
+                name: "Yoga",
+                desc: "Pratica che unisce respiro, postura e consapevolezza. Lavora su flessibilita', equilibrio e gestione dello stress. Sessioni adatte a tutti i livelli, anche all'aperto nei mesi caldi.",
                 instructor: "Chiara Destro",
-                role: "Istruttrice Pilates & Yoga",
+                role: "Istruttrice Yoga & Pilates",
+                image: "/images/yoga-esterno.jpg",
+              },
+              {
+                name: "Pilates",
+                desc: "Metodo di controllo del corpo focalizzato su core, postura e mobilita'. Movimenti precisi e respirazione guidata per tonificare in profondita' senza sovraccaricare le articolazioni.",
+                instructor: "Chiara Destro",
+                role: "Istruttrice Yoga & Pilates",
+                image: "/images/yoga-indoor.jpg",
               },
               {
                 name: "Group Training",
                 desc: "Allenamento di gruppo ad alta intensita' con programmi strutturati. Motivazione, risultati e spirito di squadra.",
                 instructor: "Sascha Antoniutti",
                 role: "Master Trainer & Personal Trainer",
+                image: "/images/palestra-3.jpg",
+              },
+              {
+                name: "AcquaGym (solo in estate)",
+                desc: "Allenamento in acqua a basso impatto articolare: tonificazione, mobilita' e cardio in un ambiente divertente e adatto a tutti. Attivo solo nei mesi estivi (giugno, luglio, agosto).",
+                instructor: "Da definire",
+                role: "Istruttore/Istruttrice AcquaGym",
+                image: "/images/acquagym.jpg",
               },
             ].map((course) => (
               <div
                 key={course.name}
                 className="flex flex-col overflow-hidden rounded-xl bg-white shadow-sm md:flex-row"
               >
-                <div className="md:w-2/5">
-                  <ImagePlaceholder
-                    aspect="card"
-                    label={course.name}
-                    className="h-full min-h-[200px] w-full"
+                <div className="relative min-h-[240px] md:w-2/5">
+                  <Image
+                    src={course.image}
+                    alt={course.name}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 40vw"
                   />
                 </div>
                 <div className="flex flex-1 flex-col justify-center p-8">
@@ -130,39 +185,50 @@ export default function PalestraPage() {
             Consulta gli orari settimanali. Per conferma e prenotazioni
             contatta la reception.
           </p>
-          <div className="mt-10 overflow-hidden rounded-xl border border-neutral-200">
-            <div className="grid grid-cols-7 border-b border-neutral-200 bg-neutral-50 text-center text-sm font-medium text-neutral-600">
-              {["Lun", "Mar", "Mer", "Gio", "Ven", "Sab", "Dom"].map((d) => (
-                <div key={d} className="border-r border-neutral-200 py-4 last:border-r-0">
-                  {d}
-                </div>
-              ))}
-            </div>
-            {[
-              { time: "09:00", courses: ["Functional", "—", "Yoga", "—", "Group", "—", "Chiuso"] },
-              { time: "10:30", courses: ["—", "Group", "—", "Functional", "—", "Pilates", "—"] },
-              { time: "18:00", courses: ["Group", "Functional", "Pilates", "Group", "Functional", "—", "—"] },
-            ].map((row) => (
-              <div
-                key={row.time}
-                className="grid grid-cols-7 border-b border-neutral-200 last:border-b-0"
-              >
-                <div className="border-r border-neutral-200 py-4 pl-4 font-medium text-primary">
-                  {row.time}
-                </div>
-                {row.courses.map((c, i) => (
-                  <div
-                    key={i}
-                    className="border-r border-neutral-200 py-4 text-center text-sm last:border-r-0"
-                  >
-                    {c}
+          <div className="mt-10 overflow-x-auto">
+            <div className="min-w-[720px] overflow-hidden rounded-xl border border-neutral-200">
+              <div className="grid grid-cols-[80px_repeat(7,1fr)] border-b border-neutral-200 bg-neutral-50 text-center text-sm font-medium text-neutral-600">
+                <div className="border-r border-neutral-200 py-4">Ora</div>
+                {["Lun", "Mar", "Mer", "Gio", "Ven", "Sab", "Dom"].map((d) => (
+                  <div key={d} className="border-r border-neutral-200 py-4 last:border-r-0">
+                    {d}
                   </div>
                 ))}
               </div>
-            ))}
+              {[
+                { time: "08:40", courses: ["Full Body Workout", "—", "Full Body Workout", "—", "Core Stability & Upper Body (Postural)", "—", "—"] },
+                { time: "13:10", courses: ["—", "Fit for Golf", "—", "Fit for Golf", "—", "—", "—"] },
+                { time: "17:30", courses: ["—", "Pilates", "—", "Pilates", "—", "—", "—"] },
+                { time: "18:15", courses: ["Brucia Grassi", "Step and Sculpt", "Tonificazione Total Body", "Step and Sculpt", "Gambe Addome Glutei", "—", "—"] },
+                { time: "19:00", courses: ["—", "Hatha Yoga", "—", "Hatha Yoga", "—", "—", "—"] },
+                { time: "19:15", courses: ["Tone up & Cardio", "—", "Tone up & Cardio", "—", "—", "—", "—"] },
+                { time: "20:10", courses: ["—", "Pilates", "—", "Pilates", "—", "—", "—"] },
+              ].map((row) => (
+                <div
+                  key={row.time}
+                  className="grid grid-cols-[80px_repeat(7,1fr)] border-b border-neutral-200 last:border-b-0"
+                >
+                  <div className="border-r border-neutral-200 py-4 text-center font-semibold text-primary">
+                    {row.time}
+                  </div>
+                  {row.courses.map((c, i) => (
+                    <div
+                      key={i}
+                      className={`border-r border-neutral-200 py-4 text-center text-sm last:border-r-0 ${courseColor(c)}`}
+                    >
+                      {c}
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
           </div>
           <p className="mt-4 text-sm text-neutral-500">
-            * Orari indicativi. Per conferma contattare la reception.
+            Stagione 2025/2026 (autunno · inverno · primavera). Venerdì mattina inizio alle 08:45.{" "}
+            <span className="font-medium">Corsi solo su prenotazione</span> — WhatsApp 331 4059134.
+          </p>
+          <p className="mt-1 text-xs text-neutral-400">
+            AcquaGym attiva solo nei mesi estivi (giugno · luglio · agosto).
           </p>
         </div>
       </section>

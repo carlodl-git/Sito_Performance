@@ -142,28 +142,78 @@ export const services: Service[] = [
 
   // ============== DISCIPLINE ==============
   {
-    slug: "pilates-yoga",
-    title: "Pilates e Yoga",
+    slug: "yoga",
+    title: "Yoga",
     shortDescription:
-      "Discipline che migliorano la qualità della vita, portando equilibrio e benessere tra corpo, mente e spirito. Particolarmente utili nel golf per coordinazione e mobilità.",
+      "Pratica che unisce respiro, postura e consapevolezza. Migliora flessibilità, equilibrio e gestione dello stress. Utile anche nel golf per concentrazione e mobilità.",
     category: "Discipline",
     intro:
-      "Pilates e Yoga al Montecchia Performance Center: discipline complementari per equilibrio, mobilità, controllo del corpo e benessere mentale. Lezioni di gruppo condotte da istruttrice certificata.",
+      "Yoga al Montecchia Performance Center: lezioni di gruppo condotte da istruttrice certificata, in sala o all'aperto nei mesi caldi. Pratica adatta a tutti i livelli, con varianti e progressioni.",
     body: [
-      "Pilates e Yoga sono discipline che migliorano la qualità della vita, portando equilibrio e benessere tra corpo, mente e spirito. Condivise solo in apparenza, lavorano in modo profondamente diverso ma complementare.",
-      "Lo Yoga mira ad acquisire freschezza mentale e raggiungere stabilità emotiva: il respiro guida il movimento, la pratica costruisce consapevolezza corporea e capacità di gestire lo stress. Il Pilates lavora sulla precisione dei movimenti corporei: scolpisce il corpo a livello formale e permette il raggiungimento di un profondo benessere interiore attraverso il controllo motorio fine.",
-      "Nel golf, entrambe le discipline sono particolarmente preziose: migliorano coordinazione, concentrazione e mantenimento dell'equilibrio — elementi necessari per lo swing. L'incremento della mobilità e della flessibilità si traduce in uno swing più ampio e una maggior distanza nei colpi.",
+      "Lo Yoga mira ad acquisire freschezza mentale e a raggiungere stabilità emotiva. Il respiro guida il movimento, la pratica costruisce consapevolezza corporea e capacità di gestire lo stress.",
+      "Sul piano fisico lavora su flessibilità, equilibrio, mobilità articolare e tono muscolare profondo. Sul piano mentale aiuta a sviluppare concentrazione, rilassamento attivo e una migliore qualità del sonno.",
+      "Nel golf è una disciplina particolarmente preziosa: migliora coordinazione, concentrazione e mantenimento dell'equilibrio — elementi necessari per lo swing. L'aumento della mobilità si traduce in uno swing più ampio e in una maggior distanza nei colpi.",
     ],
     benefits: [
-      "Migliora coordinazione, equilibrio e concentrazione",
-      "Aumenta mobilità e flessibilità — utile nello swing del golf",
+      "Migliora flessibilità, equilibrio e concentrazione",
       "Riduce stress e tensione muscolare",
-      "Adatta a tutti i livelli, con varianti e progressioni",
+      "Aumenta mobilità — utile nello swing del golf",
+      "Adatto a tutti i livelli, con varianti e progressioni",
     ],
     relatedTeamSlugs: ["chiara-destro"],
     image: {
-      src: "/wp-content/uploads/2016/02/Chiara_yoga_parco-34.jpeg",
-      alt: "Pilates e Yoga con Chiara Destro al Montecchia Performance Center",
+      src: "/images/yoga-esterno.jpg",
+      alt: "Yoga al Montecchia Performance Center",
+    },
+  },
+  {
+    slug: "pilates",
+    title: "Pilates",
+    shortDescription:
+      "Metodo di controllo del corpo focalizzato su core, postura e mobilità. Movimenti precisi che tonificano in profondità senza sovraccaricare le articolazioni.",
+    category: "Discipline",
+    intro:
+      "Pilates al Montecchia Performance Center: lezioni di gruppo condotte da istruttrice certificata. Lavoro mirato su forza profonda, controllo motorio e postura.",
+    body: [
+      "Il Pilates lavora sulla precisione dei movimenti corporei: scolpisce il corpo a livello formale e permette il raggiungimento di un profondo benessere interiore attraverso il controllo motorio fine.",
+      "Le sessioni sono strutturate intorno ai principi del metodo — concentrazione, controllo, centro, fluidità, precisione, respirazione — con esercizi a corpo libero e con piccoli attrezzi per tonificare, allineare la postura e migliorare la mobilità.",
+      "Per il golfista è un complemento prezioso: rinforza il core, migliora la stabilità del tronco e la coordinazione, riduce il rischio di infortuni e supporta uno swing più efficiente.",
+    ],
+    benefits: [
+      "Rinforza il core e migliora la postura",
+      "Tonifica in profondità senza impatto articolare",
+      "Aumenta controllo motorio e coordinazione",
+      "Complementare all'allenamento e utile nel golf",
+    ],
+    relatedTeamSlugs: ["chiara-destro"],
+    image: {
+      src: "/images/yoga-indoor.jpg",
+      alt: "Pilates al Montecchia Performance Center",
+    },
+  },
+
+  {
+    slug: "piscina",
+    title: "Piscina (mesi estivi)",
+    shortDescription:
+      "Piscina esterna aperta nei mesi estivi (giugno–settembre): nuoto libero, AcquaGym e relax dopo l'allenamento, in un'oasi di verde all'interno del Golf Club.",
+    category: "Discipline",
+    intro:
+      "Nei mesi estivi il Performance Center mette a disposizione la piscina esterna del Golf Club della Montecchia: uno spazio per nuoto libero, sessioni di AcquaGym e momenti di relax tra una sessione di allenamento e l'altra.",
+    body: [
+      "La piscina è aperta tipicamente da giugno a settembre, in base alla stagione e alle condizioni meteo. Accessibile ai soci e a chi frequenta i corsi del centro, è ideale per integrare l'allenamento con un'attività a basso impatto articolare oppure semplicemente per godersi una pausa all'aria aperta.",
+      "Durante la stagione organizziamo sessioni di AcquaGym in piscina: allenamento in acqua condotto da istruttore, divertente, adatto a tutti i livelli e particolarmente indicato per chi cerca tonificazione e mobilità senza sovraccarichi.",
+      "Per orari, condizioni di accesso e calendario corsi acqua chiedi in reception o contattaci.",
+    ],
+    benefits: [
+      "Aperta nei mesi estivi (giugno–settembre)",
+      "Nuoto libero a basso impatto articolare",
+      "Sessioni di AcquaGym con istruttore",
+      "Ambiente immerso nel verde del Golf Club",
+    ],
+    image: {
+      src: "/images/acquagym.jpg",
+      alt: "Piscina esterna del Montecchia Performance Center",
     },
   },
 

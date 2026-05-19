@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     siteName: "Montecchia Performance Center",
     locale: "it_IT",
     type: "website",
+    images: ["/images/palestra-1.jpg"],
   },
 };
 

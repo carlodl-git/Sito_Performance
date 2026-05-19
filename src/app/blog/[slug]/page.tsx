@@ -35,6 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       siteName: "Montecchia Performance Center",
       locale: "it_IT",
       publishedTime: post.publishedAt,
+      images: ["/images/palestra-1.jpg"],
     },
     alternates: {
       canonical: `https://www.montecchiaperformancecenter.it/blog/${post.slug}`,

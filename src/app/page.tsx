@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { HeroSlideshow } from "@/components/ui/HeroSlideshow";
 import type { Metadata } from "next";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 
@@ -20,6 +21,7 @@ export const metadata: Metadata = {
     siteName: "Montecchia Performance Center",
     locale: "it_IT",
     type: "website",
+    images: ["/images/palestra-1.jpg"],
   },
 };
 
@@ -66,6 +68,29 @@ function WhatsAppButton({ children, className = "" }: { children: React.ReactNod
   );
 }
 
+function courseColor(name: string) {
+  switch (name) {
+    case "Full Body Workout":
+    case "Core Stability & Upper Body (Postural)":
+    case "Tone up & Cardio":
+    case "Hatha Yoga":
+      return "bg-indigo-200 text-indigo-900 font-medium";
+    case "Fit for Golf":
+      return "bg-emerald-200 text-emerald-900 font-medium";
+    case "Pilates":
+      return "bg-fuchsia-200 text-fuchsia-900 font-medium";
+    case "Tonificazione Total Body":
+      return "bg-violet-200 text-violet-900 font-medium";
+    case "Step and Sculpt":
+      return "bg-red-200 text-red-900 font-medium";
+    case "Brucia Grassi":
+    case "Gambe Addome Glutei":
+      return "bg-amber-200 text-amber-900 font-medium";
+    default:
+      return "text-neutral-300";
+  }
+}
+
 export default function HomePage() {
   return (
     <>
@@ -74,24 +99,26 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
       {/* Hero */}
-      <section className="relative min-h-[85vh] flex flex-col justify-end overflow-hidden bg-brand">
+      <section className="relative min-h-[85vh] flex flex-col justify-end overflow-hidden">
         <div className="absolute inset-0">
-          <Image
-            src="/images/performance.webp"
-            alt="Montecchia Performance Center - Simulatore golf indoor"
-            fill
-            className="object-cover opacity-40"
-            priority
-            sizes="100vw"
+          <HeroSlideshow
+            images={[
+              { src: "/images/palestra-2.jpg", alt: "Sala palestra - allenamento funzionale" },
+              { src: "/images/yoga-esterno.jpg", alt: "Sessione yoga all'aperto" },
+              { src: "/images/yoga-indoor.jpg", alt: "Sala pilates" },
+              { src: "/images/palestra-3.jpg", alt: "Allenamento di gruppo" },
+              { src: "/images/acquagym.jpg", alt: "AcquaGym in piscina" },
+            ]}
           />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
         </div>
         <div className="container-narrow relative z-10 pb-16 pt-32 sm:pb-20 lg:pb-24">
-          <h1 className="font-display text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl">
+          <h1 className="font-display text-4xl font-semibold tracking-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.55)] sm:text-5xl lg:text-6xl xl:text-7xl">
             Performance
             <br />
             <span className="text-accent">senza compromessi</span>
           </h1>
-          <p className="mt-6 max-w-xl text-lg text-neutral-300">
+          <p className="mt-6 max-w-xl text-lg text-white drop-shadow-[0_1px_8px_rgba(0,0,0,0.6)]">
             Palestra, corsi, golf indoor e un team di professionisti. Un unico
             centro per raggiungere i tuoi obiettivi.
           </p>
@@ -251,9 +278,13 @@ export default function HomePage() {
                 ))}
               </div>
               {[
-                { time: "09:00", courses: ["Functional", "—", "Yoga", "—", "Group", "—", "—"] },
-                { time: "10:30", courses: ["—", "Group", "—", "Functional", "—", "Pilates", "—"] },
-                { time: "18:00", courses: ["Group", "Functional", "Pilates", "Group", "Functional", "—", "—"] },
+                { time: "08:40", courses: ["Full Body Workout", "—", "Full Body Workout", "—", "Core Stability & Upper Body (Postural)", "—", "—"] },
+                { time: "13:10", courses: ["—", "Fit for Golf", "—", "Fit for Golf", "—", "—", "—"] },
+                { time: "17:30", courses: ["—", "Pilates", "—", "Pilates", "—", "—", "—"] },
+                { time: "18:15", courses: ["Brucia Grassi", "Step and Sculpt", "Tonificazione Total Body", "Step and Sculpt", "Gambe Addome Glutei", "—", "—"] },
+                { time: "19:00", courses: ["—", "Hatha Yoga", "—", "Hatha Yoga", "—", "—", "—"] },
+                { time: "19:15", courses: ["Tone up & Cardio", "—", "Tone up & Cardio", "—", "—", "—", "—"] },
+                { time: "20:10", courses: ["—", "Pilates", "—", "Pilates", "—", "—", "—"] },
               ].map((row) => (
                 <div
                   key={row.time}
@@ -265,11 +296,7 @@ export default function HomePage() {
                   {row.courses.map((c, i) => (
                     <div
                       key={i}
-                      className={`border-r border-neutral-200 py-4 text-center text-sm last:border-r-0 ${
-                        c !== "—"
-                          ? "font-medium text-primary bg-primary/5"
-                          : "text-neutral-300"
-                      }`}
+                      className={`border-r border-neutral-200 py-4 text-center text-sm last:border-r-0 ${courseColor(c)}`}
                     >
                       {c}
                     </div>
@@ -279,7 +306,10 @@ export default function HomePage() {
             </div>
           </div>
           <p className="mt-4 text-center text-sm text-neutral-500">
-            * Orari indicativi. Per conferma contattare la reception.
+            Stagione 2025/2026 (autunno · inverno · primavera). Venerdì mattina inizio alle 08:45. Corsi <span className="font-medium">solo su prenotazione</span> — WhatsApp 331 4059134.
+          </p>
+          <p className="mt-1 text-center text-xs text-neutral-400">
+            AcquaGym attiva solo nei mesi estivi (giugno · luglio · agosto).
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-4">
             <WhatsAppButton className="text-sm px-5 py-3">

@@ -27,7 +27,7 @@ export function Header() {
             <span className="relative block h-10 w-10 shrink-0 overflow-hidden sm:h-12 sm:w-12">
               <Image
                 src="/images/logo_performance.webp"
-                alt=""
+                alt="Logo Montecchia Performance Center"
                 fill
                 className="object-contain"
                 priority
