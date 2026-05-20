@@ -268,8 +268,8 @@ export default function HomePage() {
             e vieni a provare.
           </p>
           <div className="mt-10 overflow-x-auto">
-            <div className="min-w-[640px] overflow-hidden rounded-xl border border-neutral-200">
-              <div className="grid grid-cols-[80px_repeat(7,1fr)] border-b border-neutral-200 bg-primary text-center text-sm font-medium text-white">
+            <div className="min-w-[680px] overflow-hidden rounded-xl border border-neutral-200">
+              <div className="grid grid-cols-[96px_repeat(7,1fr)] border-b border-neutral-200 bg-primary text-center text-sm font-medium text-white">
                 <div className="border-r border-primary-light py-4">Ora</div>
                 {["Lun", "Mar", "Mer", "Gio", "Ven", "Sab", "Dom"].map((d) => (
                   <div key={d} className="border-r border-primary-light py-4 last:border-r-0">
@@ -278,20 +278,21 @@ export default function HomePage() {
                 ))}
               </div>
               {[
-                { time: "08:40", courses: ["Full Body Workout", "—", "Full Body Workout", "—", "Core Stability & Upper Body (Postural)", "—", "—"] },
-                { time: "13:10", courses: ["—", "Fit for Golf", "—", "Fit for Golf", "—", "—", "—"] },
-                { time: "17:30", courses: ["—", "Pilates", "—", "Pilates", "—", "—", "—"] },
-                { time: "18:15", courses: ["Brucia Grassi", "Step and Sculpt", "Tonificazione Total Body", "Step and Sculpt", "Gambe Addome Glutei", "—", "—"] },
-                { time: "19:00", courses: ["—", "Hatha Yoga", "—", "Hatha Yoga", "—", "—", "—"] },
-                { time: "19:15", courses: ["Tone up & Cardio", "—", "Tone up & Cardio", "—", "—", "—", "—"] },
-                { time: "20:10", courses: ["—", "Pilates", "—", "Pilates", "—", "—", "—"] },
+                { start: "08:40", end: "09:30", courses: ["Full Body Workout", "—", "Full Body Workout", "—", "Core Stability & Upper Body (Postural)", "—", "—"] },
+                { start: "13:10", end: "14:00", courses: ["—", "Fit for Golf", "—", "Fit for Golf", "—", "—", "—"] },
+                { start: "17:30", end: "18:30", courses: ["—", "Pilates", "—", "Pilates", "—", "—", "—"] },
+                { start: "18:15", end: "19:05", courses: ["Brucia Grassi", "Step and Sculpt", "Tonificazione Total Body", "Step and Sculpt", "Gambe Addome Glutei", "—", "—"] },
+                { start: "19:00", end: "20:00", courses: ["—", "Hatha Yoga", "—", "Hatha Yoga", "—", "—", "—"] },
+                { start: "19:15", end: "20:05", courses: ["Tone up & Cardio", "—", "Tone up & Cardio", "—", "—", "—", "—"] },
+                { start: "20:10", end: "21:00", courses: ["—", "Pilates", "—", "Pilates", "—", "—", "—"] },
               ].map((row) => (
                 <div
-                  key={row.time}
-                  className="grid grid-cols-[80px_repeat(7,1fr)] border-b border-neutral-200 last:border-b-0"
+                  key={row.start}
+                  className="grid grid-cols-[96px_repeat(7,1fr)] border-b border-neutral-200 last:border-b-0"
                 >
-                  <div className="border-r border-neutral-200 py-4 text-center font-semibold text-primary">
-                    {row.time}
+                  <div className="border-r border-neutral-200 py-4 text-center text-primary">
+                    <div className="font-semibold">{row.start}</div>
+                    <div className="text-xs text-neutral-500">→ {row.end}</div>
                   </div>
                   {row.courses.map((c, i) => (
                     <div
