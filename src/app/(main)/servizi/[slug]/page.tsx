@@ -105,10 +105,10 @@ export default async function ServizioPage({ params }: Props) {
           <p className="mt-6 text-sm font-medium uppercase tracking-wide text-accent">
             {service.category}
           </p>
-          <h1 className="mt-2 font-display text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
+          <h1 className="mt-2 font-display text-4xl font-normal tracking-tight text-white sm:text-5xl lg:text-6xl">
             {service.title}
           </h1>
-          <p className="mt-6 max-w-2xl text-lg text-neutral-300">
+          <p className="mt-6 max-w-2xl text-lg text-white/70">
             {service.intro}
           </p>
         </div>
@@ -127,7 +127,7 @@ export default async function ServizioPage({ params }: Props) {
 
               {service.benefits && service.benefits.length > 0 && (
                 <div className="mt-10">
-                  <h3 className="font-display text-xl font-semibold text-primary">
+                  <h3 className="font-display text-xl font-normal text-primary">
                     Benefici principali
                   </h3>
                   <ul className="mt-4 space-y-3">
@@ -150,8 +150,8 @@ export default async function ServizioPage({ params }: Props) {
 
             <aside className="space-y-8">
               {relatedMembers.length > 0 && (
-                <div className="rounded-xl border border-neutral-200 bg-white p-6">
-                  <h3 className="font-display text-sm font-semibold uppercase tracking-wide text-primary">
+                <div className="border border-line bg-white p-6">
+                  <h3 className="eyebrow">
                     {relatedMembers.length === 1 ? "Professionista" : "Team"}
                   </h3>
                   <ul className="mt-4 space-y-4">
@@ -161,17 +161,17 @@ export default async function ServizioPage({ params }: Props) {
                           href={`/team/${m.slug}`}
                           className="group flex items-center gap-3"
                         >
-                          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary font-display font-semibold">
+                          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/8 font-display text-primary">
                             {m.name
                               .split(" ")
                               .map((n) => n[0])
                               .join("")}
                           </div>
                           <div>
-                            <p className="font-display text-sm font-semibold text-primary group-hover:text-accent">
+                            <p className="font-display text-base text-primary group-hover:text-accent">
                               {m.name}
                             </p>
-                            <p className="text-xs text-neutral-600">{m.role}</p>
+                            <p className="text-xs text-ink-soft">{m.role}</p>
                           </div>
                         </Link>
                       </li>
@@ -185,7 +185,7 @@ export default async function ServizioPage({ params }: Props) {
       </section>
 
       {relatedServices.length > 0 && (
-        <section className="section-padding bg-neutral-50">
+        <section className="section-padding bg-paper-alt">
           <div className="container-narrow">
             <h2 className="heading-section">Altri servizi — {service.category}</h2>
             <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -193,12 +193,12 @@ export default async function ServizioPage({ params }: Props) {
                 <Link
                   key={s.slug}
                   href={`/servizi/${s.slug}`}
-                  className="flex flex-col rounded-xl border border-neutral-200 bg-white p-6 transition-shadow hover:shadow-md"
+                  className="flex flex-col rounded-sm border border-line bg-white p-6 transition-colors hover:border-primary/40"
                 >
-                  <h3 className="font-display text-lg font-semibold text-primary">
+                  <h3 className="font-display text-lg font-normal text-primary">
                     {s.title}
                   </h3>
-                  <p className="mt-2 text-sm text-neutral-600 leading-relaxed line-clamp-3">
+                  <p className="mt-2 text-sm text-ink-soft leading-relaxed line-clamp-3">
                     {s.shortDescription}
                   </p>
                   <span className="mt-4 text-sm font-medium text-accent">

@@ -360,6 +360,63 @@ export const serviceCategories = [
   "Salute & Benessere",
 ] as const;
 
+/* ============================================================
+   AREE DEL CENTRO
+   Il sito è organizzato in quattro aree. Ogni servizio appartiene
+   a una sola area; le pagine /servizi/<slug> restano invariate
+   (sono indicizzate) e vengono raggiunte dalla pagina della sua area.
+   ============================================================ */
+
+export type Area = "palestra" | "pilates" | "golf" | "salute";
+
+export const areas = ["palestra", "pilates", "golf", "salute"] as const;
+
+export const areaMeta: Record<
+  Area,
+  { label: string; href: string; tagline: string }
+> = {
+  palestra: {
+    label: "Palestra",
+    href: "/palestra",
+    tagline: "Corsi di gruppo e allenamento individuale",
+  },
+  pilates: {
+    label: "Studio Pilates Reformer",
+    href: "/pilates",
+    tagline: "Reformer e matwork, individuale o in piccolo gruppo",
+  },
+  golf: {
+    label: "Golf Indoor",
+    href: "/golf-lab",
+    tagline: "Simulatori, analisi dello swing e golf fitness",
+  },
+  salute: {
+    label: "Salute e Benessere",
+    href: "/salute-benessere",
+    tagline: "Fisioterapia, osteopatia, nutrizione e trattamenti",
+  },
+};
+
+const CATEGORY_TO_AREA: Record<Service["category"], Area> = {
+  Allenamento: "palestra",
+  Discipline: "palestra",
+  Golf: "golf",
+  "Salute & Benessere": "salute",
+};
+
+// Eccezioni alla mappatura per categoria.
+const AREA_OVERRIDES: Record<string, Area> = {
+  pilates: "pilates",
+};
+
+export function serviceArea(service: Service): Area {
+  return AREA_OVERRIDES[service.slug] ?? CATEGORY_TO_AREA[service.category];
+}
+
+export function servicesByArea(area: Area): Service[] {
+  return services.filter((s) => serviceArea(s) === area);
+}
+
 export function getService(slug: string): Service | undefined {
   return services.find((s) => s.slug === slug);
 }

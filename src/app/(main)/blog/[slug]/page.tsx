@@ -99,7 +99,7 @@ export default async function BlogPostPage({ params }: Props) {
           <p className="mt-6 text-sm font-medium uppercase tracking-wide text-accent">
             {post.category}
           </p>
-          <h1 className="mt-2 font-display text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+          <h1 className="mt-2 font-display text-4xl font-normal tracking-tight text-white sm:text-5xl">
             {post.title}
           </h1>
           <time
@@ -121,7 +121,7 @@ export default async function BlogPostPage({ params }: Props) {
               <p key={i}>{paragraph}</p>
             ))}
           </div>
-          <div className="mt-12 border-t border-neutral-200 pt-8">
+          <div className="mt-12 border-t border-line pt-8">
             <Link href="/contatti" className="btn-primary">
               Contattaci
             </Link>
@@ -130,7 +130,7 @@ export default async function BlogPostPage({ params }: Props) {
       </article>
 
       {otherPosts.length > 0 && (
-        <section className="section-padding bg-neutral-50">
+        <section className="section-padding bg-paper-alt">
           <div className="container-narrow">
             <h2 className="heading-section">Altri articoli</h2>
             <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -138,15 +138,15 @@ export default async function BlogPostPage({ params }: Props) {
                 <Link
                   key={p.slug}
                   href={`/blog/${p.slug}`}
-                  className="group flex flex-col rounded-xl border border-neutral-200 bg-white p-6 transition-shadow hover:shadow-md"
+                  className="group flex flex-col rounded-sm border border-line bg-white p-6 transition-colors hover:border-primary/40"
                 >
                   <p className="text-xs font-medium uppercase tracking-wide text-accent">
                     {p.category}
                   </p>
-                  <h3 className="mt-3 font-display text-lg font-semibold text-primary group-hover:text-accent">
+                  <h3 className="mt-3 font-display text-lg font-normal text-primary group-hover:text-accent">
                     {p.title}
                   </h3>
-                  <p className="mt-2 text-sm text-neutral-600 leading-relaxed line-clamp-3">
+                  <p className="mt-2 text-sm text-ink-soft leading-relaxed line-clamp-3">
                     {p.excerpt}
                   </p>
                 </Link>

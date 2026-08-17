@@ -7,34 +7,57 @@
     @apply scroll-smooth;
   }
   body {
-    @apply bg-white text-neutral-800 antialiased;
+    @apply bg-paper text-ink antialiased;
   }
 }
 
 @layer components {
   .container-narrow {
-    @apply mx-auto max-w-6xl px-4 sm:px-6 lg:px-8;
+    @apply mx-auto max-w-6xl px-5 sm:px-8 lg:px-10;
   }
   .container-wide {
-    @apply mx-auto max-w-8xl px-4 sm:px-6 lg:px-8;
+    @apply mx-auto max-w-8xl px-5 sm:px-8 lg:px-10;
   }
+  /* Ritmo verticale unico per tutto il sito. */
   .section-padding {
-    @apply py-16 sm:py-20 lg:py-28;
+    padding-block: clamp(4rem, 9vw, 7.5rem);
   }
+
   .heading-display {
-    @apply font-display text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl xl:text-6xl text-primary;
+    @apply font-display text-4xl font-normal leading-[1.05] tracking-tight text-primary sm:text-5xl lg:text-6xl;
   }
   .heading-section {
-    @apply font-display text-2xl font-semibold tracking-tight sm:text-3xl lg:text-4xl text-primary;
+    @apply font-display text-3xl font-normal leading-[1.1] tracking-tight text-primary sm:text-4xl;
   }
+  .heading-sub {
+    @apply font-display text-xl font-normal leading-snug text-primary sm:text-2xl;
+  }
+  /* Occhiello sopra i titoli di sezione. */
+  .eyebrow {
+    @apply text-[0.6875rem] font-medium uppercase tracking-[0.2em] text-muted;
+  }
+  /* Misura di riga leggibile per i testi lunghi. */
+  .prose-body {
+    @apply max-w-[68ch] text-ink-soft;
+  }
+  .rule {
+    @apply border-0 border-t border-line;
+  }
+
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-lg bg-accent px-6 py-3.5 text-sm font-medium text-white transition-colors hover:bg-accent-light focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2;
+    @apply inline-flex items-center justify-center rounded-sm bg-cta px-7 py-3.5 text-sm font-medium text-white transition-colors hover:bg-cta-dark focus:outline-none focus:ring-2 focus:ring-cta focus:ring-offset-2;
   }
   .btn-secondary {
-    @apply inline-flex items-center justify-center rounded-lg border-2 border-primary bg-transparent px-6 py-3.5 text-sm font-medium text-primary transition-colors hover:bg-primary hover:text-white focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+    @apply inline-flex items-center justify-center rounded-sm border border-primary bg-transparent px-7 py-3.5 text-sm font-medium text-primary transition-colors hover:bg-primary hover:text-white focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
   }
+
+  /* Superficie di base: filetto, niente ombra. */
+  .card {
+    @apply rounded-sm border border-line bg-white transition-colors hover:border-primary/40;
+  }
+
   .image-placeholder {
-    @apply bg-neutral-200 flex items-center justify-center text-neutral-400 font-body text-sm;
+    @apply flex items-center justify-center bg-neutral-100 font-body text-sm text-neutral-400;
   }
 }
 

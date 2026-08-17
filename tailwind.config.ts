@@ -9,39 +9,73 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Logo: teal/petrol (#2C8B8D) = primary, red (#E43733) = accent, grey (#A0A0A0) = muted
+        /* Logo: verde/petrolio, rosso, grigio.
+           Il verde profondo del logo è il colore dominante del sito; il teal
+           passa ad accento (link, dettagli) e il rosso resta solo per la CTA
+           principale — una per schermata. */
         primary: {
-          DEFAULT: "#2C8B8D",
-          dark: "#1E6264",
-          light: "#3DA5A7",
+          DEFAULT: "#143D3E",
+          dark: "#0F2D2E",
+          light: "#2C8B8D",
         },
         accent: {
+          // Teal del logo scurito quanto basta a superare AA sul fondo avorio
+          // (5.35:1); il teal esatto del logo resta in `accent-light`, usato
+          // sui fondi scuri dove il contrasto non è un problema.
+          DEFAULT: "#237371",
+          light: "#2C8B8D",
+          dark: "#1A5857",
+        },
+        // Azione principale. Da usare a mano, mai come colore di servizio.
+        cta: {
           DEFAULT: "#E43733",
           light: "#EA5A57",
           dark: "#C42E2A",
         },
-        muted: "#A0A0A0",
-        neutral: {
-          50: "#FAFAFA",
-          100: "#F5F5F5",
-          200: "#E5E5E5",
-          300: "#D4D4D4",
-          400: "#A3A3A3",
-          500: "#737373",
-          600: "#525252",
-          700: "#404040",
-          800: "#262626",
-          900: "#171717",
+        muted: "#6E695F",
+        // Fondo pagina avorio al posto del bianco puro: ammorbidisce tutto il
+        // sito senza toccare le 43 `bg-white` già scritte.
+        white: "#FBFAF7",
+        paper: {
+          DEFAULT: "#FBFAF7",
+          alt: "#F3F1EA",
         },
-        // Sfondo scuro per hero/footer (in linea con il verde scuro del logo)
+        line: "#E4E0D6",
+        ink: {
+          DEFAULT: "#1C1C1A",
+          soft: "#4A4A45",
+        },
+        // Scala neutra riscaldata: le `text-neutral-600` e `bg-neutral-50`
+        // esistenti si riallineano da sole alla nuova palette.
+        neutral: {
+          50: "#F7F5F0",
+          100: "#F0EDE6",
+          200: "#E4E0D6",
+          300: "#D3CEC2",
+          400: "#A8A398",
+          500: "#7A756B",
+          600: "#4A4A45",
+          700: "#3A3A36",
+          800: "#262622",
+          900: "#1C1C1A",
+        },
         brand: {
           dark: "#0F2D2E",
           DEFAULT: "#143D3E",
         },
       },
       fontFamily: {
-        display: ["var(--font-display)", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "Georgia", "serif"],
         body: ["var(--font-body)", "system-ui", "sans-serif"],
+      },
+      fontSize: {
+        // Corpo del testo a 17px con interlinea generosa.
+        base: ["1.0625rem", { lineHeight: "1.75" }],
+      },
+      borderRadius: {
+        lg: "0.25rem",
+        xl: "0.25rem",
+        "2xl": "0.375rem",
       },
       spacing: {
         "18": "4.5rem",

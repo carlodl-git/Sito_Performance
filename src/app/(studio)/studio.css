@@ -1,0 +1,189 @@
+/* ============================================================
+   STUDIO PILATES REFORMER — foglio di stile dedicato
+   Vive solo dentro il route group (studio). Volutamente scollegato
+   dal design system del sito principale: palette calda, serif,
+   filetti sottili, niente ombre, molta aria.
+   ============================================================ */
+
+.studio {
+  --st-bg: #f5f1ea;
+  --st-bg-alt: #ebe4d9;
+  --st-surface: #fffdfa;
+  --st-ink: #23201c;
+  --st-ink-soft: #4a443d;
+  --st-muted: #857b70;
+  --st-line: #ddd3c5;
+  --st-accent: #7f8b79;
+
+  background-color: var(--st-bg);
+  color: var(--st-ink);
+  font-family: var(--font-studio-body), system-ui, sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.005em;
+}
+
+.studio ::selection {
+  background: var(--st-accent);
+  color: var(--st-bg);
+}
+
+/* --- Layout ------------------------------------------------ */
+
+.st-container {
+  width: 100%;
+  max-width: 1120px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .st-container {
+    padding-inline: 2.5rem;
+  }
+}
+
+.st-narrow {
+  max-width: 46rem;
+}
+
+.st-section {
+  padding-block: clamp(4.5rem, 11vw, 9rem);
+}
+
+.st-section--tight {
+  padding-block: clamp(3rem, 7vw, 5.5rem);
+}
+
+.st-alt {
+  background-color: var(--st-bg-alt);
+}
+
+.st-rule {
+  height: 1px;
+  background-color: var(--st-line);
+  border: 0;
+}
+
+/* --- Tipografia -------------------------------------------- */
+
+.st-display {
+  font-family: var(--font-studio-display), Georgia, serif;
+  font-weight: 300;
+  letter-spacing: -0.015em;
+  line-height: 1.04;
+}
+
+.st-h1 {
+  font-size: clamp(2.9rem, 8.5vw, 5.75rem);
+}
+
+.st-h2 {
+  font-size: clamp(1.95rem, 4.2vw, 3.15rem);
+  line-height: 1.1;
+}
+
+.st-h3 {
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  line-height: 1.25;
+}
+
+.st-eyebrow {
+  font-size: 0.6875rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.26em;
+  color: var(--st-muted);
+}
+
+.st-lead {
+  font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+  line-height: 1.8;
+  color: var(--st-ink-soft);
+}
+
+.st-body {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: var(--st-ink-soft);
+}
+
+.st-small {
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: var(--st-muted);
+}
+
+.st-num {
+  font-family: var(--font-studio-display), Georgia, serif;
+  font-size: 2.25rem;
+  font-weight: 300;
+  color: var(--st-accent);
+  line-height: 1;
+}
+
+/* --- Elementi ---------------------------------------------- */
+
+.st-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 1rem 2.25rem;
+  border: 1px solid var(--st-ink);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--st-ink);
+  background: transparent;
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+.st-btn:hover {
+  background-color: var(--st-ink);
+  color: var(--st-bg);
+}
+
+.st-btn--light {
+  border-color: var(--st-bg);
+  color: var(--st-bg);
+}
+
+.st-btn--light:hover {
+  background-color: var(--st-bg);
+  color: var(--st-ink);
+}
+
+.st-link {
+  color: var(--st-ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--st-line);
+  padding-bottom: 2px;
+  transition: border-color 0.3s ease;
+}
+
+.st-link:hover {
+  border-color: var(--st-ink);
+}
+
+.st-nav-link {
+  font-size: 0.8125rem;
+  letter-spacing: 0.08em;
+  color: var(--st-ink-soft);
+  transition: color 0.3s ease;
+}
+
+.st-nav-link:hover {
+  color: var(--st-ink);
+}
+
+/* Voce di elenco separata da un filetto: la struttura portante
+   delle sezioni "metodo" e "lezioni". */
+.st-row {
+  border-top: 1px solid var(--st-line);
+  padding-block: clamp(1.75rem, 3vw, 2.75rem);
+}
+
+.st-row:last-child {
+  border-bottom: 1px solid var(--st-line);
+}

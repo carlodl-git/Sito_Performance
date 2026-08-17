@@ -12,10 +12,10 @@ export default function ContattiPage() {
     <>
       <section className="relative bg-brand py-24 sm:py-32">
         <div className="container-narrow">
-          <h1 className="font-display text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
+          <h1 className="font-display text-4xl font-normal tracking-tight text-white sm:text-5xl lg:text-6xl">
             Contatti
           </h1>
-          <p className="mt-6 max-w-2xl text-lg text-neutral-300">
+          <p className="mt-6 max-w-2xl text-lg text-white/70">
             Indirizzo, orari e come raggiungerci. Siamo a disposizione per
             informazioni e prenotazioni.
           </p>
@@ -28,7 +28,7 @@ export default function ContattiPage() {
             {/* Info e mappa */}
             <div>
               <h2 className="heading-section">Dove siamo</h2>
-              <div className="mt-6 space-y-4 text-neutral-600">
+              <div className="mt-6 space-y-4 text-ink-soft">
                 <p className="font-medium text-primary">
                   Montecchia Performance Center
                 </p>
@@ -57,7 +57,7 @@ export default function ContattiPage() {
               </div>
               <div className="mt-8">
                 <p className="font-medium text-primary">Orari</p>
-                <p className="mt-2 text-neutral-600">
+                <p className="mt-2 text-ink-soft">
                   Lun–Ven: 7:00 – 22:00
                   <br />
                   Sab: 8:00 – 18:00
@@ -66,7 +66,7 @@ export default function ContattiPage() {
                 </p>
               </div>
               <div className="mt-8">
-                <div className="overflow-hidden rounded-xl border border-neutral-200">
+                <div className="overflow-hidden border border-line">
                   <iframe
                     src={MAPS_EMBED_URL}
                     width="100%"
@@ -96,7 +96,7 @@ export default function ContattiPage() {
             {/* Scrivici */}
             <div>
               <h2 className="heading-section">Scrivici</h2>
-              <p className="mt-4 text-neutral-600">
+              <p className="mt-4 text-ink-soft">
                 Contattaci su WhatsApp per una risposta veloce o inviaci una
                 email. Per prenotazioni golf usa il sito di booking.
               </p>
@@ -139,11 +139,11 @@ export default function ContattiPage() {
                 </a>
               </div>
 
-              <div className="mt-12 rounded-xl border border-neutral-200 bg-neutral-50 p-6">
-                <h3 className="font-display text-lg font-semibold text-primary">
+              <div className="mt-12 border border-line bg-paper-alt p-6">
+                <h3 className="font-display text-lg font-normal text-primary">
                   Prenotazioni Golf Indoor
                 </h3>
-                <p className="mt-2 text-sm text-neutral-600">
+                <p className="mt-2 text-sm text-ink-soft">
                   Per prenotare una sessione ai simulatori golf, utilizza il
                   nostro sistema di booking online.
                 </p>

@@ -26,10 +26,10 @@ export default function ChiSiamoPage() {
     <>
       <section className="relative bg-brand py-24 sm:py-32">
         <div className="container-narrow">
-          <h1 className="font-display text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
+          <h1 className="font-display text-4xl font-normal tracking-tight text-white sm:text-5xl lg:text-6xl">
             Chi siamo
           </h1>
-          <p className="mt-6 max-w-2xl text-lg text-neutral-300">
+          <p className="mt-6 max-w-2xl text-lg text-white/70">
             La storia e la filosofia del Montecchia Performance Center.
           </p>
         </div>
@@ -38,7 +38,7 @@ export default function ChiSiamoPage() {
       <section className="section-padding bg-white">
         <div className="container-narrow">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
+            <div className="relative aspect-[4/3] overflow-hidden">
               <Image
                 src="/images/esterno.jpg"
                 alt="Esterno del Montecchia Performance Center"
@@ -49,7 +49,7 @@ export default function ChiSiamoPage() {
             </div>
             <div>
               <h2 className="heading-section">La nostra storia</h2>
-              <p className="mt-6 text-neutral-600 leading-relaxed">
+              <p className="mt-6 text-ink-soft leading-relaxed">
                 Il Montecchia Performance Center nasce dalla volonta&apos; di creare
                 un luogo dove sport, tecnologia e professionalita&apos; si
                 incontrano. Nato nel contesto di eccellenza del Golf Club della
@@ -57,7 +57,7 @@ export default function ChiSiamoPage() {
                 golf indoor con simulatori Trackman, ma una palestra completa,
                 corsi di gruppo e un team di professionisti del benessere.
               </p>
-              <p className="mt-6 text-neutral-600 leading-relaxed">
+              <p className="mt-6 text-ink-soft leading-relaxed">
                 Crediamo che la performance sia il risultato di allenamento,
                 alimentazione, recupero e mentalita&apos;. Per questo abbiamo riunito
                 sotto lo stesso tetto palestra, corsi, nutrizionista, osteopata
@@ -69,10 +69,10 @@ export default function ChiSiamoPage() {
         </div>
       </section>
 
-      <section className="section-padding bg-neutral-50">
+      <section className="section-padding bg-paper-alt">
         <div className="container-narrow">
           <h2 className="heading-section text-center">La nostra filosofia</h2>
-          <p className="mx-auto mt-8 max-w-3xl text-center text-lg text-neutral-600 leading-relaxed">
+          <p className="mx-auto mt-8 max-w-3xl text-center text-lg text-ink-soft leading-relaxed">
             Performance senza compromessi: offriamo strumenti, spazi e
             professionisti di livello per permettere a ognuno di dare il
             massimo. Ambiente curato, attrezzature all&apos;avanguardia e un team
@@ -94,11 +94,11 @@ export default function ChiSiamoPage() {
                 text: "Un unico centro dove fitness, golf, nutrizione e riabilitazione lavorano insieme per la tua performance.",
               },
             ].map((item) => (
-              <div key={item.title} className="rounded-xl bg-white p-8 shadow-sm">
-                <h3 className="font-display text-xl font-semibold text-primary">
+              <div key={item.title} className="border-t border-line bg-transparent pt-7">
+                <h3 className="font-display text-xl font-normal text-primary">
                   {item.title}
                 </h3>
-                <p className="mt-3 text-neutral-600">{item.text}</p>
+                <p className="mt-3 text-ink-soft">{item.text}</p>
               </div>
             ))}
           </div>
@@ -109,7 +109,7 @@ export default function ChiSiamoPage() {
       <section className="section-padding bg-white">
         <div className="container-narrow">
           <h2 className="heading-section text-center">La struttura</h2>
-          <p className="mx-auto mt-4 max-w-xl text-center text-neutral-600">
+          <p className="mx-auto mt-4 max-w-xl text-center text-ink-soft">
             Il Golf Lab, i simulatori e gli spazi del centro.
           </p>
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -119,7 +119,7 @@ export default function ChiSiamoPage() {
               { src: "/images/yoga-esterno.jpg", alt: "Sessione yoga all'aperto" },
               { src: "/images/trackman_io_immagine.webp", alt: "Trackman in azione" },
             ].map((img) => (
-              <div key={img.src} className="relative aspect-[4/3] overflow-hidden rounded-xl">
+              <div key={img.src} className="relative aspect-[4/3] overflow-hidden">
                 <Image
                   src={img.src}
                   alt={img.alt}
@@ -134,10 +134,10 @@ export default function ChiSiamoPage() {
       </section>
 
       {/* CTA Team */}
-      <section className="section-padding bg-neutral-50">
+      <section className="section-padding bg-paper-alt">
         <div className="container-narrow text-center">
           <h2 className="heading-section">Conosci il team</h2>
-          <p className="mt-4 text-neutral-600">
+          <p className="mt-4 text-ink-soft">
             Scopri i professionisti che rendono unico il Montecchia Performance
             Center.
           </p>

@@ -35,10 +35,10 @@ export default function PrivacyPolicyPage() {
           >
             ← Home
           </Link>
-          <h1 className="mt-4 font-display text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+          <h1 className="mt-4 font-display text-4xl font-normal tracking-tight text-white sm:text-5xl">
             Privacy Policy
           </h1>
-          <p className="mt-4 max-w-2xl text-lg text-neutral-300">
+          <p className="mt-4 max-w-2xl text-lg text-white/70">
             Informativa sul trattamento dei dati personali ai sensi del
             Regolamento UE 2016/679 (GDPR).
           </p>
@@ -48,7 +48,7 @@ export default function PrivacyPolicyPage() {
       <section className="section-padding bg-white">
         <article
           className="container-narrow max-w-3xl text-neutral-700 leading-relaxed
-            [&_h2]:font-display [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:text-primary [&_h2]:mt-10 [&_h2]:mb-4
+            [&_h2]:font-display [&_h2]:text-2xl [&_h2]:font-normal [&_h2]:text-primary [&_h2]:mt-10 [&_h2]:mb-4
             [&_p]:mb-4
             [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:space-y-2 [&_ol]:my-4
             [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:space-y-2 [&_ul]:my-4

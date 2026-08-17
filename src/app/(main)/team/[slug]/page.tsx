@@ -82,10 +82,10 @@ export default async function TeamMemberPage({ params }: Props) {
           <p className="mt-6 text-sm font-medium uppercase tracking-wide text-accent">
             {member.category}
           </p>
-          <h1 className="mt-2 font-display text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
+          <h1 className="mt-2 font-display text-4xl font-normal tracking-tight text-white sm:text-5xl lg:text-6xl">
             {member.name}
           </h1>
-          <p className="mt-4 text-xl text-neutral-300">{member.role}</p>
+          <p className="mt-4 text-xl text-white/70">{member.role}</p>
         </div>
       </section>
 
@@ -106,16 +106,16 @@ export default async function TeamMemberPage({ params }: Props) {
               </div>
             </div>
             <aside>
-              <div className="rounded-xl border border-neutral-200 bg-white p-6">
+              <div className="border border-line bg-white p-6">
                 <div className="flex items-center gap-4">
-                  <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary font-display font-semibold text-2xl">
+                  <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-primary/8 font-display text-primary text-2xl">
                     {member.name
                       .split(" ")
                       .map((n) => n[0])
                       .join("")}
                   </div>
                   <div>
-                    <p className="font-display text-lg font-semibold text-primary">
+                    <p className="font-display text-lg font-normal text-primary">
                       {member.name}
                     </p>
                     <p className="text-sm text-accent font-medium">
@@ -124,8 +124,8 @@ export default async function TeamMemberPage({ params }: Props) {
                   </div>
                 </div>
                 {member.credentials && member.credentials.length > 0 && (
-                  <div className="mt-6 border-t border-neutral-200 pt-6">
-                    <h3 className="font-display text-sm font-semibold uppercase tracking-wide text-primary">
+                  <div className="mt-6 border-t border-line pt-6">
+                    <h3 className="eyebrow">
                       Credenziali
                     </h3>
                     <ul className="mt-4 space-y-2 text-sm text-neutral-700">
@@ -145,7 +145,7 @@ export default async function TeamMemberPage({ params }: Props) {
       </section>
 
       {related.length > 0 && (
-        <section className="section-padding bg-neutral-50">
+        <section className="section-padding bg-paper-alt">
           <div className="container-narrow">
             <h2 className="heading-section">Altri professionisti — {member.category}</h2>
             <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -153,23 +153,23 @@ export default async function TeamMemberPage({ params }: Props) {
                 <Link
                   key={m.slug}
                   href={`/team/${m.slug}`}
-                  className="flex flex-col rounded-xl border border-neutral-200 bg-white p-6 transition-shadow hover:shadow-md"
+                  className="flex flex-col rounded-sm border border-line bg-white p-6 transition-colors hover:border-primary/40"
                 >
                   <div className="flex items-center gap-4">
-                    <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary font-display font-semibold text-xl">
+                    <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-primary/8 font-display text-primary text-xl">
                       {m.name
                         .split(" ")
                         .map((n) => n[0])
                         .join("")}
                     </div>
                     <div>
-                      <h3 className="font-display text-lg font-semibold text-primary">
+                      <h3 className="font-display text-lg font-normal text-primary">
                         {m.name}
                       </h3>
                       <p className="text-sm text-accent font-medium">{m.role}</p>
                     </div>
                   </div>
-                  <p className="mt-4 text-sm text-neutral-600 leading-relaxed line-clamp-3">
+                  <p className="mt-4 text-sm text-ink-soft leading-relaxed line-clamp-3">
                     {m.shortDescription}
                   </p>
                 </Link>

@@ -28,3 +28,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# artefatti di analisi (screenshot Playwright)
+.playwright-mcp/
+
+# Originali pesanti delle foto, prima dell'ottimizzazione: restano in locale,
+# nel repo va solo la versione servita da public/images/.
+public/images/originals/

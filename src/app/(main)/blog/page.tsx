@@ -34,10 +34,10 @@ export default function BlogPage() {
     <>
       <section className="relative bg-brand py-24 sm:py-32">
         <div className="container-narrow">
-          <h1 className="font-display text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
+          <h1 className="font-display text-4xl font-normal tracking-tight text-white sm:text-5xl lg:text-6xl">
             Blog
           </h1>
-          <p className="mt-6 max-w-2xl text-lg text-neutral-300">
+          <p className="mt-6 max-w-2xl text-lg text-white/70">
             Articoli su allenamento, golf, salute, nutrizione e benessere dal
             team del Montecchia Performance Center.
           </p>
@@ -51,21 +51,21 @@ export default function BlogPage() {
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="group flex flex-col rounded-xl border border-neutral-200 bg-white p-6 transition-shadow hover:shadow-md"
+                className="group flex flex-col rounded-sm border border-line bg-white p-6 transition-colors hover:border-primary/40"
               >
                 <p className="text-xs font-medium uppercase tracking-wide text-accent">
                   {post.category}
                 </p>
-                <h2 className="mt-3 font-display text-xl font-semibold text-primary group-hover:text-accent">
+                <h2 className="mt-3 font-display text-xl font-normal text-primary group-hover:text-accent">
                   {post.title}
                 </h2>
-                <p className="mt-3 text-sm text-neutral-600 leading-relaxed line-clamp-3">
+                <p className="mt-3 text-sm text-ink-soft leading-relaxed line-clamp-3">
                   {post.excerpt}
                 </p>
                 <div className="mt-6 flex items-center justify-between">
                   <time
                     dateTime={post.publishedAt}
-                    className="text-xs text-neutral-500"
+                    className="text-xs text-muted"
                   >
                     {dateFormatter.format(new Date(post.publishedAt))}
                   </time>

@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Outfit, DM_Sans } from "next/font/google";
+import { Fraunces, DM_Sans } from "next/font/google";
 import "./globals.css";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
 
-const outfit = Outfit({
+// Serif per i titoli: dà al sito il registro editoriale che il geometrico
+// precedente (Outfit) non aveva.
+const fraunces = Fraunces({
   subsets: ["latin"],
+  weight: ["300", "400", "500"],
   variable: "--font-display",
   display: "swap",
 });
@@ -52,12 +53,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="it" className={`${outfit.variable} ${dmSans.variable}`}>
-      <body className="font-body min-h-screen flex flex-col">
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
-      </body>
+    // La chrome (header/footer) è definita dai layout dei gruppi:
+    // (main) per il sito principale, (studio) per lo Studio Pilates.
+    <html lang="it" className={`${fraunces.variable} ${dmSans.variable}`}>
+      <body className="min-h-screen">{children}</body>
     </html>
   );
 }

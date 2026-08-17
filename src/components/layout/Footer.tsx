@@ -2,8 +2,10 @@ import Link from "next/link";
 
 const footerLinks = [
   { href: "/palestra", label: "Palestra" },
-  { href: "/golf-lab", label: "Golf Lab" },
-  { href: "/servizi", label: "Servizi" },
+  { href: "/pilates", label: "Pilates Reformer" },
+  { href: "/golf-lab", label: "Golf Indoor" },
+  { href: "/salute-benessere", label: "Salute e Benessere" },
+  { href: "/servizi", label: "Tutte le attività" },
   { href: "/team", label: "Team" },
   { href: "/chi-siamo", label: "Chi Siamo" },
   { href: "/contatti", label: "Contatti" },
@@ -11,23 +13,23 @@ const footerLinks = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-neutral-200 bg-brand text-white">
+    <footer className="bg-brand-dark text-white">
       <div className="container-narrow section-padding">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <p className="font-display text-lg font-semibold text-accent">
+            <p className="font-display text-xl font-normal text-white">
               Montecchia Performance Center
             </p>
-            <p className="mt-3 text-sm text-neutral-300">
-              Centro di eccellenza per fitness, golf e benessere a Selvazzano
-              Dentro (PD).
+            <p className="mt-4 text-sm leading-relaxed text-white/60">
+              Palestra, Studio Pilates Reformer, Golf Indoor e Salute e
+              Benessere. Al Golf Club della Montecchia, Selvazzano Dentro (PD).
             </p>
-            <div className="mt-4 flex gap-4">
+            <div className="mt-6 flex gap-4">
               <a
                 href="https://www.facebook.com/montecchiaperformancecenter"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-neutral-400 transition-colors hover:text-white"
+                className="text-white/50 transition-colors hover:text-white"
                 aria-label="Facebook"
               >
                 <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
@@ -38,7 +40,7 @@ export function Footer() {
                 href="https://www.instagram.com/montecchiaperformancecenter"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-neutral-400 transition-colors hover:text-white"
+                className="text-white/50 transition-colors hover:text-white"
                 aria-label="Instagram"
               >
                 <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
@@ -48,15 +50,15 @@ export function Footer() {
             </div>
           </div>
           <div>
-            <p className="text-xs font-medium uppercase tracking-wider text-neutral-400">
+            <p className="eyebrow text-white/50">
               Navigazione
             </p>
-            <ul className="mt-4 space-y-2">
+            <ul className="mt-5 space-y-2.5">
               {footerLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-neutral-300 transition-colors hover:text-white"
+                    className="text-sm text-white/70 transition-colors hover:text-white"
                   >
                     {link.label}
                   </Link>
@@ -67,7 +69,7 @@ export function Footer() {
                   href="https://booking.montecchiaperformancecenter.it"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-accent transition-colors hover:text-accent-light"
+                  className="text-sm text-white transition-colors hover:text-accent-light"
                 >
                   Prenota Golf
                 </a>
@@ -75,10 +77,10 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <p className="text-xs font-medium uppercase tracking-wider text-neutral-400">
+            <p className="eyebrow text-white/50">
               Contatti
             </p>
-            <ul className="mt-4 space-y-2 text-sm text-neutral-300">
+            <ul className="mt-5 space-y-2.5 text-sm text-white/70">
               <li>Via Montecchia, 12</li>
               <li>35030 Selvazzano Dentro (PD)</li>
               <li>
@@ -97,10 +99,10 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <p className="text-xs font-medium uppercase tracking-wider text-neutral-400">
+            <p className="eyebrow text-white/50">
               Orari
             </p>
-            <p className="mt-4 text-sm text-neutral-300">
+            <p className="mt-5 text-sm leading-relaxed text-white/70">
               Lun–Ven: 7:00 – 22:00
               <br />
               Sab: 8:00 – 18:00
@@ -109,7 +111,7 @@ export function Footer() {
             </p>
           </div>
         </div>
-        <div className="mt-16 border-t border-primary/30 pt-8 flex flex-col items-center gap-3 text-sm text-neutral-400 sm:flex-row sm:justify-between">
+        <div className="mt-16 flex flex-col items-center gap-3 border-t border-white/15 pt-8 text-sm text-white/50 sm:flex-row sm:justify-between">
           <p>
             © {new Date().getFullYear()} Montecchia Performance Center. Tutti i
             diritti riservati.
