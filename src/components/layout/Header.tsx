@@ -46,7 +46,7 @@ export function Header() {
           )}
         </Link>
 
-        <nav className="hidden items-center gap-8 xl:flex" aria-label="Principale">
+        <nav className="hidden items-center gap-8 lg:flex" aria-label="Principale">
           {areaItems.map((item) => (
             <Link
               key={item.href}
@@ -108,7 +108,7 @@ export function Header() {
 
         <button
           type="button"
-          className="flex h-10 w-10 items-center justify-center rounded-sm text-ink-soft hover:bg-paper-alt xl:hidden"
+          className="flex h-10 w-10 items-center justify-center rounded-sm text-ink-soft hover:bg-paper-alt lg:hidden"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-expanded={mobileOpen}
           aria-label="Menu"
@@ -124,7 +124,7 @@ export function Header() {
       </div>
 
       {mobileOpen && (
-        <div className="border-t border-line bg-paper px-5 py-5 xl:hidden">
+        <div className="border-t border-line bg-paper px-5 py-5 lg:hidden">
           <nav className="flex flex-col" aria-label="Mobile">
             {areaItems.map((item) => (
               <Link

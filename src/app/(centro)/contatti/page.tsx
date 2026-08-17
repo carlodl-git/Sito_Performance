@@ -45,17 +45,19 @@ export default function ContattiPage() {
                   <br />
                   {contatti.cap} {contatti.citta} ({contatti.provincia})
                 </p>
-                <p className="mt-6 text-ink-soft">
+                <p className="mt-6">
                   <a
                     href={`tel:${contatti.telefono}`}
-                    className="link-area !text-base"
+                    className="text-area transition-opacity hover:opacity-75"
                   >
                     {contatti.telefonoLeggibile}
                   </a>
                   <br />
+                  {/* L'email è una stringa di 35 caratteri senza spazi: a
+                      320px sfondava il contenitore, va spezzata. */}
                   <a
                     href={`mailto:${contatti.email}`}
-                    className="link-area !text-base"
+                    className="break-all text-area transition-opacity hover:opacity-75"
                   >
                     {contatti.email}
                   </a>

@@ -17,7 +17,11 @@ export const areaKeys = ["palestra", "pilates", "golf", "salute"] as const;
 export type AreaMeta = {
   /** Etichetta piena, usata nei titoli e nella home. */
   label: string;
-  /** Etichetta corta per la nav, dove lo spazio è contato. */
+  /**
+   * Etichetta corta, usata solo nella barra di navigazione in alto.
+   * Con le etichette piene la nav chiedeva 1065px e non stava sotto i
+   * 1280, costringendo all'hamburger anche su un portatile da 1024.
+   */
   navLabel: string;
   href: string;
   /** Numero d'ordine mostrato nella home e negli hero. */
@@ -35,7 +39,7 @@ export type AreaMeta = {
 export const areaMeta: Record<Area, AreaMeta> = {
   palestra: {
     label: "Palestra & Corsi",
-    navLabel: "Palestra & Corsi",
+    navLabel: "Palestra",
     href: "/palestra",
     n: "01",
     tagline: "Sala attrezzata e corsi di gruppo",
@@ -55,7 +59,7 @@ export const areaMeta: Record<Area, AreaMeta> = {
   },
   pilates: {
     label: "Studio Pilates Reformer",
-    navLabel: "Pilates Reformer",
+    navLabel: "Pilates",
     href: "/pilates",
     n: "02",
     tagline: "Individuale, in duetto o in piccolo gruppo",
@@ -99,7 +103,7 @@ export const areaMeta: Record<Area, AreaMeta> = {
   },
   salute: {
     label: "Salute e Benessere",
-    navLabel: "Salute e Benessere",
+    navLabel: "Salute",
     href: "/salute-benessere",
     n: "04",
     tagline: "Fisioterapia, osteopatia, nutrizione",

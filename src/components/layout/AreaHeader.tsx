@@ -29,15 +29,35 @@ export function AreaHeader({ area }: { area: Area }) {
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-paper/90 backdrop-blur supports-[backdrop-filter]:bg-paper/80">
       <div className="container-narrow flex h-20 items-center justify-between gap-6">
-        {/* Lockup: il centro, poi l'area. Nell'ordine in cui ci si è arrivati. */}
-        <div className="flex min-w-0 items-center gap-4">
+        {/* Lockup: il centro, poi l'area. Nell'ordine in cui ci si è arrivati.
+            Il logo è un lockup orizzontale largo 165px: sotto sm mangiava lo
+            spazio del nome dell'area, che finiva troncato. Lì diventa una
+            freccia di rientro, che occupa un decimo dello spazio e fa la
+            stessa cosa. */}
+        <div className="flex min-w-0 items-center gap-3 sm:gap-4">
           <Link
             href="/"
-            className="shrink-0 opacity-70 transition-opacity hover:opacity-100"
+            className="shrink-0 text-ink-soft opacity-70 transition-opacity hover:opacity-100"
             aria-label="Torna al Montecchia Performance Center"
           >
+            <svg
+              className="h-5 w-5 sm:hidden"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={1.5}
+                d="M10 19l-7-7 7-7M3 12h18"
+              />
+            </svg>
             {logoError ? (
-              <span className="font-display text-sm text-primary">MPC</span>
+              <span className="hidden font-display text-sm text-primary sm:inline">
+                MPC
+              </span>
             ) : (
               <Image
                 src="/images/logo_performance.webp"
@@ -46,15 +66,19 @@ export function AreaHeader({ area }: { area: Area }) {
                 height={52}
                 priority
                 unoptimized
-                className="h-7 w-auto sm:h-8"
+                className="hidden h-8 w-auto sm:block"
                 onError={() => setLogoError(true)}
               />
             )}
           </Link>
           <span className="h-8 w-px shrink-0 bg-line" aria-hidden />
           <Link href={meta.href} className="min-w-0">
+            {/* Sotto i 360px "Studio Pilates Reformer" non ci sta e finirebbe
+                coi puntini: lì si usa l'etichetta corta, che dice la stessa
+                cosa per intero invece di dirne una a metà. */}
             <span className="block truncate font-display text-lg leading-tight text-primary sm:text-xl">
-              {meta.label}
+              <span className="xs:hidden">{meta.navLabel}</span>
+              <span className="hidden xs:inline">{meta.label}</span>
             </span>
           </Link>
         </div>
@@ -136,7 +160,7 @@ export function AreaHeader({ area }: { area: Area }) {
                 className="mt-1 block border-b border-line py-3 text-sm text-ink-soft"
                 onClick={() => setOpen(false)}
               >
-                {a.navLabel}
+                {a.label}
               </Link>
             ))}
 

@@ -7,6 +7,18 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    /* Dichiarati per intero, non in `extend`: un breakpoint aggiunto in
+       `extend` finisce in coda al CSS e vincerebbe su `sm:`/`lg:` anche
+       alle larghezze grandi. `xs` serve a distinguere i telefoni piccoli
+       (320px) da quelli normali; il resto sono i valori di default. */
+    screens: {
+      xs: "360px",
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+    },
     extend: {
       colors: {
         /* Logo: verde/petrolio, rosso, grigio.

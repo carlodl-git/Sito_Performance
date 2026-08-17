@@ -82,7 +82,7 @@ export function Footer({ currentArea }: { currentArea?: Area }) {
                           : "text-sm text-white/70 transition-colors hover:text-white"
                       }
                     >
-                      {a.navLabel}
+                      {a.label}
                     </Link>
                   </li>
                 );
