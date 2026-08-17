@@ -7,9 +7,9 @@ import { PageHero } from "@/components/ui/PageHero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { PersonCard } from "@/components/ui/PersonCard";
 import { areaMeta } from "@/data/areas";
+import { contatti } from "@/data/contatti";
 
 const meta = areaMeta.golf;
-const BOOKING = "https://booking.montecchiaperformancecenter.it";
 
 export const metadata: Metadata = {
   title: "Golf Indoor — Simulatore Golf a Padova",
@@ -82,7 +82,7 @@ export default function GolfIndoorPage() {
         }}
       >
         <a
-          href={BOOKING}
+          href={contatti.booking}
           target="_blank"
           rel="noopener noreferrer"
           className="btn-area-light"
@@ -247,7 +247,7 @@ export default function GolfIndoorPage() {
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <a
-              href={BOOKING}
+              href={contatti.booking}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary"

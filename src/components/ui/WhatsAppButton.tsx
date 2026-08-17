@@ -1,4 +1,4 @@
-const BASE = "https://wa.me/393314059134";
+import { whatsappLink } from "@/data/contatti";
 
 /**
  * CTA principale del sito. È l'unico elemento che usa il rosso `cta`:
@@ -31,7 +31,7 @@ export function WhatsAppButton({
 
   return (
     <a
-      href={`${BASE}?text=${encodeURIComponent(message)}`}
+      href={whatsappLink(message)}
       target="_blank"
       rel="noopener noreferrer"
       className={`inline-flex items-center justify-center gap-3 rounded-sm px-7 py-3.5 text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 ${styles} ${className}`}

@@ -5,6 +5,7 @@ import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { allAreas } from "@/data/areas";
+import { contatti, indirizzoBreve, whatsappLink } from "@/data/contatti";
 
 export const metadata: Metadata = {
   title: {
@@ -38,19 +39,16 @@ const localBusinessSchema = {
     "Palestra con corsi di gruppo, Studio Pilates Reformer, Golf Indoor e area Salute e Benessere al Golf Club della Montecchia.",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Via della Montecchia 12",
-    addressLocality: "Selvazzano Dentro",
-    addressRegion: "PD",
-    postalCode: "35030",
+    streetAddress: contatti.via,
+    addressLocality: contatti.citta,
+    addressRegion: contatti.provincia,
+    postalCode: contatti.cap,
     addressCountry: "IT",
   },
-  telephone: "+39 331 405 9134",
-  email: "info@montecchiaperformancecenter.it",
+  telephone: contatti.telefono,
+  email: contatti.email,
   areaServed: { "@type": "City", name: "Padova" },
-  sameAs: [
-    "https://www.facebook.com/montecchiaperformancecenter",
-    "https://www.instagram.com/montecchiaperformancecenter",
-  ],
+  sameAs: [contatti.facebook, contatti.instagram],
 };
 
 /** Pagine che valgono per tutte e quattro le aree. */
@@ -73,7 +71,7 @@ const centro = [
   {
     href: "/contatti",
     title: "Dove siamo",
-    text: "Via della Montecchia 12, Selvazzano Dentro. Orari, mappa e come raggiungerci.",
+    text: `${indirizzoBreve}. Orari, mappa e come raggiungerci.`,
   },
 ];
 
@@ -106,8 +104,11 @@ export default function HomePage() {
             </span>
           </p>
           <div className="pointer-events-auto hidden items-center gap-7 text-sm text-white/80 sm:flex">
-            <a href="tel:+393314059134" className="hover:text-white">
-              331 405 9134
+            <a
+              href={`tel:${contatti.telefono}`}
+              className="hover:text-white"
+            >
+              {contatti.telefonoLeggibile}
             </a>
             <Link href="/contatti" className="hover:text-white">
               Contatti
@@ -204,7 +205,7 @@ export default function HomePage() {
           <p className="mt-14 text-sm text-muted">
             Non sai da dove iniziare?{" "}
             <a
-              href="https://wa.me/393314059134"
+              href={whatsappLink("Ciao! Vorrei informazioni sul centro")}
               target="_blank"
               rel="noopener noreferrer"
               className="border-b border-line pb-0.5 text-primary transition-colors hover:border-primary"

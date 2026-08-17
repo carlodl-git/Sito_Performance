@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { allAreas } from "@/data/areas";
+import { contatti } from "@/data/contatti";
 
 /** Le quattro aree: sono la navigazione primaria. */
 const areaItems = allAreas.map((a) => ({ href: a.href, label: a.navLabel }));
@@ -96,7 +97,7 @@ export function Header() {
           </Link>
 
           <a
-            href="https://booking.montecchiaperformancecenter.it"
+            href={contatti.booking}
             target="_blank"
             rel="noopener noreferrer"
             className="whitespace-nowrap rounded-sm border border-primary px-4 py-2 text-sm text-primary transition-colors hover:bg-primary hover:text-white"
@@ -146,7 +147,7 @@ export function Header() {
               </Link>
             ))}
             <a
-              href="https://booking.montecchiaperformancecenter.it"
+              href={contatti.booking}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-5 rounded-sm border border-primary px-5 py-3 text-center text-sm text-primary"

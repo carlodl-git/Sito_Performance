@@ -7,6 +7,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { CourseTimetable } from "@/components/ui/CourseTimetable";
 import { areaMeta } from "@/data/areas";
+import { contatti } from "@/data/contatti";
 
 const meta = areaMeta.palestra;
 
@@ -272,7 +273,8 @@ export default function PalestraPage() {
           <div className="mt-8 flex flex-col gap-1">
             <p className="text-sm text-muted">
               Corsi <span className="text-ink">solo su prenotazione</span> —
-              WhatsApp 331 405 9134. Il pallino indica i corsi golf-specific.
+              WhatsApp {contatti.telefonoLeggibile}. Il pallino indica i corsi
+              golf-specific.
             </p>
             <p className="text-sm text-muted">
               AcquaGym attiva solo nei mesi estivi (giugno, luglio, agosto).

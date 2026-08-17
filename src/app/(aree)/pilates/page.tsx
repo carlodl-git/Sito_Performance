@@ -4,6 +4,7 @@ import { PageHero } from "@/components/ui/PageHero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { areaMeta } from "@/data/areas";
+import { contatti } from "@/data/contatti";
 
 // TODO (da confermare col centro): numero di Reformer, nome
 // dell'istruttrice, orari delle lezioni, listino.
@@ -163,8 +164,8 @@ export default function StudioPilatesPage() {
 
           <p className="mt-14 text-sm text-muted">
             Orari e tariffe aggiornati su richiesta —{" "}
-            <a href="tel:+393314059134" className="link-area">
-              331 405 9134
+            <a href={`tel:${contatti.telefono}`} className="link-area">
+              {contatti.telefonoLeggibile}
             </a>
           </p>
         </div>
@@ -229,8 +230,8 @@ export default function StudioPilatesPage() {
             <WhatsAppButton message={meta.whatsapp} variant="light">
               Scrivici su WhatsApp
             </WhatsAppButton>
-            <a href="tel:+393314059134" className="btn-area-light">
-              331 405 9134
+            <a href={`tel:${contatti.telefono}`} className="btn-area-light">
+              {contatti.telefonoLeggibile}
             </a>
           </div>
         </div>

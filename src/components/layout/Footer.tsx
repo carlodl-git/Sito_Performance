@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { allAreas, type Area } from "@/data/areas";
+import { contatti } from "@/data/contatti";
 
 const centroLinks = [
   { href: "/servizi", label: "Tutte le attività" },
@@ -31,7 +32,7 @@ export function Footer({ currentArea }: { currentArea?: Area }) {
             </p>
             <div className="mt-6 flex gap-4">
               <a
-                href="https://www.facebook.com/montecchiaperformancecenter"
+                href={contatti.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white/50 transition-colors hover:text-white"
@@ -47,7 +48,7 @@ export function Footer({ currentArea }: { currentArea?: Area }) {
                 </svg>
               </a>
               <a
-                href="https://www.instagram.com/montecchiaperformancecenter"
+                href={contatti.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white/50 transition-colors hover:text-white"
@@ -106,24 +107,29 @@ export function Footer({ currentArea }: { currentArea?: Area }) {
           <div>
             <p className="eyebrow text-white/50">Contatti</p>
             <ul className="mt-5 space-y-2.5 text-sm text-white/70">
-              <li>Via della Montecchia, 12</li>
-              <li>35030 Selvazzano Dentro (PD)</li>
+              <li>{contatti.via}</li>
               <li>
-                <a href="tel:+393314059134" className="hover:text-white">
-                  +39 331 405 9134
+                {contatti.cap} {contatti.citta} ({contatti.provincia})
+              </li>
+              <li>
+                <a
+                  href={`tel:${contatti.telefono}`}
+                  className="hover:text-white"
+                >
+                  {contatti.telefonoLeggibile}
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:info@montecchiaperformancecenter.it"
+                  href={`mailto:${contatti.email}`}
                   className="break-all hover:text-white"
                 >
-                  info@montecchiaperformancecenter.it
+                  {contatti.email}
                 </a>
               </li>
               <li className="pt-2">
                 <a
-                  href="https://booking.montecchiaperformancecenter.it"
+                  href={contatti.booking}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white transition-colors hover:text-area-glow"
@@ -136,13 +142,13 @@ export function Footer({ currentArea }: { currentArea?: Area }) {
 
           <div>
             <p className="eyebrow text-white/50">Orari</p>
-            <p className="mt-5 text-sm leading-relaxed text-white/70">
-              Lun–Ven: 7:00 – 22:00
-              <br />
-              Sab: 8:00 – 18:00
-              <br />
-              Dom: chiuso
-            </p>
+            <ul className="mt-5 space-y-1 text-sm text-white/70">
+              {contatti.orari.map((o) => (
+                <li key={o.giorni}>
+                  {o.giorni}: {o.ore}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 

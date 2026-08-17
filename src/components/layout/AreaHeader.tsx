@@ -4,9 +4,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { allAreas, areaMeta, type Area } from "@/data/areas";
+import { contatti, whatsappLink } from "@/data/contatti";
 
-const WHATSAPP = "https://wa.me/393314059134";
-const BOOKING = "https://booking.montecchiaperformancecenter.it";
+
 
 /**
  * Header di un'area. Dentro un'area la navigazione primaria sono le
@@ -23,11 +23,8 @@ export function AreaHeader({ area }: { area: Area }) {
   // Il golf si prenota dal gestionale del club, le altre aree via WhatsApp.
   const cta =
     area === "golf"
-      ? { href: BOOKING, label: "Prenota campo" }
-      : {
-          href: `${WHATSAPP}?text=${encodeURIComponent(meta.whatsapp)}`,
-          label: "Prenota",
-        };
+      ? { href: contatti.booking, label: "Prenota campo" }
+      : { href: whatsappLink(meta.whatsapp), label: "Prenota" };
 
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-paper/90 backdrop-blur supports-[backdrop-filter]:bg-paper/80">
