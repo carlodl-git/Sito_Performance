@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
@@ -100,62 +101,58 @@ export default function HomePage() {
         }}
       >
         <WhatsAppButton variant="light">
-          Prenota la prova gratuita
+          Scrivici su WhatsApp
         </WhatsAppButton>
       </PageHero>
 
       {/* ============================================================
           LE QUATTRO AREE
-          Quattro card in fila: foto sopra, titolo numerato e descrizione
-          sotto. Niente riquadro, niente ombra: la foto è la superficie.
+          Lista verticale: card collegate da un filetto, in bianco e
+          nero finché non ci passi sopra. Allora crescono, tornano a
+          colori e scoprono la descrizione. Su mobile sono già aperte:
+          l'hover non esiste, non si può chiedere di scoprirle.
           ============================================================ */}
       <section className="section-padding" id="aree">
-        <div className="container-wide">
+        <div className="container-narrow">
           <SectionHeading
             eyebrow="Le aree"
             title="Da dove vuoi partire?"
             intro="Ognuna ha i suoi spazi, i suoi professionisti e il suo calendario."
           />
 
-          {/* Quattro in fila solo da 1280: a 1024 le card scenderebbero a
-              212px e i titoli andrebbero a capo. Sotto, due per riga. */}
-          <div className="mt-14 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:mt-16 xl:grid-cols-4">
+          <div className="mt-14 flex flex-col items-center lg:mt-16">
             {allAreas.map((area, i) => (
-              <Link
-                key={area.key}
-                href={area.href}
-                data-area={area.key}
-                className="group flex flex-col outline-none focus-visible:ring-2 focus-visible:ring-area focus-visible:ring-offset-4"
-              >
-                <div className="relative aspect-[16/10] w-full overflow-hidden bg-paper-alt">
+              <Fragment key={area.key}>
+                {i > 0 && <span className="area-card-divider" aria-hidden />}
+
+                <Link
+                  href={area.href}
+                  data-area={area.key}
+                  className="area-card group block"
+                >
                   <Image
                     src={area.image.src}
-                    alt={area.image.alt}
+                    alt=""
                     fill
-                    // Le prime due card sono sopra la piega su desktop.
+                    // Le prime due sono sopra la piega su desktop.
                     priority={i < 2}
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                    sizes="(max-width: 1024px) 100vw, 700px"
+                    className="area-card__img"
                   />
-                </div>
 
-                <h3 className="mt-6 font-display text-xl leading-snug text-primary transition-colors group-hover:text-area">
-                  <span className="text-area">{area.n}</span>{" "}
-                  {area.label}
-                </h3>
-                <p className="mt-3 flex-1 text-[0.95rem] leading-relaxed text-ink-soft">
-                  {area.blurb}
-                </p>
-                <span className="link-area mt-5">
-                  Scopri
-                  <span
-                    className="transition-transform group-hover:translate-x-1"
-                    aria-hidden
-                  >
-                    →
-                  </span>
-                </span>
-              </Link>
+                  {/* Niente numero d'ordine qui: in colore d'area sulla foto
+                      schiarita faceva 1.75:1, e in una lista verticale
+                      l'ordine si legge già dalla posizione. */}
+                  <div className="relative z-10 flex h-full flex-col items-center justify-center px-7 py-10 text-center sm:px-10">
+                    <h3 className="area-card__title font-display leading-snug text-white">
+                      {area.label}
+                    </h3>
+                    <p className="area-card__desc mt-3.5 max-w-md overflow-hidden text-[0.9375rem] leading-relaxed text-white/85">
+                      {area.blurb}
+                    </p>
+                  </div>
+                </Link>
+              </Fragment>
             ))}
           </div>
 
@@ -213,20 +210,20 @@ export default function HomePage() {
       </section>
 
       {/* ============================================================
-          PROVA GRATUITA
+          CONSULENZA GRATUITA
           ============================================================ */}
       <section className="section-padding bg-area-deep text-white">
         <div className="container-narrow text-center">
           <h2 className="font-display text-3xl font-normal tracking-tight sm:text-4xl">
-            La prima prova è gratuita
+            La prima consulenza è gratuita
           </h2>
           <p className="mx-auto mt-5 max-w-lg text-white/70">
-            Vale per la palestra, per il Pilates Reformer e per la valutazione
-            nell&apos;area Salute. Scrivici su WhatsApp e fissiamo
-            l&apos;appuntamento.
+            Vale per la palestra, per il Pilates Reformer e per l&apos;area
+            Salute: si guarda da dove parti e si sceglie insieme il percorso,
+            senza impegno.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <WhatsAppButton>Prenota la prova gratuita</WhatsAppButton>
+            <WhatsAppButton>Scrivici su WhatsApp</WhatsAppButton>
             <Link href="/contatti" className="btn-area-light">
               Altre informazioni
             </Link>

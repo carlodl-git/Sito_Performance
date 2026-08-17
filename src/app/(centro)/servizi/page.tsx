@@ -4,6 +4,7 @@ import { servicesByArea } from "@/data/services";
 import { areaKeys, areaMeta } from "@/data/areas";
 import { PageHero } from "@/components/ui/PageHero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 
 export const metadata: Metadata = {
   title: "Tutte le attività e i servizi",
@@ -105,16 +106,13 @@ export default function ServiziPage() {
             Non sai quale attività fa per te?
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-white/70">
-            Contattaci per una consulenza gratuita: ti aiutiamo a identificare
-            il percorso più adatto ai tuoi obiettivi.
+            La prima consulenza è gratuita: ti aiutiamo a identificare il
+            percorso più adatto ai tuoi obiettivi.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <Link
-              href="/contatti"
-              className="inline-flex items-center justify-center rounded-sm border border-white/40 px-7 py-3.5 text-sm font-medium text-white transition-colors hover:bg-white hover:text-primary"
-            >
-              Contattaci
-            </Link>
+            <WhatsAppButton message="Ciao! Vorrei prenotare una consulenza gratuita">
+              Scrivici su WhatsApp
+            </WhatsAppButton>
             <Link
               href="/team"
               className="inline-flex items-center justify-center rounded-sm px-7 py-3.5 text-sm font-medium text-white/70 transition-colors hover:text-white"

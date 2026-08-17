@@ -6,14 +6,14 @@ import { whatsappLink } from "@/data/contatti";
  */
 export function WhatsAppButton({
   children,
-  message = "Ciao! Vorrei prenotare una prova gratuita",
+  message = "Ciao! Vorrei prenotare una consulenza gratuita",
   variant = "solid",
   className = "",
 }: {
   children: React.ReactNode;
   message?: string;
   /**
-   * `solid` è il rosso della prova gratuita: uno per schermata.
+   * `solid` è il rosso della consulenza gratuita: uno per schermata.
    * `area` è la stessa CTA nel colore dell'area, per le pagine dove il
    * rosso è già speso altrove.
    */

@@ -129,7 +129,7 @@ export default function PalestraPage() {
         }}
       >
         <WhatsAppButton message={meta.whatsapp} variant="light">
-          Prenota la prova gratuita
+          Scrivici su WhatsApp
         </WhatsAppButton>
       </PageHero>
 
@@ -329,22 +329,22 @@ export default function PalestraPage() {
         </section>
       )}
 
-      {/* Prova gratuita */}
+      {/* Consulenza gratuita */}
       <section
         id="prenota"
         className="section-padding scroll-mt-24 bg-area-deep text-white"
       >
         <div className="container-narrow text-center">
           <h2 className="font-display text-3xl font-normal tracking-tight sm:text-4xl">
-            La prima prova è gratuita
+            La prima consulenza è gratuita
           </h2>
           <p className="mx-auto mt-5 max-w-lg text-white/70">
-            Scegli un corso dal calendario e vieni a provarlo. Scrivici su
-            WhatsApp e ti diciamo se c&apos;è posto.
+            Ci sediamo dieci minuti, guardiamo come ti muovi e scegliamo il
+            corso o il formato giusto per te.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <WhatsAppButton message="Ciao! Vorrei provare un corso in palestra">
-              Prenota la prova
+            <WhatsAppButton message="Ciao! Vorrei prenotare una consulenza gratuita per la palestra">
+              Scrivici su WhatsApp
             </WhatsAppButton>
             <Link href="/contatti" className="btn-area-light">
               Contatti

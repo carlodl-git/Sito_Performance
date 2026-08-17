@@ -97,7 +97,7 @@
   }
 
   /* Azione dell'area: prende il colore di `data-area`. Convive con
-     `.btn-primary` (rosso), che resta riservato alla prova gratuita. */
+     `.btn-primary` (rosso), che resta riservato alla consulenza gratuita. */
   .btn-area {
     @apply inline-flex items-center justify-center rounded-sm bg-area px-7 py-3.5 text-sm font-medium text-white transition-opacity hover:opacity-85 focus:outline-none focus:ring-2 focus:ring-area focus:ring-offset-2;
   }
@@ -126,6 +126,122 @@
      serve a cambiare respiro tra due sezioni dense. */
   .manifesto {
     @apply mx-auto max-w-3xl text-center font-display text-2xl font-normal leading-snug tracking-tight text-primary sm:text-3xl lg:text-[2.5rem];
+  }
+
+  /* ==========================================================
+     CARD DELLE AREE (home)
+     Lista verticale centrata, card collegate da un filetto. A
+     riposo sono piccole e in bianco e nero; al passaggio del mouse
+     crescono, tornano a colori e mostrano la descrizione.
+
+     Le misure vengono dal riferimento indicato dal cliente:
+     500x240 → 700x340, raggio 30px, 0.5s.
+
+     Sotto lg non esiste l'hover: lì le card sono a tutta larghezza
+     e già aperte, perché su un telefono non c'è modo di scoprirle.
+
+     Scritte in CSS e non con le varianti Tailwind perché
+     `lg:group-hover:` su tre proprietà diverse dipende dall'ordine
+     con cui Tailwind emette le regole: qui l'ordine lo decido io.
+     ========================================================== */
+  .area-card {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    overflow: hidden;
+    border-radius: 1.75rem;
+    outline: none;
+    transition:
+      width 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+      height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .area-card__img {
+    object-fit: cover;
+    filter: grayscale(1) brightness(0.5);
+    transition: filter 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  /* Velo scuro fisso sotto il testo. Il solo `brightness()` non basta:
+     dipende da quanto è chiara la foto, e l'esterno del centro è un
+     cielo assolato. Questo garantisce il contrasto su qualsiasi foto,
+     anche quando all'hover l'immagine si schiarisce. */
+  .area-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background-color: rgb(0 0 0 / 0.4);
+    pointer-events: none;
+  }
+  .area-card__title {
+    /* La misura sta qui e non fra le utility: `text-xl` verrebbe emesso
+       dopo, nel layer utilities, e vincerebbe sulla regola a riposo
+       lasciando il titolo grande anche da fermo. */
+    font-size: 1.25rem;
+    transition: font-size 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .area-card__desc {
+    transition:
+      max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 0.4s ease,
+      margin-top 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  /* Il filetto che collega una card alla successiva. */
+  .area-card-divider {
+    width: 1px;
+    height: 3rem;
+    flex-shrink: 0;
+    background-color: theme("colors.line");
+  }
+
+  @media (min-width: 1024px) {
+    .area-card {
+      width: 500px;
+      height: 240px;
+      max-width: none;
+    }
+    .area-card:hover,
+    .area-card:focus-visible {
+      width: 700px;
+      height: 340px;
+    }
+    .area-card:focus-visible {
+      box-shadow: 0 0 0 3px theme("colors.paper.DEFAULT"), 0 0 0 6px rgb(var(--area-accent));
+    }
+    .area-card:hover .area-card__img,
+    .area-card:focus-visible .area-card__img {
+      filter: grayscale(0) brightness(0.7);
+    }
+    .area-card__title {
+      font-size: 1.125rem;
+    }
+    .area-card:hover .area-card__title,
+    .area-card:focus-visible .area-card__title {
+      font-size: 1.5rem;
+    }
+    .area-card__desc {
+      max-height: 0;
+      margin-top: 0;
+      opacity: 0;
+    }
+    .area-card:hover .area-card__desc,
+    .area-card:focus-visible .area-card__desc {
+      max-height: 8rem;
+      margin-top: 0.875rem;
+      opacity: 1;
+    }
+    .area-card-divider {
+      height: 4rem;
+    }
+  }
+
+  /* Chi ha chiesto di ridurre le animazioni non vede la crescita. */
+  @media (prefers-reduced-motion: reduce) {
+    .area-card,
+    .area-card__img,
+    .area-card__title,
+    .area-card__desc {
+      transition: none;
+    }
   }
 
   /* Superficie di base: filetto, niente ombra. */

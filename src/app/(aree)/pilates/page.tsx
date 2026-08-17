@@ -98,7 +98,7 @@ export default function StudioPilatesPage() {
         }}
       >
         <WhatsAppButton message={meta.whatsapp} variant="light">
-          Prenota una prova
+          Scrivici su WhatsApp
         </WhatsAppButton>
       </PageHero>
 
@@ -223,8 +223,8 @@ export default function StudioPilatesPage() {
             Vieni a provare il Reformer
           </h2>
           <p className="mx-auto mt-6 max-w-lg text-white/70">
-            Scrivici su WhatsApp: fissiamo la prima lezione di valutazione e
-            scegliamo insieme il formato giusto.
+            Fissiamo la prima lezione di valutazione e scegliamo insieme il
+            formato giusto: individuale, in duetto o in piccolo gruppo.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <WhatsAppButton message={meta.whatsapp} variant="light">

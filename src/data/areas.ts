@@ -53,7 +53,7 @@ export const areaMeta: Record<Area, AreaMeta> = {
       { href: "#allenamenti", label: "Come ti alleni" },
       { href: "#corsi", label: "I corsi" },
       { href: "#orario", label: "Orario" },
-      { href: "#prenota", label: "Prova gratuita" },
+      { href: "#prenota", label: "Consulenza gratuita" },
     ],
     whatsapp: "Ciao! Vorrei informazioni sulla palestra e sui corsi",
   },

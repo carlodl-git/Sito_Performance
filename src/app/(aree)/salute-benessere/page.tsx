@@ -185,8 +185,8 @@ export default function SaluteBenesserePage() {
             Prenota una visita
           </h2>
           <p className="mx-auto mt-5 max-w-lg text-white/70">
-            Scrivici su WhatsApp indicando di cosa hai bisogno: ti mettiamo in
-            contatto con il professionista giusto.
+            Dicci di cosa hai bisogno e ti mettiamo in contatto con il
+            professionista giusto.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <WhatsAppButton message={meta.whatsapp}>
