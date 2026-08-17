@@ -46,7 +46,16 @@ export function PageHero({
             sizes="100vw"
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-area-deep/95 via-area-deep/60 to-area-deep/30" />
+          {/* Sfumatura neutra concentrata nella metà bassa, dove sta il
+              testo: sopra l'82% la foto è pulita del tutto. Prima era una
+              tinta del colore dell'area, densa al 95% in basso e ancora al
+              30% in cima: copriva la fotografia invece di limitarsi a
+              renderla leggibile.
+
+              I valori non sono a occhio: sono quelli che tengono il titolo
+              sopra 3:1 e il sommario sopra 4.5:1 sul pixel più chiaro di
+              ogni foto usata negli hero. */}
+          <div className="absolute inset-0 bg-[linear-gradient(to_top,rgb(0_0_0/0.88)_0%,rgb(0_0_0/0.75)_25%,rgb(0_0_0/0.45)_50%,transparent_82%)]" />
         </>
       )}
 

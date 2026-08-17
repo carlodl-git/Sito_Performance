@@ -131,8 +131,8 @@
   /* ==========================================================
      CARD DELLE AREE (home)
      Lista verticale centrata, card collegate da un filetto. A
-     riposo sono piccole e in bianco e nero; al passaggio del mouse
-     crescono, tornano a colori e mostrano la descrizione.
+     riposo sono piccole e appena scurite; al passaggio del mouse
+     crescono, si schiariscono e mostrano la descrizione.
 
      Le misure vengono dal riferimento indicato dal cliente:
      500x240 → 700x340, raggio 30px, 0.5s.
@@ -157,19 +157,26 @@
   }
   .area-card__img {
     object-fit: cover;
-    filter: grayscale(1) brightness(0.5);
+    /* Niente bianco e nero e niente velo pieno: erano tre trattamenti
+       sovrapposti (desaturazione, mezza luminosità e un nero al 40%) e
+       della foto restava poco. Qui si scurisce e basta. */
+    filter: brightness(0.78);
     transition: filter 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  /* Velo scuro fisso sotto il testo. Il solo `brightness()` non basta:
-     dipende da quanto è chiara la foto, e l'esterno del centro è un
-     cielo assolato. Questo garantisce il contrasto su qualsiasi foto,
-     anche quando all'hover l'immagine si schiarisce. */
+  /* Alone morbido al centro, dove appoggia il testo. Concentrando lo
+     scuro dove serve, gli angoli della foto restano quasi puliti: il
+     contrasto è lo stesso di un velo pieno, il peso visivo molto meno. */
   .area-card::after {
     content: "";
     position: absolute;
     inset: 0;
     z-index: 1;
-    background-color: rgb(0 0 0 / 0.4);
+    background-image: radial-gradient(
+      ellipse 78% 68% at 50% 50%,
+      rgb(0 0 0 / 0.55) 0%,
+      rgb(0 0 0 / 0.38) 55%,
+      rgb(0 0 0 / 0.06) 100%
+    );
     pointer-events: none;
   }
   .area-card__title {
@@ -209,7 +216,7 @@
     }
     .area-card:hover .area-card__img,
     .area-card:focus-visible .area-card__img {
-      filter: grayscale(0) brightness(0.7);
+      filter: brightness(0.95);
     }
     .area-card__title {
       font-size: 1.125rem;

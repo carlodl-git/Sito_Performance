@@ -89,10 +89,13 @@ export default async function ServizioPage({ params }: Props) {
               fill
               priority
               sizes="100vw"
-              className="object-cover opacity-25"
+              className="object-cover"
               unoptimized
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-brand via-brand/80 to-brand/40" />
+            {/* La foto era a opacity-25 sotto un lavaggio verde pieno: non
+                si vedeva. Ora si vede, e a scurire è solo una sfumatura
+                neutra da sinistra, dove appoggia il testo. */}
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,rgb(0_0_0/0.85)_0%,rgb(0_0_0/0.65)_50%,rgb(0_0_0/0.35)_100%)]" />
           </div>
         )}
         <div className="container-narrow relative">

@@ -107,10 +107,10 @@ export default function HomePage() {
 
       {/* ============================================================
           LE QUATTRO AREE
-          Lista verticale: card collegate da un filetto, in bianco e
-          nero finché non ci passi sopra. Allora crescono, tornano a
-          colori e scoprono la descrizione. Su mobile sono già aperte:
-          l'hover non esiste, non si può chiedere di scoprirle.
+          Lista verticale: card collegate da un filetto. Al passaggio
+          del mouse crescono, si schiariscono e scoprono la descrizione.
+          Su mobile sono già aperte: l'hover non esiste, non si può
+          chiedere di scoprirle.
           ============================================================ */}
       <section className="section-padding" id="aree">
         <div className="container-narrow">
