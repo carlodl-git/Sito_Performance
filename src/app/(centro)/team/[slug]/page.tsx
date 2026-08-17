@@ -71,7 +71,7 @@ export default async function TeamMemberPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
       />
 
-      <section className="relative bg-brand py-24 sm:py-32">
+      <section className="relative bg-area-deep py-24 sm:py-32">
         <div className="container-narrow">
           <Link
             href="/team"

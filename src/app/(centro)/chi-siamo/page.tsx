@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 export default function ChiSiamoPage() {
   return (
     <>
-      <section className="relative bg-brand py-24 sm:py-32">
+      <section className="relative bg-area-deep py-24 sm:py-32">
         <div className="container-narrow">
           <h1 className="font-display text-4xl font-normal tracking-tight text-white sm:text-5xl lg:text-6xl">
             Chi siamo

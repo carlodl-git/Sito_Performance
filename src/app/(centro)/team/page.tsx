@@ -65,7 +65,7 @@ export default function TeamPage() {
         );
       })}
 
-      <section className="section-padding bg-brand text-white">
+      <section className="section-padding bg-area-deep text-white">
         <div className="container-narrow text-center">
           <h2 className="font-display text-3xl font-normal sm:text-4xl">
             Vuoi conoscerci di persona?

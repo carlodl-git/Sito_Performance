@@ -99,7 +99,7 @@ export default function ServiziPage() {
         );
       })}
 
-      <section className="section-padding bg-brand text-white">
+      <section className="section-padding bg-area-deep text-white">
         <div className="container-narrow text-center">
           <h2 className="font-display text-3xl font-normal sm:text-4xl">
             Non sai quale attività fa per te?

@@ -80,7 +80,7 @@ export default async function ServizioPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
 
-      <section className="relative overflow-hidden bg-brand py-24 sm:py-32">
+      <section className="relative overflow-hidden bg-area-deep py-24 sm:py-32">
         {service.image && (
           <div className="absolute inset-0">
             <Image

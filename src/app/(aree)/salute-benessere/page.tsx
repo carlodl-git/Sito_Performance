@@ -11,7 +11,7 @@ import { areaMeta } from "@/data/areas";
 const meta = areaMeta.salute;
 
 export const metadata: Metadata = {
-  title: "Salute e Benessere — Fisioterapia, Osteopatia e Nutrizione a Padova",
+  title: "Fisioterapia e Osteopatia a Padova (Selvazzano)",
   description:
     "Area Salute e Benessere del Montecchia Performance Center: fisioterapia, osteopatia, nutrizione e shiatsu. Selvazzano Dentro, Padova.",
   alternates: {

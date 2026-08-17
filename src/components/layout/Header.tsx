@@ -14,7 +14,7 @@ const centroItems = [
   { href: "/servizi", label: "Tutte le attività" },
   { href: "/team", label: "Team" },
   { href: "/chi-siamo", label: "Chi siamo" },
-  { href: "/blog", label: "News" },
+  { href: "/blog", label: "Blog" },
 ];
 
 export function Header() {

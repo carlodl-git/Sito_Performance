@@ -88,7 +88,7 @@ export default async function BlogPostPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
 
-      <section className="relative bg-brand py-24 sm:py-32">
+      <section className="relative bg-area-deep py-24 sm:py-32">
         <div className="container-narrow">
           <Link
             href="/blog"

@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 export default function PrivacyPolicyPage() {
   return (
     <>
-      <section className="relative bg-brand py-20 sm:py-24">
+      <section className="relative bg-area-deep py-20 sm:py-24">
         <div className="container-narrow">
           <Link
             href="/"
