@@ -9,6 +9,51 @@
   body {
     @apply bg-paper text-ink antialiased;
   }
+
+  /* ==========================================================
+     COLORE DELL'AREA
+     Un solo design system, quattro accenti. Il layout dell'area
+     mette `data-area` sul contenitore e da lì in giù `bg-area`,
+     `text-area`, `border-area` cambiano valore da sole.
+
+     Formato canale ("29 110 108") e non esadecimale, perché
+     Tailwind possa comporre le opacità: `bg-area/10`.
+
+     Ogni `--area-accent` supera AA sul fondo avorio (≥ 5:1);
+     `--area-glow` è la variante da usare sui fondi scuri, dove
+     il contrasto va nella direzione opposta.
+     ========================================================== */
+  :root,
+  [data-area="centro"] {
+    --area-accent: 35 115 113; /* #237371 — teal del brand */
+    --area-deep: 15 45 46; /* #0F2D2E */
+    --area-tint: 243 241 234; /* #F3F1EA */
+    --area-glow: 44 139 141; /* #2C8B8D */
+  }
+  [data-area="palestra"] {
+    --area-accent: 29 110 108; /* #1D6E6C — petrolio, il cuore del centro */
+    --area-deep: 18 63 62; /* #123F3E */
+    --area-tint: 234 241 240; /* #EAF1F0 */
+    --area-glow: 56 163 160; /* #38A3A0 */
+  }
+  [data-area="pilates"] {
+    --area-accent: 95 107 84; /* #5F6B54 — salvia, il registro più calmo */
+    --area-deep: 46 54 40; /* #2E3628 */
+    --area-tint: 237 239 232; /* #EDEFE8 */
+    --area-glow: 147 161 134; /* #93A186 */
+  }
+  [data-area="golf"] {
+    --area-accent: 138 98 52; /* #8A6234 — ottone, il legno del club */
+    --area-deep: 51 35 15; /* #33230F */
+    --area-tint: 243 237 227; /* #F3EDE3 */
+    --area-glow: 200 154 94; /* #C89A5E */
+  }
+  [data-area="salute"] {
+    --area-accent: 63 90 107; /* #3F5A6B — ardesia, registro clinico */
+    --area-deep: 31 46 56; /* #1F2E38 */
+    --area-tint: 235 239 242; /* #EBEFF2 */
+    --area-glow: 127 160 180; /* #7FA0B4 */
+  }
 }
 
 @layer components {
@@ -49,6 +94,38 @@
   }
   .btn-secondary {
     @apply inline-flex items-center justify-center rounded-sm border border-primary bg-transparent px-7 py-3.5 text-sm font-medium text-primary transition-colors hover:bg-primary hover:text-white focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  }
+
+  /* Azione dell'area: prende il colore di `data-area`. Convive con
+     `.btn-primary` (rosso), che resta riservato alla prova gratuita. */
+  .btn-area {
+    @apply inline-flex items-center justify-center rounded-sm bg-area px-7 py-3.5 text-sm font-medium text-white transition-opacity hover:opacity-85 focus:outline-none focus:ring-2 focus:ring-area focus:ring-offset-2;
+  }
+  /* Variante per i fondi scuri: bordo chiaro, si riempie all'hover. */
+  .btn-area-light {
+    @apply inline-flex items-center justify-center rounded-sm border border-white/40 px-7 py-3.5 text-sm font-medium text-white transition-colors hover:bg-white hover:text-area-deep focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent;
+  }
+  .link-area {
+    @apply inline-flex items-center gap-2 text-sm font-medium text-area transition-opacity hover:opacity-75;
+  }
+
+  /* Numero d'ordine (01, 02, …): scandisce gli elenchi lunghi senza
+     bisogno di pallini o icone. */
+  .area-num {
+    @apply font-display text-2xl font-light text-area;
+  }
+  /* Riga di elenco separata da un filetto, invece che da una card. */
+  .row-rule {
+    @apply border-t border-line py-7;
+  }
+  /* Paragrafo d'attacco, più grande del corpo del testo. */
+  .lead {
+    @apply text-lg leading-relaxed text-ink-soft;
+  }
+  /* Affermazione a tutta larghezza, senza occhiello né titolo sopra:
+     serve a cambiare respiro tra due sezioni dense. */
+  .manifesto {
+    @apply mx-auto max-w-3xl text-center font-display text-2xl font-normal leading-snug tracking-tight text-primary sm:text-3xl lg:text-[2.5rem];
   }
 
   /* Superficie di base: filetto, niente ombra. */

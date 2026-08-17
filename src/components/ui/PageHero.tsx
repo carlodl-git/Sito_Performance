@@ -5,7 +5,8 @@ type PageHeroProps = {
   eyebrow?: string;
   title: React.ReactNode;
   intro?: React.ReactNode;
-  /** Con immagine l'hero diventa alto e fotografico; senza, è un blocco verde. */
+  /** Con immagine l'hero è alto e fotografico; senza, è un blocco del
+   colore dell'area. */
   image?: { src: string; alt: string };
   /** Priorità di caricamento: attivarla solo sull'hero della pagina corrente. */
   priority?: boolean;
@@ -31,7 +32,7 @@ export function PageHero({
 
   return (
     <section
-      className={`relative flex flex-col justify-end overflow-hidden bg-primary ${minHeight} ${
+      className={`relative flex flex-col justify-end overflow-hidden bg-area-deep ${minHeight} ${
         image ? "" : "py-24 sm:py-28"
       }`}
     >
@@ -45,7 +46,7 @@ export function PageHero({
             sizes="100vw"
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/95 via-primary-dark/60 to-primary-dark/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-area-deep/95 via-area-deep/60 to-area-deep/30" />
         </>
       )}
 

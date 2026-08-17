@@ -3,21 +3,17 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { allAreas } from "@/data/areas";
 
 /** Le quattro aree: sono la navigazione primaria. */
-const areaItems = [
-  { href: "/palestra", label: "Palestra" },
-  { href: "/pilates", label: "Pilates Reformer" },
-  { href: "/golf-lab", label: "Golf Indoor" },
-  { href: "/salute-benessere", label: "Salute e Benessere" },
-];
+const areaItems = allAreas.map((a) => ({ href: a.href, label: a.navLabel }));
 
 /** Pagine trasversali: raccolte per non far andare la nav a capo. */
 const centroItems = [
   { href: "/servizi", label: "Tutte le attività" },
   { href: "/team", label: "Team" },
   { href: "/chi-siamo", label: "Chi siamo" },
-  { href: "/blog", label: "Blog" },
+  { href: "/blog", label: "News" },
 ];
 
 export function Header() {

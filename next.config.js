@@ -119,6 +119,13 @@ const nextConfig = {
       { source: '/fitmatepro', destination: '/palestra', permanent: true },
       { source: '/fitmatepro/', destination: '/palestra', permanent: true },
 
+      // ---------- RINOMINE INTERNE ----------
+      // /golf-lab/ → /golf-indoor: "golf lab" era gergo interno, l'area si
+      // chiama Golf Indoor ed è quello che la gente cerca. La vecchia URL
+      // era indicizzata, quindi il 301 va tenuto.
+      { source: '/golf-lab', destination: '/golf-indoor', permanent: true },
+      { source: '/golf-lab/', destination: '/golf-indoor', permanent: true },
+
       // ---------- NOTE ----------
       // I PDF in /wp-content/uploads/* NON hanno redirect:
       //   sono copiati con path identica in /public/wp-content/uploads/.
@@ -129,7 +136,7 @@ const nextConfig = {
       //
       // /privacy-policy/ NON ha redirect: stessa URL sul nuovo sito.
       //
-      // /golf-lab/, /team/, / restano identiche (zero redirect necessari).
+      // /team/ e / restano identiche (zero redirect necessari).
     ];
   },
 };

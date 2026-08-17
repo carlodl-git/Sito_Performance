@@ -1,8 +1,23 @@
+import type { Area } from "./areas";
+
+/** Le categorie corrispondono alle quattro aree, più il coordinamento. */
+export const teamCategories = [
+  "Centro",
+  "Palestra & Corsi",
+  "Studio Pilates",
+  "Golf Indoor",
+  "Salute & Benessere",
+] as const;
+
+export type TeamCategory = (typeof teamCategories)[number];
+
 export type TeamMember = {
   slug: string;
   name: string;
   role: string;
-  category: "Centro" | "Fitness & Training" | "Golf Lab" | "Salute & Benessere";
+  category: TeamCategory;
+  /** Aree in cui compare. Se assente, si deduce dalla categoria. */
+  areas?: Area[];
   shortDescription: string;
   bio: string[];
   credentials?: string[];
@@ -28,7 +43,7 @@ export const team: TeamMember[] = [
     slug: "anna-simone",
     name: "Anna Simone",
     role: "Personal Trainer & Istruttrice Functional",
-    category: "Fitness & Training",
+    category: "Palestra & Corsi",
     shortDescription:
       "Specializzata in Functional Training, Acquagym e Personal Training. Laureata in Scienze Motorie e Tecniche Sportive.",
     bio: [
@@ -45,7 +60,7 @@ export const team: TeamMember[] = [
     slug: "sascha-antoniutti",
     name: "Sascha Antoniutti",
     role: "Master Trainer & Personal Trainer",
-    category: "Fitness & Training",
+    category: "Palestra & Corsi",
     shortDescription:
       "CEO Sensus Club, International Master Trainer Pilates e Reaxing. Specializzato in functional training, TRX e Pilates.",
     bio: [
@@ -62,7 +77,9 @@ export const team: TeamMember[] = [
     slug: "chiara-destro",
     name: "Chiara Destro",
     role: "Istruttrice Pilates & Yoga",
-    category: "Fitness & Training",
+    category: "Studio Pilates",
+    // Tiene lo yoga in palestra e il Reformer in studio: compare in entrambe.
+    areas: ["pilates", "palestra"],
     shortDescription:
       "Istruttrice certificata Polestar-Pilates Matwork e HAMSA Hatha Yoga. Background nella danza e nel Sensitive Dance.",
     bio: [
@@ -81,7 +98,7 @@ export const team: TeamMember[] = [
     slug: "maria-paola-casati",
     name: "Maria Paola Casati",
     role: "Direttrice Montecchia Golf Academy",
-    category: "Golf Lab",
+    category: "Golf Indoor",
     shortDescription:
       "Maestra Classe A PGA Italiana dal 2004. Certificata TPI Level 3 Pro e Junior Coach. Ex nazionale italiana, campionessa italiana 1994.",
     bio: [
@@ -99,7 +116,7 @@ export const team: TeamMember[] = [
     slug: "massimo-de-vidal",
     name: "Massimo De Vidal",
     role: "Maestro di Golf PGA",
-    category: "Golf Lab",
+    category: "Golf Indoor",
     shortDescription:
       "Maestro Classe A PGA Italiana. Ex giocatore Alps Tour ed European Challenge Tour. Coach alla Montecchia Golf Academy dal 2006.",
     bio: [
@@ -117,7 +134,7 @@ export const team: TeamMember[] = [
     slug: "germana-zanardi",
     name: "Germana Zanardi",
     role: "Maestra di Golf",
-    category: "Golf Lab",
+    category: "Golf Indoor",
     shortDescription:
       "Maestra alla Montecchia Golf Academy dal 2017. Certificata TPI Level 1 e Trackman Level 1-2. Ex nazionale italiana, 4 titoli italiani.",
     bio: [
@@ -136,7 +153,7 @@ export const team: TeamMember[] = [
     slug: "gionatan-baglioni",
     name: "Gionatan Baglioni",
     role: "Maestro di Golf",
-    category: "Golf Lab",
+    category: "Golf Indoor",
     shortDescription:
       "Maestro iscritto al registro FIG. Coach Team Advisor Montecchia Golf Academy. Coaching giovanile e sviluppo agonistico.",
     bio: [
@@ -152,7 +169,7 @@ export const team: TeamMember[] = [
     slug: "luca-pannone",
     name: "Luca Pannone",
     role: "Maestro di Golf PGA",
-    category: "Golf Lab",
+    category: "Golf Indoor",
     shortDescription:
       "Membro FIG & PGAI, Certified Golf Professional dal 2014. Specializzato in biomeccanica del golf con tecnologie avanzate.",
     bio: [
@@ -228,17 +245,30 @@ export const team: TeamMember[] = [
   },
 ];
 
-export const teamCategories = [
-  "Centro",
-  "Fitness & Training",
-  "Golf Lab",
-  "Salute & Benessere",
-] as const;
-
 export function getTeamMember(slug: string): TeamMember | undefined {
   return team.find((m) => m.slug === slug);
 }
 
 export function getAllTeamSlugs(): string[] {
   return team.map((m) => m.slug);
+}
+
+/** Categoria → area, quando il membro non dichiara le sue aree. */
+const CATEGORY_TO_AREAS: Record<TeamCategory, Area[]> = {
+  Centro: ["palestra", "pilates", "golf", "salute"],
+  "Palestra & Corsi": ["palestra"],
+  "Studio Pilates": ["pilates"],
+  "Golf Indoor": ["golf"],
+  "Salute & Benessere": ["salute"],
+};
+
+export function memberAreas(member: TeamMember): Area[] {
+  return member.areas ?? CATEGORY_TO_AREAS[member.category];
+}
+
+/** I professionisti di un'area, esclusi quelli del coordinamento. */
+export function teamByArea(area: Area): TeamMember[] {
+  return team.filter(
+    (m) => m.category !== "Centro" && memberAreas(m).includes(area),
+  );
 }

@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { team } from "@/data/team";
 import { services } from "@/data/services";
 import { blogPosts } from "@/data/blog";
+import { allAreas } from "@/data/areas";
 
 const BASE_URL = "https://www.montecchiaperformancecenter.it";
 
@@ -16,30 +17,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 1.0,
     },
-    {
-      url: `${BASE_URL}/palestra`,
+    // Le quattro aree: lette da data/areas.ts, così una rinomina non
+    // lascia indietro la sitemap.
+    ...allAreas.map((a) => ({
+      url: `${BASE_URL}${a.href}`,
       lastModified: now,
-      changeFrequency: "monthly",
+      changeFrequency: "monthly" as const,
       priority: 0.9,
-    },
-    {
-      url: `${BASE_URL}/pilates`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${BASE_URL}/golf-lab`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${BASE_URL}/salute-benessere`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
+    })),
     {
       url: `${BASE_URL}/servizi`,
       lastModified: now,

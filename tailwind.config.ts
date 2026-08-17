@@ -63,6 +63,16 @@ const config: Config = {
           dark: "#0F2D2E",
           DEFAULT: "#143D3E",
         },
+        /* Colore dell'area corrente. I valori arrivano da globals.css
+           (`[data-area="..."]`): la stessa classe `bg-area` rende teal in
+           palestra e ottone nel golf indoor, senza varianti per area nel
+           markup. In formato canale perché `bg-area/10` deve funzionare. */
+        area: {
+          DEFAULT: "rgb(var(--area-accent) / <alpha-value>)",
+          deep: "rgb(var(--area-deep) / <alpha-value>)",
+          tint: "rgb(var(--area-tint) / <alpha-value>)",
+          glow: "rgb(var(--area-glow) / <alpha-value>)",
+        },
       },
       fontFamily: {
         display: ["var(--font-display)", "Georgia", "serif"],

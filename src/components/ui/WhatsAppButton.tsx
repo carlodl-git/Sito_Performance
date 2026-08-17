@@ -12,16 +12,21 @@ export function WhatsAppButton({
 }: {
   children: React.ReactNode;
   message?: string;
-  variant?: "solid" | "outline" | "light";
+  /**
+   * `solid` è il rosso della prova gratuita: uno per schermata.
+   * `area` è la stessa CTA nel colore dell'area, per le pagine dove il
+   * rosso è già speso altrove.
+   */
+  variant?: "solid" | "area" | "outline" | "light";
   className?: string;
 }) {
   const styles = {
-    solid:
-      "bg-cta text-white hover:bg-cta-dark focus:ring-cta",
+    solid: "bg-cta text-white hover:bg-cta-dark focus:ring-cta",
+    area: "bg-area text-white transition-opacity hover:opacity-85 focus:ring-area",
     outline:
       "border border-primary text-primary hover:bg-primary hover:text-white focus:ring-primary",
     light:
-      "border border-white/40 text-white hover:bg-white hover:text-primary focus:ring-white",
+      "border border-white/40 text-white hover:bg-white hover:text-area-deep focus:ring-white",
   }[variant];
 
   return (

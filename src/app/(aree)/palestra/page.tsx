@@ -6,18 +6,21 @@ import { PageHero } from "@/components/ui/PageHero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { CourseTimetable } from "@/components/ui/CourseTimetable";
+import { areaMeta } from "@/data/areas";
+
+const meta = areaMeta.palestra;
 
 export const metadata: Metadata = {
-  title: "Palestra a Padova (Selvazzano)",
+  title: "Palestra e corsi a Padova (Selvazzano)",
   description:
-    "Palestra al Golf Club della Montecchia: personal training, allenamento di gruppo, functional, yoga. Corsi su prenotazione e team qualificato.",
+    "Palestra al Golf Club della Montecchia: corsi di gruppo, personal training, functional, yoga. Orario 2025/26, istruttori qualificati, su prenotazione.",
   alternates: {
     canonical: "https://www.montecchiaperformancecenter.it/palestra",
   },
   openGraph: {
-    title: "Palestra a Padova (Selvazzano) — Montecchia Performance Center",
+    title: "Palestra e corsi a Padova — Montecchia Performance Center",
     description:
-      "Personal training, allenamento di gruppo, functional, yoga al Golf Club della Montecchia.",
+      "Corsi di gruppo, personal training, functional e yoga al Golf Club della Montecchia.",
     url: "https://www.montecchiaperformancecenter.it/palestra",
     siteName: "Montecchia Performance Center",
     locale: "it_IT",
@@ -25,6 +28,28 @@ export const metadata: Metadata = {
     images: ["/images/palestra-1.jpg"],
   },
 };
+
+/** I tre modi di allenarsi nell'area: è la prima cosa da capire. */
+const modalita = [
+  {
+    n: "01",
+    title: "Corso di gruppo",
+    text: "Un calendario settimanale fisso, con istruttore. Ti presenti all'orario del corso: non devi costruirti la scheda, ci pensa chi conduce.",
+    link: { href: "#corsi", label: "Vedi i corsi" },
+  },
+  {
+    n: "02",
+    title: "Personal training",
+    text: "Uno a uno con il trainer, all'orario che decidi tu. Il formato per chi riparte da zero, per chi ha un obiettivo preciso o un vincolo fisico.",
+    link: { href: "/servizi/personal-training", label: "Come funziona" },
+  },
+  {
+    n: "03",
+    title: "Mini group",
+    text: "In due o tre, con lo stesso trainer. Costa meno dell'individuale e mantiene la correzione su ogni esercizio.",
+    link: { href: "/servizi/mini-group-training", label: "Come funziona" },
+  },
+];
 
 /**
  * I corsi di gruppo, con istruttore e scheda di approfondimento.
@@ -74,33 +99,77 @@ const gallery = [
 ];
 
 export default function PalestraPage() {
-  // Le attività dell'area che non sono corsi di gruppo (personal training,
-  // mini group, tone…): elencate in coda, senza ripetere i corsi qui sopra.
+  // Le attività dell'area che non sono corsi di gruppo né una delle tre
+  // modalità già raccontate: elencate in coda, senza ripetizioni.
+  const giaRaccontati = [
+    ...corsiSlugs,
+    "personal-training",
+    "mini-group-training",
+  ];
   const altreAttivita = servicesByArea("palestra").filter(
-    (s) => !corsiSlugs.includes(s.slug),
+    (s) => !giaRaccontati.includes(s.slug),
   );
 
   return (
     <>
       <PageHero
-        eyebrow="Area 01"
-        title="La Palestra"
-        intro="Uno spazio dedicato al personal training e ai corsi di gruppo, seguiti da professionisti. Pochi macchinari, tanta qualità."
+        tall
+        eyebrow={`Area ${meta.n}`}
+        title={
+          <>
+            Palestra
+            <br />e corsi di gruppo
+          </>
+        }
+        intro="Una sala attrezzata e un calendario settimanale di corsi. Pochi macchinari, molta attenzione: in sala c'è sempre un istruttore."
         image={{
           src: "/images/palestra-2.jpg",
           alt: "Sala della palestra al Montecchia Performance Center",
         }}
-      />
+      >
+        <WhatsAppButton message={meta.whatsapp} variant="light">
+          Prenota la prova gratuita
+        </WhatsAppButton>
+      </PageHero>
 
-      {/* Struttura */}
-      <section className="section-padding" id="struttura">
+      {/* Come ti alleni — l'orientamento, prima del dettaglio */}
+      <section id="allenamenti" className="section-padding scroll-mt-24">
         <div className="container-narrow">
-          <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
-            <SectionHeading
-              eyebrow="Gli spazi"
-              title="Struttura e spazi"
-              intro="Uno spazio funzionale con macchinari e pesi, progettato per sessioni di personal training e allenamenti individuali o in piccoli gruppi. Niente confusione, solo qualità e attenzione dedicata."
-            />
+          <SectionHeading
+            eyebrow="Come ti alleni"
+            title="Tre modi di allenarti"
+            intro="Puoi seguire il calendario dei corsi, lavorare uno a uno con un trainer, o stare in mezzo con il mini group. Si può anche combinare."
+          />
+
+          <div className="mt-14">
+            {modalita.map((m) => (
+              <div key={m.n} className="row-rule">
+                <div className="grid gap-4 md:grid-cols-[auto_14rem_1fr] md:gap-12">
+                  <span className="area-num">{m.n}</span>
+                  <h3 className="heading-sub">{m.title}</h3>
+                  <div>
+                    <p className="max-w-2xl text-ink-soft">{m.text}</p>
+                    <Link href={m.link.href} className="link-area mt-4">
+                      {m.link.label}
+                      <span aria-hidden>→</span>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Gli spazi */}
+          <div className="mt-20 grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
+            <div>
+              <p className="eyebrow">Gli spazi</p>
+              <h3 className="heading-sub mt-4">La sala</h3>
+              <p className="mt-5 max-w-[46ch] text-ink-soft">
+                Macchinari, pesi liberi e una zona ampia per il lavoro
+                funzionale. È dimensionata per gruppi contenuti: non ci si
+                aspetta la coda a un attrezzo.
+              </p>
+            </div>
             <div className="grid grid-cols-2 gap-3">
               {gallery.map((img, i) => (
                 <div
@@ -123,8 +192,11 @@ export default function PalestraPage() {
         </div>
       </section>
 
-      {/* Corsi di gruppo */}
-      <section className="section-padding bg-paper-alt" id="corsi">
+      {/* I corsi di gruppo */}
+      <section
+        id="corsi"
+        className="section-padding scroll-mt-24 bg-area-tint"
+      >
         <div className="container-narrow">
           <SectionHeading
             eyebrow="I corsi"
@@ -156,10 +228,12 @@ export default function PalestraPage() {
                   <h3 className="font-display text-2xl leading-tight text-primary sm:text-3xl">
                     {course.name}
                   </h3>
-                  <p className="mt-5 max-w-[54ch] text-ink-soft">{course.desc}</p>
+                  <p className="mt-5 max-w-[54ch] text-ink-soft">
+                    {course.desc}
+                  </p>
 
                   <div className="mt-8 flex items-center gap-4">
-                    <span className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/8 font-display text-base text-primary">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-full bg-area/10 font-display text-base text-area">
                       {course.instructor
                         .split(" ")
                         .map((n) => n[0])
@@ -173,10 +247,7 @@ export default function PalestraPage() {
                     </div>
                   </div>
 
-                  <Link
-                    href={`/servizi/${course.slug}`}
-                    className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-accent hover:text-accent-dark"
-                  >
+                  <Link href={`/servizi/${course.slug}`} className="link-area mt-8">
                     Scheda completa
                     <span aria-hidden>→</span>
                   </Link>
@@ -187,12 +258,12 @@ export default function PalestraPage() {
         </div>
       </section>
 
-      {/* Orari */}
-      <section className="section-padding" id="orari">
+      {/* Orario */}
+      <section id="orario" className="section-padding scroll-mt-24">
         <div className="container-narrow">
           <SectionHeading
             eyebrow="Calendario"
-            title="Orari dei corsi"
+            title="Orario dei corsi"
             intro="Stagione 2025/2026, da settembre a giugno. Il venerdì mattina si inizia alle 08:45."
           />
           <div className="mt-12">
@@ -211,63 +282,69 @@ export default function PalestraPage() {
       </section>
 
       {/* Altre attività dell'area */}
-      <section className="section-padding bg-paper-alt" id="attivita">
-        <div className="container-narrow">
-          <SectionHeading
-            eyebrow="Oltre ai corsi"
-            title="Allenamento individuale"
-            intro="Percorsi seguiti uno a uno o in piccoli gruppi, fuori dal calendario dei corsi."
-          />
-          <ul className="mt-12">
-            {altreAttivita.map((service) => (
-              <li key={service.slug}>
-                <Link
-                  href={`/servizi/${service.slug}`}
-                  className="group flex flex-col gap-2 border-t border-line py-7 transition-colors hover:border-primary sm:flex-row sm:items-baseline sm:gap-10"
-                >
-                  <h3 className="heading-sub shrink-0 sm:w-64 group-hover:text-accent">
-                    {service.title}
-                  </h3>
-                  <p className="max-w-[60ch] text-sm text-ink-soft">
-                    {service.shortDescription}
-                  </p>
-                  <span className="ml-auto hidden shrink-0 text-accent transition-transform group-hover:translate-x-1 sm:block">
-                    →
-                  </span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <p className="mt-10 text-sm text-muted">
-            Cerchi il Pilates sul Reformer?{" "}
-            <Link
-              href="/pilates"
-              className="border-b border-line pb-0.5 text-primary transition-colors hover:border-primary"
-            >
-              È nello Studio Pilates
-            </Link>
-            .
-          </p>
-        </div>
-      </section>
+      {altreAttivita.length > 0 && (
+        <section className="section-padding bg-area-tint">
+          <div className="container-narrow">
+            <SectionHeading
+              eyebrow="Oltre ai corsi"
+              title="Le altre attività dell'area"
+              intro="Percorsi fuori dal calendario dei corsi, su appuntamento."
+            />
+            <ul className="mt-12">
+              {altreAttivita.map((service) => (
+                <li key={service.slug}>
+                  <Link
+                    href={`/servizi/${service.slug}`}
+                    className="group flex flex-col gap-2 border-t border-line py-7 transition-colors hover:border-area sm:flex-row sm:items-baseline sm:gap-10"
+                  >
+                    <h3 className="heading-sub shrink-0 transition-colors group-hover:text-area sm:w-64">
+                      {service.title}
+                    </h3>
+                    <p className="max-w-[60ch] text-sm text-ink-soft">
+                      {service.shortDescription}
+                    </p>
+                    <span
+                      className="ml-auto hidden shrink-0 text-area transition-transform group-hover:translate-x-1 sm:block"
+                      aria-hidden
+                    >
+                      →
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-10 text-sm text-muted">
+              Cerchi il Pilates sul Reformer?{" "}
+              <Link
+                href="/pilates"
+                className="border-b border-line pb-0.5 text-primary transition-colors hover:border-primary"
+              >
+                È nello Studio Pilates
+              </Link>
+              , che è un&apos;area a sé.
+            </p>
+          </div>
+        </section>
+      )}
 
-      {/* CTA */}
-      <section className="section-padding bg-brand text-white">
+      {/* Prova gratuita */}
+      <section
+        id="prenota"
+        className="section-padding scroll-mt-24 bg-area-deep text-white"
+      >
         <div className="container-narrow text-center">
-          <h2 className="font-display text-3xl font-normal sm:text-4xl">
-            Vuoi provare?
+          <h2 className="font-display text-3xl font-normal tracking-tight sm:text-4xl">
+            La prima prova è gratuita
           </h2>
           <p className="mx-auto mt-5 max-w-lg text-white/70">
-            La prima prova è gratuita. Scrivici per fissare un appuntamento.
+            Scegli un corso dal calendario e vieni a provarlo. Scrivici su
+            WhatsApp e ti diciamo se c&apos;è posto.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <WhatsAppButton message="Ciao! Vorrei provare un corso in palestra">
               Prenota la prova
             </WhatsAppButton>
-            <Link
-              href="/contatti"
-              className="inline-flex items-center justify-center rounded-sm border border-white/40 px-7 py-3.5 text-sm font-medium text-white transition-colors hover:bg-white hover:text-primary"
-            >
+            <Link href="/contatti" className="btn-area-light">
               Contatti
             </Link>
           </div>

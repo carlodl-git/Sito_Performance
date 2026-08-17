@@ -1,9 +1,14 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { servicesByArea } from "@/data/services";
+import { teamByArea } from "@/data/team";
 import { PageHero } from "@/components/ui/PageHero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { PersonCard } from "@/components/ui/PersonCard";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
+import { areaMeta } from "@/data/areas";
+
+const meta = areaMeta.salute;
 
 export const metadata: Metadata = {
   title: "Salute e Benessere — Fisioterapia, Osteopatia e Nutrizione a Padova",
@@ -24,8 +29,6 @@ export const metadata: Metadata = {
   },
 };
 
-const MESSAGE = "Ciao! Vorrei informazioni sull'area Salute e Benessere";
-
 const steps = [
   {
     n: "01",
@@ -44,13 +47,22 @@ const steps = [
   },
 ];
 
+/** Le altre aree in cui prosegue il percorso, dopo il trattamento. */
+const proseguire = [
+  { href: "/palestra", label: "Palestra & Corsi" },
+  { href: "/pilates", label: "Studio Pilates Reformer" },
+  { href: "/golf-indoor", label: "Golf Indoor" },
+];
+
 export default function SaluteBenesserePage() {
   const services = servicesByArea("salute");
+  const professionisti = teamByArea("salute");
 
   return (
     <>
       <PageHero
-        eyebrow="Area 04"
+        tall
+        eyebrow={`Area ${meta.n}`}
         title="Salute e Benessere"
         intro="Fisioterapia, osteopatia, nutrizione e trattamenti manuali. I professionisti dell'area lavorano a contatto con i trainer del centro: chi ti tratta e chi ti allena parlano tra loro."
         image={{
@@ -58,13 +70,38 @@ export default function SaluteBenesserePage() {
           alt: "Trattamento nell'area Salute e Benessere",
         }}
       >
-        <WhatsAppButton message={MESSAGE} variant="light">
+        <WhatsAppButton message={meta.whatsapp} variant="light">
           Richiedi un appuntamento
         </WhatsAppButton>
       </PageHero>
 
-      {/* Prestazioni */}
-      <section className="section-padding">
+      {/* Il percorso */}
+      <section id="percorso" className="section-padding scroll-mt-24">
+        <div className="container-narrow">
+          <SectionHeading
+            eyebrow="Il percorso"
+            title="Come funziona"
+            intro="Tre passaggi, sempre gli stessi, qualunque sia il motivo per cui arrivi."
+          />
+          <div className="mt-14 grid gap-x-10 gap-y-10 sm:grid-cols-3">
+            {steps.map((s) => (
+              <div key={s.n} className="border-t border-line pt-7">
+                <span className="area-num">{s.n}</span>
+                <h3 className="heading-sub mt-4">{s.title}</h3>
+                <p className="mt-4 text-sm leading-relaxed text-ink-soft">
+                  {s.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Le prestazioni */}
+      <section
+        id="prestazioni"
+        className="section-padding scroll-mt-24 bg-area-tint"
+      >
         <div className="container-narrow">
           <SectionHeading
             eyebrow="Le prestazioni"
@@ -76,10 +113,10 @@ export default function SaluteBenesserePage() {
               <li key={service.slug}>
                 <Link
                   href={`/servizi/${service.slug}`}
-                  className="group grid gap-3 border-t border-line py-8 transition-colors hover:border-primary sm:grid-cols-[16rem_1fr] sm:gap-10"
+                  className="group grid gap-3 border-t border-line py-8 transition-colors hover:border-area sm:grid-cols-[16rem_1fr] sm:gap-10"
                 >
                   <div>
-                    <h3 className="heading-sub group-hover:text-accent">
+                    <h3 className="heading-sub transition-colors group-hover:text-area">
                       {service.title}
                     </h3>
                     {service.professional && (
@@ -98,28 +135,30 @@ export default function SaluteBenesserePage() {
         </div>
       </section>
 
-      {/* Percorso */}
-      <section className="section-padding bg-paper-alt">
+      {/* I professionisti */}
+      <section id="professionisti" className="section-padding scroll-mt-24">
         <div className="container-narrow">
-          <SectionHeading eyebrow="Il percorso" title="Come funziona" />
-          <div className="mt-12 grid gap-x-10 gap-y-10 sm:grid-cols-3">
-            {steps.map((s) => (
-              <div key={s.n} className="border-t border-line pt-7">
-                <span className="font-display text-2xl font-light text-accent">
-                  {s.n}
-                </span>
-                <h3 className="heading-sub mt-4">{s.title}</h3>
-                <p className="mt-4 text-sm leading-relaxed text-ink-soft">
-                  {s.desc}
-                </p>
-              </div>
+          <SectionHeading
+            eyebrow="I professionisti"
+            title="Chi ti segue"
+            intro="Ognuno ha la sua specializzazione e il suo studio all'interno del centro."
+            action={
+              <Link href="/team" className="link-area">
+                Tutto il team
+                <span aria-hidden>→</span>
+              </Link>
+            }
+          />
+          <div className="mt-14 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+            {professionisti.map((m) => (
+              <PersonCard key={m.slug} member={m} />
             ))}
           </div>
         </div>
       </section>
 
       {/* Collegamento alle altre aree */}
-      <section className="section-padding">
+      <section className="section-padding bg-area-tint">
         <div className="container-narrow">
           <SectionHeading
             eyebrow="Dopo il trattamento"
@@ -127,23 +166,22 @@ export default function SaluteBenesserePage() {
             intro="Il percorso prosegue nelle altre aree del centro: in palestra con un programma dedicato, sul Reformer per il lavoro posturale, o al simulatore per rimettere a posto lo swing."
           />
           <div className="mt-10 flex flex-wrap gap-4">
-            <Link href="/palestra" className="btn-secondary">
-              Palestra
-            </Link>
-            <Link href="/pilates" className="btn-secondary">
-              Studio Pilates Reformer
-            </Link>
-            <Link href="/golf-lab" className="btn-secondary">
-              Golf Indoor
-            </Link>
+            {proseguire.map((a) => (
+              <Link key={a.href} href={a.href} className="btn-secondary">
+                {a.label}
+              </Link>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="section-padding bg-brand text-white">
+      {/* Prenota */}
+      <section
+        id="prenota"
+        className="section-padding scroll-mt-24 bg-area-deep text-white"
+      >
         <div className="container-narrow text-center">
-          <h2 className="font-display text-3xl font-normal sm:text-4xl">
+          <h2 className="font-display text-3xl font-normal tracking-tight sm:text-4xl">
             Prenota una visita
           </h2>
           <p className="mx-auto mt-5 max-w-lg text-white/70">
@@ -151,13 +189,10 @@ export default function SaluteBenesserePage() {
             contatto con il professionista giusto.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <WhatsAppButton message={MESSAGE}>
+            <WhatsAppButton message={meta.whatsapp}>
               Scrivici su WhatsApp
             </WhatsAppButton>
-            <Link
-              href="/team"
-              className="inline-flex items-center justify-center rounded-sm border border-white/40 px-7 py-3.5 text-sm font-medium text-white transition-colors hover:bg-white hover:text-primary"
-            >
+            <Link href="/team" className="btn-area-light">
               I professionisti
             </Link>
           </div>

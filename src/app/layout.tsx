@@ -20,11 +20,12 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.montecchiaperformancecenter.it"),
   title: {
-    default: "Montecchia Performance Center — Palestra & Golf Lab a Padova",
+    default:
+      "Montecchia Performance Center — Palestra, Pilates & Golf Indoor a Padova",
     template: "%s | Montecchia Performance Center",
   },
   description:
-    "Palestra, golf indoor, fisioterapia, osteopatia, nutrizione e personal training al Golf Club della Montecchia. Performance e benessere a Selvazzano Dentro (Padova).",
+    "Quattro aree al Golf Club della Montecchia: palestra e corsi, Studio Pilates Reformer, Golf Indoor, Salute e Benessere. Selvazzano Dentro (Padova).",
   openGraph: {
     siteName: "Montecchia Performance Center",
     locale: "it_IT",

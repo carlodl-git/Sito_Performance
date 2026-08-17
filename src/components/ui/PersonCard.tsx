@@ -27,7 +27,7 @@ export function PersonCard({
   return (
     <Link
       href={`/team/${member.slug}`}
-      className="group flex flex-col border-t border-line pt-6 transition-colors hover:border-primary"
+      className="group flex flex-col border-t border-line pt-6 transition-colors hover:border-area"
     >
       {photo ? (
         <div className="relative mb-5 aspect-[4/5] w-full overflow-hidden bg-paper-alt">
@@ -40,12 +40,12 @@ export function PersonCard({
           />
         </div>
       ) : (
-        <span className="mb-4 flex h-11 w-11 items-center justify-center rounded-full bg-primary/8 font-display text-sm text-primary">
+        <span className="mb-4 flex h-11 w-11 items-center justify-center rounded-full bg-area/10 font-display text-sm text-area">
           {initials(member.name)}
         </span>
       )}
 
-      <h3 className="heading-sub transition-colors group-hover:text-accent">
+      <h3 className="heading-sub transition-colors group-hover:text-area">
         {member.name}
       </h3>
       <p className="eyebrow mt-2">{member.role}</p>

@@ -110,12 +110,12 @@ export default function ChiSiamoPage() {
         <div className="container-narrow">
           <h2 className="heading-section text-center">La struttura</h2>
           <p className="mx-auto mt-4 max-w-xl text-center text-ink-soft">
-            Il Golf Lab, i simulatori e gli spazi del centro.
+            Il Golf Indoor, i simulatori e gli spazi del centro.
           </p>
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {[
               { src: "/images/palestra-1.jpg", alt: "Sala palestra principale" },
-              { src: "/images/golf-indoor-1.jpg", alt: "Golf Lab - postazioni simulatori" },
+              { src: "/images/golf-indoor-1.jpg", alt: "Golf Indoor — postazioni dei simulatori" },
               { src: "/images/yoga-esterno.jpg", alt: "Sessione yoga all'aperto" },
               { src: "/images/trackman_io_immagine.webp", alt: "Trackman in azione" },
             ].map((img) => (

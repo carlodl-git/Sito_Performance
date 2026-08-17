@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { areas, areaMeta, servicesByArea } from "@/data/services";
+import { servicesByArea } from "@/data/services";
+import { areaKeys, areaMeta } from "@/data/areas";
 import { PageHero } from "@/components/ui/PageHero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
@@ -32,7 +33,7 @@ export default function ServiziPage() {
         intro="L'elenco completo di ciò che trovi al centro, diviso nelle quattro aree. Se sai già dove vuoi andare, parti dall'area."
       >
         <nav className="flex flex-wrap gap-x-6 gap-y-3" aria-label="Vai all'area">
-          {areas.map((area) => (
+          {areaKeys.map((area) => (
             <a
               key={area}
               href={`#${area}`}
@@ -44,7 +45,7 @@ export default function ServiziPage() {
         </nav>
       </PageHero>
 
-      {areas.map((area, i) => {
+      {areaKeys.map((area, i) => {
         const items = servicesByArea(area);
         if (items.length === 0) return null;
         const meta = areaMeta[area];
@@ -59,7 +60,7 @@ export default function ServiziPage() {
           >
             <div className="container-narrow">
               <SectionHeading
-                eyebrow={`Area 0${i + 1}`}
+                eyebrow={`Area ${meta.n}`}
                 title={meta.label}
                 intro={meta.tagline}
                 action={
