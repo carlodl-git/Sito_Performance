@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     siteName: "Montecchia Performance Center",
     locale: "it_IT",
     type: "website",
-    images: ["/images/esterno.jpg"],
+    images: ["/images/clubhouse-esterno.webp"],
   },
 };
 
@@ -96,8 +96,8 @@ export default function HomePage() {
         }
         intro="Palestra e corsi di gruppo, Studio Pilates Reformer, Golf Indoor, Salute e Benessere. Ogni area ha i suoi spazi e i suoi professionisti, ma la struttura è una."
         image={{
-          src: "/images/esterno.jpg",
-          alt: "Il Montecchia Performance Center al Golf Club della Montecchia",
+          src: "/images/clubhouse-esterno.webp",
+          alt: "La club house del Golf Club della Montecchia vista dal putting green",
         }}
       >
         <WhatsAppButton variant="light">
