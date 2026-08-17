@@ -53,7 +53,10 @@ const tecnologie = [
 const gallery = [
   { src: "/images/golf-indoor-1.jpg", alt: "Postazioni dei simulatori golf indoor" },
   { src: "/images/golf-indoor-2.jpg", alt: "Simulatore golf con schermo di proiezione" },
-  { src: "/images/lezione.jpeg", alt: "Lezione di golf al simulatore con analisi dei dati" },
+  {
+    src: "/images/golf-indoor-putting.jpg",
+    alt: "Giocatori in sessione sul green indoor e alle postazioni",
+  },
 ];
 
 export default function GolfIndoorPage() {

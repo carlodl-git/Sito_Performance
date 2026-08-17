@@ -5,8 +5,11 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { areaMeta } from "@/data/areas";
 
-// TODO (dati reali da confermare col centro): numero di Reformer, nome
-// dell'istruttrice, orari delle lezioni, listino, foto reali dello studio.
+// TODO (da confermare col centro): numero di Reformer, nome
+// dell'istruttrice, orari delle lezioni, listino.
+// TODO FOTO: nessuna foto dello studio né del Reformer. Le due immagini
+// di questa pagina sono lezioni all'aperto sul prato del club: vere, ma
+// non sono il Pilates. Sono il primo asset da sostituire.
 
 const meta = areaMeta.pilates;
 
@@ -27,7 +30,7 @@ export const metadata: Metadata = {
     siteName: "Studio Pilates Reformer — Montecchia",
     locale: "it_IT",
     type: "website",
-    images: ["/images/yoga-indoor.jpg"],
+    images: ["/images/yoga-prato.jpg"],
   },
 };
 
@@ -89,8 +92,8 @@ export default function StudioPilatesPage() {
         }
         intro="Uno studio dedicato al Pilates sul Reformer. Lezioni individuali, in duetto e in piccolo gruppo, sempre con un'istruttrice accanto."
         image={{
-          src: "/images/yoga-indoor.jpg",
-          alt: "Studio Pilates Reformer alla Montecchia",
+          src: "/images/yoga-prato.jpg",
+          alt: "Lezione all'aperto sul prato del Golf Club della Montecchia",
         }}
       >
         <WhatsAppButton message={meta.whatsapp} variant="light">
@@ -111,7 +114,7 @@ export default function StudioPilatesPage() {
       <section className="relative h-[45vh] min-h-[320px] w-full overflow-hidden sm:h-[60vh]">
         <Image
           src="/images/yoga-esterno.jpg"
-          alt="Lavoro sul respiro e sul controllo del movimento"
+          alt="Lezione di gruppo sul prato del Golf Club della Montecchia"
           fill
           sizes="100vw"
           className="object-cover"

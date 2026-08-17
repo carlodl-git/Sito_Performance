@@ -189,7 +189,7 @@ export const services: Service[] = [
     ],
     relatedTeamSlugs: ["chiara-destro"],
     image: {
-      src: "/images/yoga-indoor.jpg",
+      src: "/images/yoga-prato.jpg",
       alt: "Pilates al Montecchia Performance Center",
     },
   },

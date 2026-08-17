@@ -42,8 +42,8 @@ export const areaMeta: Record<Area, AreaMeta> = {
     blurb:
       "Una sala attrezzata e un calendario settimanale di corsi: functional, tonificazione, core, Fit for Golf. Sempre con un istruttore in sala, sempre su prenotazione.",
     image: {
-      src: "/images/corsi.jpg",
-      alt: "Corso di gruppo nella palestra del Montecchia Performance Center",
+      src: "/images/palestra-2.jpg",
+      alt: "La sala della palestra del Montecchia Performance Center",
     },
     sections: [
       { href: "#allenamenti", label: "Come ti alleni" },
@@ -61,9 +61,13 @@ export const areaMeta: Record<Area, AreaMeta> = {
     tagline: "Individuale, in duetto o in piccolo gruppo",
     blurb:
       "Uno studio dedicato al Pilates sul Reformer: lavoro di precisione su forza profonda, mobilità e postura, seguito uno a uno dall'istruttrice.",
+    // TODO FOTO: non esiste ancora una foto del Reformer né dello studio.
+    // Questa è una lezione all'aperto sul prato del club: è una foto vera,
+    // ma non è il Pilates. L'alt dice quello che si vede, non quello che
+    // vorremmo si vedesse. Sostituire appena arrivano le foto dello studio.
     image: {
-      src: "/images/yoga-indoor.jpg",
-      alt: "Studio Pilates Reformer al Montecchia Performance Center",
+      src: "/images/yoga-prato.jpg",
+      alt: "Lezione all'aperto sul prato del Golf Club della Montecchia",
     },
     sections: [
       { href: "#metodo", label: "Il metodo" },
@@ -101,9 +105,13 @@ export const areaMeta: Record<Area, AreaMeta> = {
     tagline: "Fisioterapia, osteopatia, nutrizione",
     blurb:
       "I professionisti che si occupano di recupero, postura e alimentazione, in dialogo diretto con i trainer delle altre aree del centro.",
+    // TODO FOTO: la foto precedente era uno stock di massaggio con oli —
+    // diceva "centro benessere" a chi cerca un fisioterapista. Meglio
+    // l'esterno del centro, che almeno è vero, finché non ci sono foto
+    // degli studi dei professionisti.
     image: {
-      src: "/images/servizi.jpg",
-      alt: "Trattamento nell'area Salute e Benessere",
+      src: "/images/esterno.jpg",
+      alt: "Il Montecchia Performance Center al Golf Club della Montecchia",
     },
     sections: [
       { href: "#percorso", label: "Il percorso" },
