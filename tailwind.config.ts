@@ -12,7 +12,7 @@ const config: Config = {
         /* Logo: verde/petrolio, rosso, grigio.
            Il verde profondo del logo è il colore dominante del sito; il teal
            passa ad accento (link, dettagli) e il rosso resta solo per la CTA
-           principale — una per schermata. */
+           principale, una per schermata. */
         primary: {
           DEFAULT: "#143D3E",
           dark: "#0F2D2E",
@@ -28,9 +28,14 @@ const config: Config = {
         },
         // Azione principale. Da usare a mano, mai come colore di servizio.
         cta: {
-          DEFAULT: "#E43733",
+          // Il rosso del logo (#E43733) portava il bianco a 4.29:1, sotto AA
+          // per il testo normale: il bottone più importante del sito era
+          // l'elemento meno leggibile. Scurito quanto basta a passare
+          // (4.91:1), differenza impercettibile se non affiancando i due.
+          // Il logo è un file immagine, non è toccato.
+          DEFAULT: "#D4312D",
           light: "#EA5A57",
-          dark: "#C42E2A",
+          dark: "#BC2B27",
         },
         muted: "#6E695F",
         // Fondo pagina avorio al posto del bianco puro: ammorbidisce tutto il

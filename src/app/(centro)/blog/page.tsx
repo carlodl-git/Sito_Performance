@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     canonical: "https://www.montecchiaperformancecenter.it/blog",
   },
   openGraph: {
-    title: "Blog — Montecchia Performance Center",
+    title: "Blog | Montecchia Performance Center",
     description:
       "Articoli su allenamento, golf, salute, nutrizione e benessere dal team del Montecchia Performance Center.",
     url: "https://www.montecchiaperformancecenter.it/blog",

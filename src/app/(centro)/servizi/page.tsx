@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     canonical: "https://www.montecchiaperformancecenter.it/servizi",
   },
   openGraph: {
-    title: "Tutte le attività e i servizi — Montecchia Performance Center",
+    title: "Tutte le attività e i servizi | Montecchia Performance Center",
     description:
       "Corsi e personal training, Pilates Reformer, golf indoor, fisioterapia, osteopatia e nutrizione. Tutte le attività del centro, area per area.",
     url: "https://www.montecchiaperformancecenter.it/servizi",

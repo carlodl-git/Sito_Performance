@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Privacy Policy — Montecchia Performance Center",
+    title: "Privacy Policy | Montecchia Performance Center",
     description:
       "Informativa sul trattamento dei dati personali ai sensi del Regolamento UE 2016/679 (GDPR).",
     url: "https://www.montecchiaperformancecenter.it/privacy-policy",

@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: "Profilo non trovato" };
   }
 
-  const title = `${member.name} — ${member.role}`;
+  const title = `${member.name}, ${member.role}`;
   const description = member.shortDescription.slice(0, 155);
 
   return {
@@ -147,7 +147,7 @@ export default async function TeamMemberPage({ params }: Props) {
       {related.length > 0 && (
         <section className="section-padding bg-paper-alt">
           <div className="container-narrow">
-            <h2 className="heading-section">Altri professionisti — {member.category}</h2>
+            <h2 className="heading-section">Altri professionisti: {member.category}</h2>
             <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {related.map((m) => (
                 <Link

@@ -5,8 +5,8 @@
    Qui c'è una copia sola, così una correzione si fa una volta.
 
    ⚠️ DA CONFERMARE COL CENTRO: la forma dell'indirizzo. Quella usata
-   qui è quella della privacy policy — testo legale di Golf della
-   Montecchia Srl, la fonte più autorevole che abbiamo in repo — ma va
+   qui è quella della privacy policy, testo legale di Golf della
+   Montecchia Srl e la fonte più autorevole che abbiamo in repo, ma va
    verificata contro l'Impressum del club prima del lancio, insieme a
    orari e numero di telefono.
    ============================================================ */

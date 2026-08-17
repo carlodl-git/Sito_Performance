@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: "Servizio non trovato" };
   }
 
-  const title = `${service.title} — Padova (Selvazzano)`;
+  const title = `${service.title} a Padova (Selvazzano)`;
   const description = service.shortDescription.slice(0, 155);
 
   return {
@@ -187,7 +187,7 @@ export default async function ServizioPage({ params }: Props) {
       {relatedServices.length > 0 && (
         <section className="section-padding bg-paper-alt">
           <div className="container-narrow">
-            <h2 className="heading-section">Altri servizi — {service.category}</h2>
+            <h2 className="heading-section">Altri servizi: {service.category}</h2>
             <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {relatedServices.map((s) => (
                 <Link

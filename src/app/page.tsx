@@ -10,7 +10,7 @@ import { contatti, indirizzoBreve, whatsappLink } from "@/data/contatti";
 export const metadata: Metadata = {
   title: {
     absolute:
-      "Montecchia Performance Center — Palestra, Pilates Reformer & Golf Indoor a Padova",
+      "Montecchia Performance Center: palestra, Pilates Reformer e Golf Indoor a Padova",
   },
   description:
     "Quattro aree in un unico centro al Golf Club della Montecchia: palestra con corsi di gruppo, Studio Pilates Reformer, Golf Indoor e Salute e Benessere. Selvazzano Dentro (Padova).",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "Montecchia Performance Center — Palestra, Pilates Reformer & Golf Indoor",
+      "Montecchia Performance Center: palestra, Pilates Reformer e Golf Indoor",
     description:
       "Palestra con corsi di gruppo, Studio Pilates Reformer, Golf Indoor e area Salute e Benessere al Golf Club della Montecchia.",
     url: "https://www.montecchiaperformancecenter.it/",
@@ -89,7 +89,7 @@ export default function HomePage() {
           nessuno scroll necessario per vederli tutti e quattro.
           ============================================================ */}
       <h1 className="sr-only">
-        Montecchia Performance Center — palestra, Pilates Reformer, golf indoor
+        Montecchia Performance Center: palestra, Pilates Reformer, golf indoor
         e salute a Selvazzano Dentro (Padova)
       </h1>
 
@@ -126,7 +126,11 @@ export default function HomePage() {
             key={area.key}
             href={area.href}
             data-area={area.key}
-            className="group relative flex flex-col justify-end overflow-hidden focus:outline-none"
+            // Il focus da tastiera ha bisogno di un indicatore suo: il
+            // filetto in basso e la scritta "Entra" non bastano (la scritta
+            // sotto lg è display:none). Anello bianco interno, visibile
+            // sopra qualsiasi foto.
+            className="group relative flex flex-col justify-end overflow-hidden outline-none focus-visible:ring-4 focus-visible:ring-inset focus-visible:ring-white"
           >
             <Image
               src={area.image.src}
@@ -166,7 +170,7 @@ export default function HomePage() {
       </section>
 
       {/* ============================================================
-          IL CENTRO — sotto la piega, per chi arriva da Google e per chi
+          IL CENTRO: sotto la piega, per chi arriva da Google e per chi
           non sa ancora quale area gli serve.
           ============================================================ */}
       <section className="section-padding" id="centro">
@@ -174,7 +178,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Golf Club della Montecchia · Padova"
             title="Un centro, quattro aree"
-            intro="Palestra e corsi di gruppo, Studio Pilates Reformer, Golf Indoor, Salute e Benessere. Ogni area ha i suoi spazi, i suoi professionisti e il suo calendario — ma la struttura è una, e chi ti tratta e chi ti allena parlano tra loro."
+            intro="Palestra e corsi di gruppo, Studio Pilates Reformer, Golf Indoor, Salute e Benessere. Ogni area ha i suoi spazi, i suoi professionisti e il suo calendario, ma la struttura è una, e chi ti tratta e chi ti allena parlano tra loro."
           />
 
           <div className="mt-14 grid gap-x-12 gap-y-2 sm:grid-cols-2">

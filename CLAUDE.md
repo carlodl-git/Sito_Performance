@@ -1,4 +1,4 @@
-# Montecchia Performance Center — sito
+# Montecchia Performance Center: il sito
 
 Next.js 14 (App Router), Tailwind, TypeScript. Tutto statico: nessun
 database, nessuna API, nessun form. Le prenotazioni passano da WhatsApp e,
@@ -19,8 +19,8 @@ Il centro ha **quattro aree**, e il sito è costruito su quella struttura:
 | Salute e Benessere | `/salute-benessere` | ardesia |
 
 La home è uno **smistatore**: quattro riquadri a schermo pieno, poi il
-centro sotto la piega. Ogni area si legge come un sito a sé — nav delle
-sue sezioni, colore proprio, footer del suo colore — ma condivide con le
+centro sotto la piega. Ogni area si legge come un sito a sé (nav delle
+sue sezioni, colore proprio, footer del suo colore), ma condivide con le
 altre griglia, tipografia e componenti.
 
 ## Le due regole che tengono in piedi tutto
@@ -89,7 +89,7 @@ npx next build && npx next lint
 Gli screenshot via Playwright vanno in timeout in questo ambiente. In
 alternativa: `npx next start -p 3113` e poi verificare a mano che ogni
 link interno risponda 200 e che `data-area` sia quello giusto su ogni
-pagina — sono i due controlli che hanno pescato più errori.
+pagina: sono i due controlli che hanno pescato più errori.
 
 ## Cosa manca (in ordine di peso)
 

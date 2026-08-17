@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     canonical: "https://www.montecchiaperformancecenter.it/palestra",
   },
   openGraph: {
-    title: "Palestra e corsi a Padova — Montecchia Performance Center",
+    title: "Palestra e corsi a Padova | Montecchia Performance Center",
     description:
       "Corsi di gruppo, personal training, functional e yoga al Golf Club della Montecchia.",
     url: "https://www.montecchiaperformancecenter.it/palestra",
@@ -133,7 +133,7 @@ export default function PalestraPage() {
         </WhatsAppButton>
       </PageHero>
 
-      {/* Come ti alleni — l'orientamento, prima del dettaglio */}
+      {/* Come ti alleni: l'orientamento, prima del dettaglio */}
       <section id="allenamenti" className="section-padding scroll-mt-24">
         <div className="container-narrow">
           <SectionHeading
@@ -272,7 +272,7 @@ export default function PalestraPage() {
           </div>
           <div className="mt-8 flex flex-col gap-1">
             <p className="text-sm text-muted">
-              Corsi <span className="text-ink">solo su prenotazione</span> —
+              Corsi <span className="text-ink">solo su prenotazione</span>:
               WhatsApp {contatti.telefonoLeggibile}. Il pallino indica i corsi
               golf-specific.
             </p>

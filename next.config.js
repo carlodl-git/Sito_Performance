@@ -13,7 +13,7 @@ const nextConfig = {
   },
 
   // ============================================================
-  // Redirect 301 — Migrazione SEO da WordPress a Next.js
+  // Redirect 301: migrazione SEO da WordPress a Next.js
   // Generato: 2026-04-26
   // Dominio: www.montecchiaperformancecenter.it
   // Vedi: Migrazione_SEO_Mappatura.xlsx per la lista completa
@@ -51,7 +51,7 @@ const nextConfig = {
       { source: '/mini-group-training/', destination: '/servizi/mini-group-training', permanent: true },
 
       // ---------- WORKOUTS (vecchio custom post type Divi) → /servizi/[slug] ----------
-      // /dt_workouts/pilates-e-yoga/ → /servizi/pilates-yoga (112 clic/anno — pagina top)
+      // /dt_workouts/pilates-e-yoga/ → /servizi/pilates-yoga (112 clic/anno, pagina top)
       { source: '/dt_workouts/pilates-e-yoga', destination: '/servizi/pilates-yoga', permanent: true },
       { source: '/dt_workouts/pilates-e-yoga/', destination: '/servizi/pilates-yoga', permanent: true },
 

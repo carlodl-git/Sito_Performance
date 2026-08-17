@@ -4,8 +4,8 @@
    delle aree leggono tutte da qui. Aggiungere un'area o rinominarne
    una significa toccare solo questo file.
 
-   Ogni area si presenta come un sito a sé — nav propria, colore
-   proprio, ritmo proprio — ma condivide con le altre griglia,
+   Ogni area si presenta come un sito a sé: nav propria, colore
+   proprio, ritmo proprio. Ma condivide con le altre griglia,
    tipografia e componenti. Il colore vive in globals.css sotto
    `[data-area="..."]`; qui c'è solo la chiave.
    ============================================================ */
@@ -105,7 +105,7 @@ export const areaMeta: Record<Area, AreaMeta> = {
     tagline: "Fisioterapia, osteopatia, nutrizione",
     blurb:
       "I professionisti che si occupano di recupero, postura e alimentazione, in dialogo diretto con i trainer delle altre aree del centro.",
-    // TODO FOTO: la foto precedente era uno stock di massaggio con oli —
+    // TODO FOTO: la foto precedente era uno stock di massaggio con oli:
     // diceva "centro benessere" a chi cerca un fisioterapista. Meglio
     // l'esterno del centro, che almeno è vero, finché non ci sono foto
     // degli studi dei professionisti.

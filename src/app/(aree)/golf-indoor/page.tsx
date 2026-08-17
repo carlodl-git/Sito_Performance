@@ -12,14 +12,14 @@ import { contatti } from "@/data/contatti";
 const meta = areaMeta.golf;
 
 export const metadata: Metadata = {
-  title: "Golf Indoor — Simulatore Golf a Padova",
+  title: "Golf Indoor: simulatore golf a Padova",
   description:
     "Simulatore golf indoor TrackMan al Golf Club della Montecchia. Lezioni con maestri PGA, analisi dello swing, fitting e golf fitness. Selvazzano Dentro, Padova.",
   alternates: {
     canonical: "https://www.montecchiaperformancecenter.it/golf-indoor",
   },
   openGraph: {
-    title: "Golf Indoor — Simulatore Golf a Padova",
+    title: "Golf Indoor: simulatore golf a Padova",
     description:
       "Simulatori TrackMan, analisi dello swing e maestri PGA al Golf Club della Montecchia.",
     url: "https://www.montecchiaperformancecenter.it/golf-indoor",
@@ -75,7 +75,7 @@ export default function GolfIndoorPage() {
             misurato
           </>
         }
-        intro="Simulatori con tecnologia TrackMan e maestri PGA. Si gioca e si migliora tutto l'anno, con qualsiasi meteo — e ogni colpo lascia un dato."
+        intro="Simulatori con tecnologia TrackMan e maestri PGA. Si gioca e si migliora tutto l'anno, con qualsiasi meteo, e ogni colpo lascia un dato."
         image={{
           src: "/images/golf-indoor-lezione.jpg",
           alt: "Sala simulatori del Golf Indoor con giocatori in sessione",

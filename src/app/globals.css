@@ -25,31 +25,31 @@
      ========================================================== */
   :root,
   [data-area="centro"] {
-    --area-accent: 35 115 113; /* #237371 — teal del brand */
+    --area-accent: 35 115 113; /* #237371, teal del brand */
     --area-deep: 15 45 46; /* #0F2D2E */
     --area-tint: 243 241 234; /* #F3F1EA */
     --area-glow: 44 139 141; /* #2C8B8D */
   }
   [data-area="palestra"] {
-    --area-accent: 29 110 108; /* #1D6E6C — petrolio, il cuore del centro */
+    --area-accent: 29 110 108; /* #1D6E6C, petrolio: il cuore del centro */
     --area-deep: 18 63 62; /* #123F3E */
     --area-tint: 234 241 240; /* #EAF1F0 */
     --area-glow: 56 163 160; /* #38A3A0 */
   }
   [data-area="pilates"] {
-    --area-accent: 95 107 84; /* #5F6B54 — salvia, il registro più calmo */
+    --area-accent: 95 107 84; /* #5F6B54, salvia: il registro più calmo */
     --area-deep: 46 54 40; /* #2E3628 */
     --area-tint: 237 239 232; /* #EDEFE8 */
     --area-glow: 147 161 134; /* #93A186 */
   }
   [data-area="golf"] {
-    --area-accent: 138 98 52; /* #8A6234 — ottone, il legno del club */
+    --area-accent: 138 98 52; /* #8A6234, ottone: il legno del club */
     --area-deep: 51 35 15; /* #33230F */
     --area-tint: 243 237 227; /* #F3EDE3 */
     --area-glow: 200 154 94; /* #C89A5E */
   }
   [data-area="salute"] {
-    --area-accent: 63 90 107; /* #3F5A6B — ardesia, registro clinico */
+    --area-accent: 63 90 107; /* #3F5A6B, ardesia: registro clinico */
     --area-deep: 31 46 56; /* #1F2E38 */
     --area-tint: 235 239 242; /* #EBEFF2 */
     --area-glow: 127 160 180; /* #7FA0B4 */

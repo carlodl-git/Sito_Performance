@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.montecchiaperformancecenter.it"),
   title: {
     default:
-      "Montecchia Performance Center — Palestra, Pilates & Golf Indoor a Padova",
+      "Montecchia Performance Center: palestra, Pilates e Golf Indoor a Padova",
     template: "%s | Montecchia Performance Center",
   },
   description:

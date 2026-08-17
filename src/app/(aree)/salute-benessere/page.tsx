@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     canonical: "https://www.montecchiaperformancecenter.it/salute-benessere",
   },
   openGraph: {
-    title: "Salute e Benessere — Montecchia Performance Center",
+    title: "Salute e Benessere | Montecchia Performance Center",
     description:
       "Fisioterapia, osteopatia, nutrizione e shiatsu al Golf Club della Montecchia (Selvazzano Dentro, Padova).",
     url: "https://www.montecchiaperformancecenter.it/salute-benessere",

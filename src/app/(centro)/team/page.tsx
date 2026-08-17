@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     canonical: "https://www.montecchiaperformancecenter.it/team",
   },
   openGraph: {
-    title: "Il Team — Montecchia Performance Center",
+    title: "Il Team | Montecchia Performance Center",
     description:
       "Oltre 13 professionisti tra trainer, maestri di golf, nutrizionisti e specialisti del benessere.",
     url: "https://www.montecchiaperformancecenter.it/team",

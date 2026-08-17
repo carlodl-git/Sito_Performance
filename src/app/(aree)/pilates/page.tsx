@@ -16,7 +16,7 @@ const meta = areaMeta.pilates;
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Studio Pilates Reformer — Selvazzano Dentro, Padova",
+    absolute: "Studio Pilates Reformer a Selvazzano Dentro (Padova)",
   },
   description:
     "Studio Pilates Reformer alla Montecchia: lezioni individuali, in duetto e in piccolo gruppo. Forza profonda, mobilità e postura. Selvazzano Dentro, Padova.",
@@ -24,11 +24,11 @@ export const metadata: Metadata = {
     canonical: "https://www.montecchiaperformancecenter.it/pilates",
   },
   openGraph: {
-    title: "Studio Pilates Reformer — Montecchia",
+    title: "Studio Pilates Reformer alla Montecchia",
     description:
       "Lezioni di Pilates sul Reformer, individuali e in piccolo gruppo. Selvazzano Dentro, Padova.",
     url: "https://www.montecchiaperformancecenter.it/pilates",
-    siteName: "Studio Pilates Reformer — Montecchia",
+    siteName: "Studio Pilates Reformer alla Montecchia",
     locale: "it_IT",
     type: "website",
     images: ["/images/yoga-prato.jpg"],
@@ -107,7 +107,7 @@ export default function StudioPilatesPage() {
         <div className="container-narrow">
           <p className="manifesto">
             Non è ginnastica veloce. È un lavoro paziente sul modo in cui stai
-            in piedi, respiri e ti muovi — che poi si sente in tutto il resto.
+            in piedi, respiri e ti muovi, che poi si sente in tutto il resto.
           </p>
         </div>
       </section>
@@ -163,7 +163,7 @@ export default function StudioPilatesPage() {
           </div>
 
           <p className="mt-14 text-sm text-muted">
-            Orari e tariffe aggiornati su richiesta —{" "}
+            Orari e tariffe aggiornati su richiesta:{" "}
             <a href={`tel:${contatti.telefono}`} className="link-area">
               {contatti.telefonoLeggibile}
             </a>

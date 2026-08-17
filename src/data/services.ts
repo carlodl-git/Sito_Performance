@@ -28,7 +28,7 @@ export const services: Service[] = [
     intro:
       "Allenamento individuale studiato sulle tue esigenze, condotto da un personal trainer dedicato. Ogni sessione è programmata in base ai tuoi obiettivi, alla tua condizione fisica e ai tempi di cui disponi.",
     body: [
-      "Il Personal Training del Montecchia Performance Center è pensato per chi vuole un percorso strutturato e seguito da vicino. Si parte da una valutazione iniziale — postura, mobilità, forza, condizione cardiovascolare — e si costruisce un piano periodizzato con micro-obiettivi misurabili.",
+      "Il Personal Training del Montecchia Performance Center è pensato per chi vuole un percorso strutturato e seguito da vicino. Si parte da una valutazione iniziale (postura, mobilità, forza, condizione cardiovascolare) e si costruisce un piano periodizzato con micro-obiettivi misurabili.",
       "Lavoriamo su composizione corporea, performance sportiva (golf in primis, ma anche corsa, sci, sport di squadra), prevenzione infortuni, recupero post-trauma in collaborazione con osteopata e fisioterapista.",
       "Ogni 4-6 settimane si rivede la programmazione sulla base dei progressi misurati: forza, mobilità, parametri di composizione corporea (con FitMate Pro), capacità aerobica.",
     ],
@@ -100,7 +100,7 @@ export const services: Service[] = [
       "Allenamento funzionale: movimento integrato, multi-articolare, replicabile nella vita quotidiana e nello sport. Migliora forza, equilibrio, mobilità e controllo motorio.",
     body: [
       "Il Functional Training del Montecchia Performance Center è strutturato come circuit-training con esercizi a corpo libero, kettlebell, TRX, bilancieri e attrezzi instabili. L'obiettivo è sviluppare capacità motorie complete: forza relativa, mobilità articolare, equilibrio, coordinazione.",
-      "Particolarmente efficace per chi pratica golf — la rotazione del busto, il controllo del baricentro e la stabilità del core sono trasferibili direttamente allo swing — ma adatto a tutti gli sport e alla popolazione generale.",
+      "Particolarmente efficace per chi pratica golf (la rotazione del busto, il controllo del baricentro e la stabilità del core sono trasferibili direttamente allo swing), ma adatto a tutti gli sport e alla popolazione generale.",
     ],
     image: {
       src: "/wp-content/uploads/2016/02/TRX_DSC1279-bassa-e1534854551358.jpg",
@@ -131,7 +131,7 @@ export const services: Service[] = [
       "Format ibrido tra Functional e Tone. Allena forza funzionale e tono muscolare in un'unica seduta.",
     category: "Allenamento",
     intro:
-      "Functional Tone: il meglio del Functional Training e del Tone in un'unica seduta. Forza funzionale, tonificazione, mobilità — un format completo per chi cerca un workout a 360°.",
+      "Functional Tone: il meglio del Functional Training e del Tone in un'unica seduta. Forza funzionale, tonificazione, mobilità: un format completo per chi cerca un workout a 360°.",
     body: [
       "La sessione alterna blocchi di Functional Training (movimento integrato, multi-articolare) a blocchi di Tone (tonificazione mirata di gruppi muscolari specifici). Il risultato è un allenamento bilanciato che lavora sia sulla forza funzionale sia sul tono muscolare.",
       "Format ideale per chi vuole un allenamento variato che eviti la monotonia, lavorando contemporaneamente su più qualità motorie.",
@@ -154,12 +154,12 @@ export const services: Service[] = [
     body: [
       "Lo Yoga mira ad acquisire freschezza mentale e a raggiungere stabilità emotiva. Il respiro guida il movimento, la pratica costruisce consapevolezza corporea e capacità di gestire lo stress.",
       "Sul piano fisico lavora su flessibilità, equilibrio, mobilità articolare e tono muscolare profondo. Sul piano mentale aiuta a sviluppare concentrazione, rilassamento attivo e una migliore qualità del sonno.",
-      "Nel golf è una disciplina particolarmente preziosa: migliora coordinazione, concentrazione e mantenimento dell'equilibrio — elementi necessari per lo swing. L'aumento della mobilità si traduce in uno swing più ampio e in una maggior distanza nei colpi.",
+      "Nel golf è una disciplina particolarmente preziosa: migliora coordinazione, concentrazione e mantenimento dell'equilibrio, elementi necessari per lo swing. L'aumento della mobilità si traduce in uno swing più ampio e in una maggior distanza nei colpi.",
     ],
     benefits: [
       "Migliora flessibilità, equilibrio e concentrazione",
       "Riduce stress e tensione muscolare",
-      "Aumenta mobilità — utile nello swing del golf",
+      "Aumenta mobilità, utile nello swing del golf",
       "Adatto a tutti i livelli, con varianti e progressioni",
     ],
     relatedTeamSlugs: ["chiara-destro"],
@@ -178,7 +178,7 @@ export const services: Service[] = [
       "Pilates al Montecchia Performance Center: lezioni di gruppo condotte da istruttrice certificata. Lavoro mirato su forza profonda, controllo motorio e postura.",
     body: [
       "Il Pilates lavora sulla precisione dei movimenti corporei: scolpisce il corpo a livello formale e permette il raggiungimento di un profondo benessere interiore attraverso il controllo motorio fine.",
-      "Le sessioni sono strutturate intorno ai principi del metodo — concentrazione, controllo, centro, fluidità, precisione, respirazione — con esercizi a corpo libero e con piccoli attrezzi per tonificare, allineare la postura e migliorare la mobilità.",
+      "Le sessioni sono strutturate intorno ai principi del metodo (concentrazione, controllo, centro, fluidità, precisione, respirazione) con esercizi a corpo libero e con piccoli attrezzi per tonificare, allineare la postura e migliorare la mobilità.",
       "Per il golfista è un complemento prezioso: rinforza il core, migliora la stabilità del tronco e la coordinazione, riduce il rischio di infortuni e supporta uno swing più efficiente.",
     ],
     benefits: [
@@ -229,7 +229,7 @@ export const services: Service[] = [
     intro:
       "Fit for Golf: programma di preparazione fisica specifica per il golfista. Sviluppato dal team del Performance Center in collaborazione con i maestri della Montecchia Golf Academy.",
     body: [
-      "Il Fit for Golf è il format di allenamento più richiesto al Performance Center: una preparazione fisica disegnata sulle esigenze biomeccaniche e fisiologiche del golfista. L'obiettivo è migliorare lo swing in termini di potenza, ripetibilità e sostenibilità — riducendo allo stesso tempo il rischio di infortuni tipici (lombalgia, gomito, polso).",
+      "Il Fit for Golf è il format di allenamento più richiesto al Performance Center: una preparazione fisica disegnata sulle esigenze biomeccaniche e fisiologiche del golfista. L'obiettivo è migliorare lo swing in termini di potenza, ripetibilità e sostenibilità, riducendo allo stesso tempo il rischio di infortuni tipici (lombalgia, gomito, polso).",
       "Il programma lavora su quattro pilastri: mobilità rotazionale del torace e dei fianchi, stabilità del core e del bacino, forza relativa (con focus su catena posteriore e gambe), velocità e potenza (per il club head speed). Le sessioni integrano valutazioni periodiche per misurare i progressi.",
     ],
     benefits: [
@@ -241,7 +241,7 @@ export const services: Service[] = [
     relatedTeamSlugs: ["maria-paola-casati", "luca-pannone"],
     image: {
       src: "/wp-content/uploads/2017/04/img-trackman.jpg",
-      alt: "Fit for Golf — preparazione fisica per golfisti con Trackman",
+      alt: "Fit for Golf: preparazione fisica per golfisti con Trackman",
     },
   },
   {
@@ -254,7 +254,7 @@ export const services: Service[] = [
       "TPI Junior: programma di sviluppo fisico-tecnico per giovani golfisti basato sui protocolli del Titleist Performance Institute. Maria Paola Casati è certificata TPI Level 3 Junior Coach.",
     body: [
       "Il TPI Junior è il programma di riferimento internazionale per lo sviluppo dei giovani golfisti. Si basa su un modello a tappe (Long Term Athletic Development) che rispetta le fasi di crescita del bambino e dell'adolescente, costruendo le capacità motorie nel modo e nei tempi giusti.",
-      "Al Montecchia Performance Center il programma è coordinato da Maria Paola Casati — una delle poche tecniche italiane certificate TPI Level 3 Junior Coach — in collaborazione con il team di trainer del centro. I giovani golfisti vengono valutati nelle componenti fisiche (mobilità, forza, equilibrio, coordinazione) e tecniche, e seguiti con un programma su misura.",
+      "Al Montecchia Performance Center il programma è coordinato da Maria Paola Casati, una delle poche tecniche italiane certificate TPI Level 3 Junior Coach, in collaborazione con il team di trainer del centro. I giovani golfisti vengono valutati nelle componenti fisiche (mobilità, forza, equilibrio, coordinazione) e tecniche, e seguiti con un programma su misura.",
     ],
     benefits: [
       "Protocollo internazionale TPI riconosciuto",
@@ -265,7 +265,7 @@ export const services: Service[] = [
     relatedTeamSlugs: ["maria-paola-casati", "gionatan-baglioni"],
     image: {
       src: "/wp-content/uploads/2015/02/kvest.jpg",
-      alt: "TPI Junior — analisi swing con K-Vest al Montecchia Performance Center",
+      alt: "TPI Junior: analisi swing con K-Vest al Montecchia Performance Center",
     },
   },
 
@@ -322,7 +322,7 @@ export const services: Service[] = [
       "Consulenza nutrizionale personalizzata: piani alimentari per performance sportiva, composizione corporea, benessere generale. Con il Dott. Emanuele Veronese, Biologo Nutrizionista, anche farmacista.",
     body: [
       "La consulenza nutrizionale al Montecchia Performance Center è pensata per integrare in modo coerente alimentazione e allenamento. Il percorso parte da una valutazione completa: anamnesi clinica, composizione corporea (FitMate Pro), abitudini alimentari, obiettivi.",
-      "Sulla base della valutazione si costruisce un piano alimentare personalizzato — non una dieta restrittiva, ma uno schema sostenibile che si modula nel tempo in base ai risultati. Follow-up regolari per ricalibrare il piano.",
+      "Sulla base della valutazione si costruisce un piano alimentare personalizzato: non una dieta restrittiva, ma uno schema sostenibile che si modula nel tempo in base ai risultati. Follow-up regolari per ricalibrare il piano.",
       "Il Dott. Veronese è anche farmacista e titolare di una parafarmacia specializzata in nutrizione sportiva: doppia competenza nutrizionale e farmaceutica applicata all'integrazione e alla performance.",
     ],
     benefits: [
@@ -342,8 +342,8 @@ export const services: Service[] = [
     intro:
       "Trattamenti osteopatici al Montecchia Performance Center con il Dott. Pietro Bernuzzi, Infermiere e Osteopata. Specializzazione clinica in trattamento viscerale per pazienti con lipedema e linfedema.",
     body: [
-      "L'osteopatia al Performance Center è integrata con il percorso di allenamento e con la fisioterapia. I trattamenti si concentrano su gestione del dolore, recupero funzionale, valutazione posturale e prevenzione degli infortuni — con particolare attenzione agli atleti e alle persone attive.",
-      "Il Dott. Pietro Bernuzzi ha una specializzazione clinica nel trattamento viscerale, particolarmente indicata per pazienti con lipedema e linfedema — campo in cui l'osteopatia integrata con il movimento e l'attività fisica può portare benefici significativi.",
+      "L'osteopatia al Performance Center è integrata con il percorso di allenamento e con la fisioterapia. I trattamenti si concentrano su gestione del dolore, recupero funzionale, valutazione posturale e prevenzione degli infortuni, con particolare attenzione agli atleti e alle persone attive.",
+      "Il Dott. Pietro Bernuzzi ha una specializzazione clinica nel trattamento viscerale, particolarmente indicata per pazienti con lipedema e linfedema, campo in cui l'osteopatia integrata con il movimento e l'attività fisica può portare benefici significativi.",
     ],
     benefits: [
       "Gestione del dolore e recupero funzionale",

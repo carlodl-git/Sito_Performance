@@ -15,7 +15,7 @@ export const scheduleDays = [
   "Dom",
 ] as const;
 
-/** Stagione 2025/2026 — autunno, inverno, primavera. */
+/** Stagione 2025/2026: autunno, inverno, primavera. */
 export const schedule: ScheduleRow[] = [
   {
     start: "08:40",

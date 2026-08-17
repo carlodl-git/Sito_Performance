@@ -51,8 +51,8 @@ export const team: TeamMember[] = [
       "Laureata in Scienze Motorie all'Università di Padova e in Tecniche Sportive all'Università di Urbino. La doppia formazione le permette di lavorare con un approccio scientifico applicato alla performance e al benessere.",
     ],
     credentials: [
-      "Laurea in Scienze Motorie — Università di Padova",
-      "Laurea in Tecniche Sportive — Università di Urbino",
+      "Laurea in Scienze Motorie, Università di Padova",
+      "Laurea in Tecniche Sportive, Università di Urbino",
       "Certificata Kardio-Kombat, aerobica, step e toning",
     ],
   },
@@ -83,13 +83,13 @@ export const team: TeamMember[] = [
     shortDescription:
       "Istruttrice certificata Polestar-Pilates Matwork e HAMSA Hatha Yoga. Background nella danza e nel Sensitive Dance.",
     bio: [
-      "Chiara conduce le sessioni di Pilates e Yoga al Montecchia Performance Center. Il suo approccio unisce la precisione del movimento — eredità della sua formazione Polestar-Pilates Matwork — alla consapevolezza del corpo coltivata nella tradizione HAMSA Hatha Yoga.",
+      "Chiara conduce le sessioni di Pilates e Yoga al Montecchia Performance Center. Il suo approccio unisce la precisione del movimento, eredità della sua formazione Polestar-Pilates Matwork, alla consapevolezza del corpo coltivata nella tradizione HAMSA Hatha Yoga.",
       "Il suo background include studi nella danza e nel Sensitive Dance con il maestro francese Claude Coldy, esperienza che porta nelle sue lezioni come attenzione al respiro, alla qualità del gesto e alla relazione tra corpo e spazio.",
     ],
     credentials: [
       "Polestar-Pilates Matwork certified",
       "HAMSA Hatha Yoga certified",
-      "Sensitive Dance — formazione con Claude Coldy",
+      "Sensitive Dance, formazione con Claude Coldy",
     ],
   },
 
@@ -103,7 +103,7 @@ export const team: TeamMember[] = [
       "Maestra Classe A PGA Italiana dal 2004. Certificata TPI Level 3 Pro e Junior Coach. Ex nazionale italiana, campionessa italiana 1994.",
     bio: [
       "Maria Paola dirige la Montecchia Golf Academy e coordina i programmi di alto livello del Performance Center. Maestra Classe A PGA Italiana dal 2004, ha alle spalle una carriera agonistica come ex nazionale italiana (1986-1998) e il titolo di campionessa italiana 1994.",
-      "Coordinatrice regionale FIG Veneto per i programmi Under 12, è certificata TPI (Titleist Performance Institute) Level 3 sia come Pro sia come Junior Coach — riconoscimenti che la collocano tra i pochi tecnici italiani con questo livello di specializzazione.",
+      "Coordinatrice regionale FIG Veneto per i programmi Under 12, è certificata TPI (Titleist Performance Institute) Level 3 sia come Pro sia come Junior Coach, riconoscimenti che la collocano tra i pochi tecnici italiani con questo livello di specializzazione.",
     ],
     credentials: [
       "Maestra Classe A PGA Italiana (dal 2004)",
@@ -124,7 +124,7 @@ export const team: TeamMember[] = [
       "Lavora con tecnologie di analisi avanzata: SMART2MOVE per la pressione plantare, Trackman per i dati di lancio, Sam Puttlab per il putting e K-Vest per l'analisi 3D del corpo. Approccio data-driven applicato all'insegnamento.",
     ],
     credentials: [
-      "Maestro Classe A — PGA Italiana",
+      "Maestro Classe A, PGA Italiana",
       "Ex giocatore Alps Tour & European Challenge Tour (2002-2006)",
       "Coach Montecchia Golf Academy dal 2006",
       "Tecnologie: SMART2MOVE, Trackman, Sam Puttlab, K-Vest",
@@ -138,8 +138,8 @@ export const team: TeamMember[] = [
     shortDescription:
       "Maestra alla Montecchia Golf Academy dal 2017. Certificata TPI Level 1 e Trackman Level 1-2. Ex nazionale italiana, 4 titoli italiani.",
     bio: [
-      "Germana è maestra alla Montecchia Golf Academy dal 2017. La sua carriera agonistica come ex nazionale italiana (1988-1995) include 4 titoli italiani — un bagaglio che porta nel suo lavoro come tecnica.",
-      "Ha completato il Diploma in Comunicazione d'Impresa e il Master in Relazioni Pubbliche presso IULM. Doppia formazione — sportiva e comunicativa — che si traduce in un metodo di insegnamento empatico e strutturato.",
+      "Germana è maestra alla Montecchia Golf Academy dal 2017. La sua carriera agonistica come ex nazionale italiana (1988-1995) include 4 titoli italiani, un bagaglio che porta nel suo lavoro come tecnica.",
+      "Ha completato il Diploma in Comunicazione d'Impresa e il Master in Relazioni Pubbliche presso IULM. Doppia formazione, sportiva e comunicativa, che si traduce in un metodo di insegnamento empatico e strutturato.",
     ],
     credentials: [
       "Maestra Montecchia Golf Academy dal 2017",
@@ -161,7 +161,7 @@ export const team: TeamMember[] = [
       "Lavora con i giovani golfisti seguendone il percorso tecnico, fisico e mentale, accompagnandoli dall'avvicinamento allo sport fino ai programmi di alto livello.",
     ],
     credentials: [
-      "Maestro (MA) — Registro FIG",
+      "Maestro (MA), Registro FIG",
       "Coach Team Advisor Montecchia Golf Academy",
     ],
   },
@@ -174,7 +174,7 @@ export const team: TeamMember[] = [
       "Membro FIG & PGAI, Certified Golf Professional dal 2014. Specializzato in biomeccanica del golf con tecnologie avanzate.",
     bio: [
       "Luca è Certified Golf Professional dal 2014, membro FIG e PGAI. La sua specializzazione è la biomeccanica del golf, con un approccio scientifico all'analisi del movimento.",
-      "Le sue certificazioni avanzate includono Trackman Level 1-2, CAPTO Level 1-2, SwingCatalyst, K-Vest, FlightScope e U.S. Kids Golf — un set di strumenti che gli permette di lavorare a 360° con golfisti di ogni livello, dai principianti agli atleti agonisti. Bilingue italiano/inglese.",
+      "Le sue certificazioni avanzate includono Trackman Level 1-2, CAPTO Level 1-2, SwingCatalyst, K-Vest, FlightScope e U.S. Kids Golf: un set di strumenti che gli permette di lavorare a 360° con golfisti di ogni livello, dai principianti agli atleti agonisti. Bilingue italiano/inglese.",
     ],
     credentials: [
       "Certified Golf Professional (PGAI) dal 2014",
@@ -197,7 +197,7 @@ export const team: TeamMember[] = [
       "Vicepresidente di AFEN e associato ESNS, è nutrizionista ufficiale del Basket Mestre (Serie B) ed è titolare di una parafarmacia specializzata in nutrizione sportiva. Doppia competenza, biologia e farmaceutica, applicata all'integrazione e alla performance.",
     ],
     credentials: [
-      "Biologo Nutrizionista — Ordine Nazionale dei Biologi",
+      "Biologo Nutrizionista, Ordine Nazionale dei Biologi",
       "Farmacista",
       "Vicepresidente AFEN, associato ESNS",
       "Nutrizionista ufficiale Basket Mestre (Serie B)",
@@ -212,11 +212,11 @@ export const team: TeamMember[] = [
       "Infermiere e Osteopata. Diploma IEMO Padova (2017). Specializzato in trattamento viscerale per lipedema e linfedema.",
     bio: [
       "Pietro è Infermiere e Osteopata, con diploma in osteopatia conseguito nel 2017 presso l'Istituto Europeo di Medicina Osteopatica di Padova. Collabora con il Performance Center dal 2021.",
-      "La sua specializzazione clinica è il trattamento viscerale, in particolare per pazienti con lipedema e linfedema — campo in cui l'osteopatia integrata con il movimento e l'attività fisica può portare benefici significativi.",
+      "La sua specializzazione clinica è il trattamento viscerale, in particolare per pazienti con lipedema e linfedema, campo in cui l'osteopatia integrata con il movimento e l'attività fisica può portare benefici significativi.",
     ],
     credentials: [
       "Infermiere",
-      "Osteopata — Diploma IEMO Padova (2017)",
+      "Osteopata, Diploma IEMO Padova (2017)",
       "Specializzazione: trattamento viscerale (lipedema, linfedema)",
       "Al Performance Center dal 2021",
     ],

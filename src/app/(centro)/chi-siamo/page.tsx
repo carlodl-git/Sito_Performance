@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     canonical: "https://www.montecchiaperformancecenter.it/chi-siamo",
   },
   openGraph: {
-    title: "Chi Siamo — Montecchia Performance Center",
+    title: "Chi Siamo | Montecchia Performance Center",
     description:
       "Struttura di performance e benessere al Golf Club della Montecchia (Padova). Storia, mission, ambiente.",
     url: "https://www.montecchiaperformancecenter.it/chi-siamo",
@@ -115,7 +115,7 @@ export default function ChiSiamoPage() {
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {[
               { src: "/images/palestra-1.jpg", alt: "Sala palestra principale" },
-              { src: "/images/golf-indoor-1.jpg", alt: "Golf Indoor — postazioni dei simulatori" },
+              { src: "/images/golf-indoor-1.jpg", alt: "Golf Indoor, postazioni dei simulatori" },
               { src: "/images/yoga-esterno.jpg", alt: "Sessione yoga all'aperto" },
               { src: "/images/trackman_io_immagine.webp", alt: "Trackman in azione" },
             ].map((img) => (

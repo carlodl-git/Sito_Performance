@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     canonical: "https://www.montecchiaperformancecenter.it/contatti",
   },
   openGraph: {
-    title: "Contatti — Montecchia Performance Center (Padova)",
+    title: "Contatti | Montecchia Performance Center (Padova)",
     description: `${indirizzoBreve}. Telefono, email, orari e mappa.`,
     url: "https://www.montecchiaperformancecenter.it/contatti",
     siteName: "Montecchia Performance Center",
@@ -86,7 +86,7 @@ export default function ContattiPage() {
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title={`Mappa — ${contatti.nome}`}
+                    title={`Mappa di ${contatti.nome}`}
                   />
                 </div>
                 <a
