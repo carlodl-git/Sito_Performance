@@ -4,9 +4,15 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { allAreas } from "@/data/areas";
-import { contatti } from "@/data/contatti";
 
-/** Le quattro aree: sono la navigazione primaria. */
+/**
+ * Le quattro aree: sono la navigazione primaria.
+ *
+ * Qui non c'è il pulsante "Prenota Golf": prenotare il campo è un'azione
+ * di una sola area su quattro, e in cima a ogni pagina del centro la
+ * faceva sembrare l'azione principale del sito. Vive dentro Golf Indoor,
+ * dove l'header dell'area la espone come CTA (vedi AreaHeader).
+ */
 const areaItems = allAreas.map((a) => ({ href: a.href, label: a.navLabel }));
 
 /** Pagine trasversali: raccolte per non far andare la nav a capo. */
@@ -95,15 +101,6 @@ export function Header() {
           >
             Contatti
           </Link>
-
-          <a
-            href={contatti.booking}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="whitespace-nowrap rounded-sm border border-primary px-4 py-2 text-sm text-primary transition-colors hover:bg-primary hover:text-white"
-          >
-            Prenota Golf
-          </a>
         </nav>
 
         <button
@@ -146,15 +143,6 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
-            <a
-              href={contatti.booking}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-5 rounded-sm border border-primary px-5 py-3 text-center text-sm text-primary"
-              onClick={() => setMobileOpen(false)}
-            >
-              Prenota Golf →
-            </a>
           </nav>
         </div>
       )}
