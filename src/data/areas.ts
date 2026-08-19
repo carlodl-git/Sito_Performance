@@ -8,6 +8,13 @@
    proprio, ritmo proprio. Ma condivide con le altre griglia,
    tipografia e componenti. Il colore vive in globals.css sotto
    `[data-area="..."]`; qui c'è solo la chiave.
+
+   ATTENZIONE: salute-trattamento.jpg è un'immagine GENERATA, non una
+   foto del centro, e la persona ritratta non lavora qui. È stata scelta
+   senza volti in inquadratura proprio per non far passare qualcuno di
+   inventato per un professionista reale, accanto alle schede di chi
+   invece esiste. Sostituirla con una foto vera dello studio appena il
+   centro la fornisce.
    ============================================================ */
 
 export type Area = "palestra" | "pilates" | "golf" | "salute";
@@ -109,13 +116,11 @@ export const areaMeta: Record<Area, AreaMeta> = {
     tagline: "Fisioterapia, osteopatia, nutrizione",
     blurb:
       "I professionisti che si occupano di recupero, postura e alimentazione, in dialogo diretto con i trainer delle altre aree del centro.",
-    // TODO FOTO: la foto precedente era uno stock di massaggio con oli:
-    // diceva "centro benessere" a chi cerca un fisioterapista. Meglio
-    // l'esterno del centro, che almeno è vero, finché non ci sono foto
-    // degli studi dei professionisti.
+    // Immagine generata, non una fotografia del centro: vedi la nota in
+    // cima al file.
     image: {
-      src: "/images/esterno.jpg",
-      alt: "Il Montecchia Performance Center al Golf Club della Montecchia",
+      src: "/images/salute-trattamento.jpg",
+      alt: "Trattamento manuale sulla schiena in sala fisioterapia",
     },
     sections: [
       { href: "#percorso", label: "Il percorso" },

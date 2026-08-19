@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     siteName: "Montecchia Performance Center",
     locale: "it_IT",
     type: "website",
-    images: ["/images/esterno.jpg"],
+    images: ["/images/salute-trattamento.jpg"],
   },
 };
 
@@ -60,15 +60,17 @@ export default function SaluteBenesserePage() {
 
   return (
     <>
-      {/* Hero senza foto, di proposito: l'unica immagine disponibile per
-          quest'area era uno stock di massaggio con oli, che raccontava un
-          centro benessere invece di fisioterapia e osteopatia. Un blocco
-          tipografico nel colore dell'area è più onesto e più minimale.
-          Rimettere la foto quando arrivano quelle degli studi. */}
+      {/* La foto è generata, non è il nostro studio: vedi la nota in
+          data/areas.ts. Sostituirla appena il centro fornisce le sue. */}
       <PageHero
+        tall
         eyebrow={`Area ${meta.n}`}
         title="Salute e Benessere"
         intro="Fisioterapia, osteopatia, nutrizione e trattamenti manuali. I professionisti dell'area lavorano a contatto con i trainer del centro: chi ti tratta e chi ti allena parlano tra loro."
+        image={{
+          src: "/images/salute-trattamento.jpg",
+          alt: "Trattamento manuale sulla schiena in sala fisioterapia",
+        }}
       >
         <WhatsAppButton message={meta.whatsapp} variant="light">
           Richiedi un appuntamento
