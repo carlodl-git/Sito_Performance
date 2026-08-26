@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     siteName: "Montecchia Performance Center",
     locale: "it_IT",
     type: "website",
-    images: ["/images/cperformance-esterno.webp"],
+    images: ["/images/cperformance-esterno-tramonto.jpg"],
   },
 };
 
@@ -85,7 +85,7 @@ export default function HomePage() {
       />
 
       <PageHero
-        tall
+        full
         eyebrow="Golf Club della Montecchia · Padova"
         title={
           <>
@@ -96,8 +96,8 @@ export default function HomePage() {
         }
         intro="Palestra e corsi di gruppo, Studio Pilates Reformer, Golf Indoor, Salute e Benessere. Ogni area ha i suoi spazi e i suoi professionisti, ma la struttura è una."
         image={{
-          src: "/images/cperformance-esterno.webp",
-          alt: "La club house del Golf Club della Montecchia vista dal putting green",
+          src: "/images/cperformance-esterno-tramonto.jpg",
+          alt: "La club house del Golf Club della Montecchia al tramonto, vista dal putting green",
         }}
       >
         <WhatsAppButton variant="light">

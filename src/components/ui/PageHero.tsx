@@ -10,8 +10,16 @@ type PageHeroProps = {
   image?: { src: string; alt: string };
   /** Priorità di caricamento: attivarla solo sull'hero della pagina corrente. */
   priority?: boolean;
-  /** Hero della home: più alto e con il titolo più grande. */
+  /** Hero delle aree: più alto e con il titolo più grande. */
   tall?: boolean;
+  /**
+   * Hero della home: occupa esattamente uno schermo. Non 100svh secchi:
+   * l'header è alto 5rem e sta nel flusso, quindi senza sottrarlo il
+   * fondo dell'hero finirebbe sotto la piega e il titolo sembrerebbe
+   * tagliato. Con `svh` invece di `vh` non salta quando su mobile la
+   * barra del browser si ritrae.
+   */
+  full?: boolean;
   children?: React.ReactNode;
 };
 
@@ -22,12 +30,15 @@ export function PageHero({
   image,
   priority = true,
   tall = false,
+  full = false,
   children,
 }: PageHeroProps) {
   const minHeight = image
-    ? tall
-      ? "min-h-[min(82vh,760px)]"
-      : "min-h-[min(56vh,520px)]"
+    ? full
+      ? "min-h-[calc(100svh-5rem)]"
+      : tall
+        ? "min-h-[min(82vh,760px)]"
+        : "min-h-[min(56vh,520px)]"
     : "";
 
   return (
