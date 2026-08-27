@@ -10,8 +10,13 @@ type PageHeroProps = {
   image?: { src: string; alt: string };
   /** Priorità di caricamento: attivarla solo sull'hero della pagina corrente. */
   priority?: boolean;
-  /** Hero delle aree: più alto e con il titolo più grande. */
-  tall?: boolean;
+  /**
+   * Riga sotto il titolo, più piccola del titolo ma più grande del
+   * sommario. Serve quando il titolo è un nome e la frase che lo spiega
+   * merita comunque peso: "Montecchia Performance Center" / "Un centro,
+   * quattro aree".
+   */
+  subtitle?: React.ReactNode;
   /**
    * Hero della home: occupa esattamente uno schermo. La barra di
    * navigazione è `fixed` e galleggia sopra, quindi non toglie spazio e
@@ -26,18 +31,16 @@ export function PageHero({
   eyebrow,
   title,
   intro,
+  subtitle,
   image,
   priority = true,
-  tall = false,
   full = false,
   children,
 }: PageHeroProps) {
   const minHeight = image
     ? full
       ? "min-h-[100svh]"
-      : tall
-        ? "min-h-[min(82vh,760px)]"
-        : "min-h-[min(56vh,520px)]"
+      : "min-h-[min(56vh,520px)]"
     : "";
 
   return (
@@ -83,13 +86,18 @@ export function PageHero({
           className={`font-display font-normal leading-[1.04] tracking-tight text-white ${
             eyebrow ? "mt-5" : ""
           } ${
-            tall
+            full
               ? "text-5xl sm:text-6xl lg:text-7xl"
               : "text-4xl sm:text-5xl lg:text-6xl"
           }`}
         >
           {title}
         </h1>
+        {subtitle && (
+          <p className="mt-4 font-display text-2xl font-normal leading-snug text-white sm:text-3xl">
+            {subtitle}
+          </p>
+        )}
         {intro && (
           <p className="mt-7 max-w-xl text-lg leading-relaxed text-white/85">
             {intro}

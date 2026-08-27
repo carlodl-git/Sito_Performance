@@ -67,7 +67,6 @@ export default function GolfIndoorPage() {
     <>
       <PageHero
         full
-        eyebrow="Golf Club della Montecchia · Padova"
         title={meta.label}
         intro="Simulatori con tecnologia TrackMan e maestri PGA. Si gioca e si migliora tutto l'anno, con qualsiasi meteo, e ogni colpo lascia un dato."
         image={{

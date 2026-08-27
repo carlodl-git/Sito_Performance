@@ -115,7 +115,6 @@ export default function PalestraPage() {
     <>
       <PageHero
         full
-        eyebrow="Golf Club della Montecchia · Padova"
         title={meta.label}
         intro="Una sala attrezzata e un calendario settimanale di corsi. Pochi macchinari, molta attenzione: in sala c'è sempre un istruttore."
         image={{

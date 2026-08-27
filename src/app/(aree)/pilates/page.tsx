@@ -83,7 +83,6 @@ export default function StudioPilatesPage() {
     <>
       <PageHero
         full
-        eyebrow="Golf Club della Montecchia · Padova"
         title={meta.label}
         intro="Uno studio dedicato al Pilates sul Reformer. Lezioni individuali, in duetto e in piccolo gruppo, sempre con un'istruttrice accanto."
         image={{

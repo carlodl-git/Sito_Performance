@@ -64,7 +64,6 @@ export default function SaluteBenesserePage() {
           data/areas.ts. Sostituirla appena il centro fornisce le sue. */}
       <PageHero
         full
-        eyebrow="Golf Club della Montecchia · Padova"
         title={meta.label}
         intro="Fisioterapia, osteopatia, nutrizione e trattamenti manuali. I professionisti dell'area lavorano a contatto con i trainer del centro: chi ti tratta e chi ti allena parlano tra loro."
         image={{

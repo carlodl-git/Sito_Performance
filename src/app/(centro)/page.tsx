@@ -87,14 +87,9 @@ export default function HomePage() {
       <PageHero
         full
         eyebrow="Golf Club della Montecchia · Padova"
-        title={
-          <>
-            Un centro,
-            <br />
-            quattro aree
-          </>
-        }
-        intro="Palestra e corsi di gruppo, Pilates Studio Reformer, Salute e Benessere, Golf Indoor. Ogni area ha i suoi spazi e i suoi professionisti, ma la struttura è una."
+        title="Montecchia Performance Center"
+        subtitle="Un centro, quattro aree"
+        intro="Ogni area ha i suoi spazi e i suoi professionisti, ma la struttura è una."
         image={{
           src: "/images/cperformance-esterno-tramonto.jpg",
           alt: "La club house del Golf Club della Montecchia al tramonto, vista dal putting green",
