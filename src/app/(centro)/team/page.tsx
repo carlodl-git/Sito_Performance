@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { team, teamCategories } from "@/data/team";
 import { PageHero } from "@/components/ui/PageHero";
+import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { PersonCard } from "@/components/ui/PersonCard";
 
@@ -28,6 +29,7 @@ export default function TeamPage() {
   return (
     <>
       <PageHero
+        full
         eyebrow="Le persone"
         title="Il Team"
         intro="Oltre 13 professionisti tra trainer, maestri di golf, nutrizionisti e specialisti del benessere."
@@ -35,7 +37,14 @@ export default function TeamPage() {
           src: "/images/palestra-3.jpg",
           alt: "Allenamento seguito da un trainer al Montecchia Performance Center",
         }}
-      />
+      >
+        <WhatsAppButton
+          message="Ciao! Vorrei parlare con uno dei professionisti del centro"
+          variant="light"
+        >
+          Scrivici su WhatsApp
+        </WhatsAppButton>
+      </PageHero>
 
       {teamCategories.map((category, i) => {
         const members = team.filter((m) => m.category === category);

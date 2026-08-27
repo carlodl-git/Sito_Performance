@@ -82,7 +82,7 @@ export default function StudioPilatesPage() {
   return (
     <>
       <PageHero
-        tall
+        full
         eyebrow={`Area ${meta.n} · Selvazzano Dentro, Padova`}
         title={
           <>

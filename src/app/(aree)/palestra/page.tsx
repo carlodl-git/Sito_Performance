@@ -114,7 +114,7 @@ export default function PalestraPage() {
   return (
     <>
       <PageHero
-        tall
+        full
         eyebrow={`Area ${meta.n}`}
         title={
           <>

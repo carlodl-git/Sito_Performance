@@ -66,7 +66,7 @@ export default function GolfIndoorPage() {
   return (
     <>
       <PageHero
-        tall
+        full
         eyebrow={`Area ${meta.n}`}
         title={
           <>

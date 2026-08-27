@@ -26,10 +26,22 @@ export default function ContattiPage() {
   return (
     <>
       <PageHero
+        full
         eyebrow="Il centro"
         title="Contatti"
         intro="Indirizzo, orari e come raggiungerci. Per informazioni e prenotazioni scrivici su WhatsApp: è il canale su cui rispondiamo più in fretta."
-      />
+        image={{
+          src: "/images/esterno.jpg",
+          alt: "Il Montecchia Performance Center visto dal campo da golf",
+        }}
+      >
+        <WhatsAppButton
+          message="Ciao! Vorrei informazioni sul centro"
+          variant="light"
+        >
+          Scrivici su WhatsApp
+        </WhatsAppButton>
+      </PageHero>
 
       <section className="section-padding">
         <div className="container-narrow">

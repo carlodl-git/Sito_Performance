@@ -63,7 +63,7 @@ export default function SaluteBenesserePage() {
       {/* La foto è generata, non è il nostro studio: vedi la nota in
           data/areas.ts. Sostituirla appena il centro fornisce le sue. */}
       <PageHero
-        tall
+        full
         eyebrow={`Area ${meta.n}`}
         title="Salute e Benessere"
         intro="Fisioterapia, osteopatia, nutrizione e trattamenti manuali. I professionisti dell'area lavorano a contatto con i trainer del centro: chi ti tratta e chi ti allena parlano tra loro."

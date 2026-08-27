@@ -29,16 +29,29 @@ export default function ServiziPage() {
   return (
     <>
       <PageHero
+        full
         eyebrow="Indice"
         title="Tutte le attività"
         intro="L'elenco completo di ciò che trovi al centro, diviso nelle quattro aree. Se sai già dove vuoi andare, parti dall'area."
+        image={{
+          src: "/images/palestra-1.jpg",
+          alt: "La sala attrezzi del Montecchia Performance Center",
+        }}
       >
-        <nav className="flex flex-wrap gap-x-6 gap-y-3" aria-label="Vai all'area">
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
+          <WhatsAppButton
+            message="Ciao! Vorrei prenotare una consulenza gratuita"
+            variant="light"
+          >
+            Scrivici su WhatsApp
+          </WhatsAppButton>
+        </div>
+        <nav className="mt-8 flex flex-wrap gap-x-6 gap-y-3" aria-label="Vai all'area">
           {areaKeys.map((area) => (
             <a
               key={area}
               href={`#${area}`}
-              className="border-b border-white/30 pb-1 text-sm text-white/80 transition-colors hover:border-white hover:text-white"
+              className="border-b border-white/40 pb-1 text-sm text-white transition-colors hover:border-white"
             >
               {areaMeta[area].label}
             </a>

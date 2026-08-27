@@ -37,8 +37,6 @@ export type AreaMeta = {
   /** Paragrafo di presentazione nella home. */
   blurb: string;
   image: { src: string; alt: string };
-  /** Sezioni della pagina: diventano la nav interna dell'area. */
-  sections: { href: string; label: string }[];
   /** Messaggio precompilato per il WhatsApp dell'area. */
   whatsapp: string;
 };
@@ -56,12 +54,6 @@ export const areaMeta: Record<Area, AreaMeta> = {
       src: "/images/palestra-2.jpg",
       alt: "La sala della palestra del Montecchia Performance Center",
     },
-    sections: [
-      { href: "#allenamenti", label: "Come ti alleni" },
-      { href: "#corsi", label: "I corsi" },
-      { href: "#orario", label: "Orario" },
-      { href: "#prenota", label: "Consulenza gratuita" },
-    ],
     whatsapp: "Ciao! Vorrei informazioni sulla palestra e sui corsi",
   },
   pilates: {
@@ -80,12 +72,6 @@ export const areaMeta: Record<Area, AreaMeta> = {
       src: "/images/yoga-prato.jpg",
       alt: "Lezione all'aperto sul prato del Golf Club della Montecchia",
     },
-    sections: [
-      { href: "#metodo", label: "Il metodo" },
-      { href: "#lezioni", label: "Le lezioni" },
-      { href: "#a-chi", label: "A chi si rivolge" },
-      { href: "#prenota", label: "Prenota" },
-    ],
     whatsapp: "Ciao! Vorrei informazioni sullo Studio Pilates Reformer",
   },
   golf: {
@@ -100,12 +86,6 @@ export const areaMeta: Record<Area, AreaMeta> = {
       src: "/images/golf-indoor-lezione.jpg",
       alt: "Sala simulatori del Golf Indoor con giocatori in sessione",
     },
-    sections: [
-      { href: "#simulatori", label: "I simulatori" },
-      { href: "#analisi", label: "Analisi dello swing" },
-      { href: "#fitness", label: "Golf fitness" },
-      { href: "#prenota", label: "Prenota" },
-    ],
     whatsapp: "Ciao! Vorrei informazioni sul Golf Indoor",
   },
   salute: {
@@ -122,12 +102,6 @@ export const areaMeta: Record<Area, AreaMeta> = {
       src: "/images/salute-trattamento.jpg",
       alt: "Trattamento manuale sulla schiena in sala fisioterapia",
     },
-    sections: [
-      { href: "#percorso", label: "Il percorso" },
-      { href: "#prestazioni", label: "Le prestazioni" },
-      { href: "#professionisti", label: "I professionisti" },
-      { href: "#prenota", label: "Prenota" },
-    ],
     whatsapp: "Ciao! Vorrei informazioni sull'area Salute e Benessere",
   },
 };
