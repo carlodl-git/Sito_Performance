@@ -89,7 +89,7 @@ export default function HomePage() {
         eyebrow="Golf Club della Montecchia · Padova"
         title="Montecchia Performance Center"
         subtitle="Un centro, quattro aree"
-        intro="Ogni area ha i suoi spazi e i suoi professionisti, ma la struttura è una."
+        intro="Palestra e corsi di gruppo, Pilates sul Reformer, fisioterapia e osteopatia, golf indoor."
         image={{
           src: "/images/performance-esterno-tramonto.jpg",
           alt: "La club house del Golf Club della Montecchia al tramonto, vista dal putting green",
@@ -112,7 +112,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Le aree"
             title="Da dove vuoi partire?"
-            intro="Ognuna ha i suoi spazi, i suoi professionisti e il suo calendario."
+            intro="Ogni area ha i suoi spazi, i suoi professionisti e il suo calendario."
           />
 
           <div className="mt-14 flex flex-col items-center lg:mt-16">
