@@ -13,11 +13,10 @@ type PageHeroProps = {
   /** Hero delle aree: più alto e con il titolo più grande. */
   tall?: boolean;
   /**
-   * Hero della home: occupa esattamente uno schermo. Non 100svh secchi:
-   * l'header è alto 5rem e sta nel flusso, quindi senza sottrarlo il
-   * fondo dell'hero finirebbe sotto la piega e il titolo sembrerebbe
-   * tagliato. Con `svh` invece di `vh` non salta quando su mobile la
-   * barra del browser si ritrae.
+   * Hero della home: occupa esattamente uno schermo. La barra di
+   * navigazione è `fixed` e galleggia sopra, quindi non toglie spazio e
+   * qui non va sottratta. Con `svh` invece di `vh` non salta quando su
+   * mobile la barra del browser si ritrae.
    */
   full?: boolean;
   children?: React.ReactNode;
@@ -35,7 +34,7 @@ export function PageHero({
 }: PageHeroProps) {
   const minHeight = image
     ? full
-      ? "min-h-[calc(100svh-5rem)]"
+      ? "min-h-[100svh]"
       : tall
         ? "min-h-[min(82vh,760px)]"
         : "min-h-[min(56vh,520px)]"
@@ -44,7 +43,7 @@ export function PageHero({
   return (
     <section
       className={`relative flex flex-col justify-end overflow-hidden bg-area-deep ${minHeight} ${
-        image ? "" : "py-24 sm:py-28"
+        image ? "" : "pb-24 pt-32 sm:pb-28 sm:pt-36"
       }`}
     >
       {image && (
