@@ -62,10 +62,11 @@ export function PageHero({
               30% in cima: copriva la fotografia invece di limitarsi a
               renderla leggibile.
 
-              I valori non sono a occhio: sono quelli che tengono il titolo
-              sopra 3:1 e il sommario sopra 4.5:1 sul pixel più chiaro di
-              ogni foto usata negli hero. */}
-          <div className="absolute inset-0 bg-[linear-gradient(to_top,rgb(0_0_0/0.88)_0%,rgb(0_0_0/0.75)_25%,rgb(0_0_0/0.45)_50%,transparent_82%)]" />
+              I valori non sono a occhio: sono quelli che tengono titolo,
+              occhiello e sommario sopra soglia sul pixel più chiaro di ogni
+              foto usata negli hero, comprese quelle delle schede servizio,
+              che sono le più chiare. */}
+          <div className="absolute inset-0 bg-[linear-gradient(to_top,rgb(0_0_0/0.88)_0%,rgb(0_0_0/0.78)_25%,rgb(0_0_0/0.55)_50%,transparent_82%)]" />
         </>
       )}
 
@@ -74,9 +75,10 @@ export function PageHero({
           image ? "pb-16 pt-36 sm:pb-20" : ""
         }`}
       >
-        {eyebrow && (
-          <p className="eyebrow text-white/70">{eyebrow}</p>
-        )}
+        {/* Bianco pieno e non al 70%: a 11px l'occhiello sta in alto
+            nell'hero, dove la sfumatura è ancora debole, e con la
+            trasparenza restava sotto 4.5:1 su quasi tutte le foto. */}
+        {eyebrow && <p className="eyebrow text-white">{eyebrow}</p>}
         <h1
           className={`font-display font-normal leading-[1.04] tracking-tight text-white ${
             eyebrow ? "mt-5" : ""

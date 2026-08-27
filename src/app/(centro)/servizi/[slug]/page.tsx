@@ -1,9 +1,16 @@
 import Link from "next/link";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { getService, getAllServiceSlugs, services } from "@/data/services";
+import {
+  getService,
+  getAllServiceSlugs,
+  services,
+  serviceArea,
+} from "@/data/services";
 import { getTeamMember } from "@/data/team";
+import { areaMeta } from "@/data/areas";
+import { PageHero } from "@/components/ui/PageHero";
+import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -32,7 +39,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: `https://www.montecchiaperformancecenter.it/servizi/${service.slug}`,
       siteName: "Montecchia Performance Center",
       locale: "it_IT",
-      images: ["/images/palestra-1.jpg"],
+      images: [service.image?.src ?? "/images/palestra-1.jpg"],
     },
     alternates: {
       canonical: `https://www.montecchiaperformancecenter.it/servizi/${service.slug}`,
@@ -80,42 +87,35 @@ export default async function ServizioPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
 
-      <section className="relative overflow-hidden bg-area-deep py-24 sm:py-32">
-        {service.image && (
-          <div className="absolute inset-0">
-            <Image
-              src={service.image.src}
-              alt={service.image.alt}
-              fill
-              priority
-              sizes="100vw"
-              className="object-cover"
-              unoptimized
-            />
-            {/* La foto era a opacity-25 sotto un lavaggio verde pieno: non
-                si vedeva. Ora si vede, e a scurire è solo una sfumatura
-                neutra da sinistra, dove appoggia il testo. */}
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,rgb(0_0_0/0.85)_0%,rgb(0_0_0/0.65)_50%,rgb(0_0_0/0.35)_100%)]" />
-          </div>
-        )}
-        <div className="container-narrow relative">
+      {/* Stesso hero di tutte le altre pagine, invece del blocco fatto a
+          mano che aveva prima: a schermo pieno, con la sfumatura già
+          tarata e il nome del servizio come titolo.
+
+          I tre servizi senza foto propria (shiatsu, nutrizionista,
+          osteopata) ereditano quella della loro area: meglio la foto
+          giusta di un'area che un blocco di colore vuoto alto uno schermo. */}
+      <PageHero
+        full
+        eyebrow={service.category}
+        title={service.title}
+        intro={service.intro}
+        image={service.image ?? areaMeta[serviceArea(service)].image}
+      >
+        <div className="flex flex-wrap items-center gap-x-8 gap-y-4">
+          <WhatsAppButton
+            message={`Ciao! Vorrei informazioni su ${service.title}`}
+            variant="light"
+          >
+            Scrivici su WhatsApp
+          </WhatsAppButton>
           <Link
             href="/servizi"
-            className="text-sm font-medium text-accent hover:text-accent-light"
+            className="text-sm text-white underline-offset-4 transition-opacity hover:opacity-75 hover:underline"
           >
-            ← Tutti i servizi
+            ← Tutte le attività
           </Link>
-          <p className="mt-6 text-sm font-medium uppercase tracking-wide text-accent">
-            {service.category}
-          </p>
-          <h1 className="mt-2 font-display text-4xl font-normal tracking-tight text-white sm:text-5xl lg:text-6xl">
-            {service.title}
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg text-white/70">
-            {service.intro}
-          </p>
         </div>
-      </section>
+      </PageHero>
 
       <section className="section-padding bg-white">
         <div className="container-narrow">
