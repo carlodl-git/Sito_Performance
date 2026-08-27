@@ -118,8 +118,8 @@ export default function PalestraPage() {
         title={meta.label}
         intro="Una sala attrezzata e un calendario settimanale di corsi. Pochi macchinari, molta attenzione: in sala c'è sempre un istruttore."
         image={{
-          src: "/images/palestra-2.jpg",
-          alt: "Sala della palestra al Montecchia Performance Center",
+          src: "/images/Palestra_hero.jpg",
+          alt: "La sala della palestra: soffitto in travi di legno, cardio, sacco da boxe e attrezzatura funzionale",
         }}
       >
         <WhatsAppButton message={meta.whatsapp} variant="light">

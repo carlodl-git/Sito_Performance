@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     siteName: "Montecchia Performance Center",
     locale: "it_IT",
     type: "website",
-    images: ["/images/cperformance-esterno-tramonto.jpg"],
+    images: ["/images/performance-esterno-tramonto.jpg"],
   },
 };
 
@@ -91,7 +91,7 @@ export default function HomePage() {
         subtitle="Un centro, quattro aree"
         intro="Ogni area ha i suoi spazi e i suoi professionisti, ma la struttura è una."
         image={{
-          src: "/images/cperformance-esterno-tramonto.jpg",
+          src: "/images/performance-esterno-tramonto.jpg",
           alt: "La club house del Golf Club della Montecchia al tramonto, vista dal putting green",
         }}
       >
