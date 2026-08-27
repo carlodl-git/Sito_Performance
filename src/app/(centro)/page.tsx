@@ -11,10 +11,10 @@ import { contatti, indirizzoBreve, whatsappLink } from "@/data/contatti";
 export const metadata: Metadata = {
   title: {
     absolute:
-      "Montecchia Performance Center: palestra, Pilates Reformer e Golf Indoor a Padova",
+      "Montecchia Performance Center: palestra, Pilates Reformer, salute e Golf Indoor a Padova",
   },
   description:
-    "Quattro aree in un unico centro al Golf Club della Montecchia: palestra con corsi di gruppo, Studio Pilates Reformer, Golf Indoor e Salute e Benessere. Selvazzano Dentro (Padova).",
+    "Quattro aree in un unico centro al Golf Club della Montecchia: palestra con corsi di gruppo, Pilates Studio Reformer, Salute e Benessere e Golf Indoor. Selvazzano Dentro (Padova).",
   alternates: {
     canonical: "https://www.montecchiaperformancecenter.it/",
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title:
       "Montecchia Performance Center: palestra, Pilates Reformer e Golf Indoor",
     description:
-      "Palestra con corsi di gruppo, Studio Pilates Reformer, Golf Indoor e area Salute e Benessere al Golf Club della Montecchia.",
+      "Palestra con corsi di gruppo, Pilates Studio Reformer, Salute e Benessere e Golf Indoor al Golf Club della Montecchia.",
     url: "https://www.montecchiaperformancecenter.it/",
     siteName: "Montecchia Performance Center",
     locale: "it_IT",
@@ -37,7 +37,7 @@ const localBusinessSchema = {
   name: "Montecchia Performance Center",
   url: "https://www.montecchiaperformancecenter.it/",
   description:
-    "Palestra con corsi di gruppo, Studio Pilates Reformer, Golf Indoor e area Salute e Benessere al Golf Club della Montecchia.",
+    "Palestra con corsi di gruppo, Pilates Studio Reformer, Salute e Benessere e Golf Indoor al Golf Club della Montecchia.",
   address: {
     "@type": "PostalAddress",
     streetAddress: contatti.via,
@@ -94,7 +94,7 @@ export default function HomePage() {
             quattro aree
           </>
         }
-        intro="Palestra e corsi di gruppo, Studio Pilates Reformer, Golf Indoor, Salute e Benessere. Ogni area ha i suoi spazi e i suoi professionisti, ma la struttura è una."
+        intro="Palestra e corsi di gruppo, Pilates Studio Reformer, Salute e Benessere, Golf Indoor. Ogni area ha i suoi spazi e i suoi professionisti, ma la struttura è una."
         image={{
           src: "/images/cperformance-esterno-tramonto.jpg",
           alt: "La club house del Golf Club della Montecchia al tramonto, vista dal putting green",

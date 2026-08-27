@@ -16,19 +16,19 @@ const meta = areaMeta.pilates;
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Studio Pilates Reformer a Selvazzano Dentro (Padova)",
+    absolute: "Pilates Studio Reformer a Selvazzano Dentro (Padova)",
   },
   description:
-    "Studio Pilates Reformer alla Montecchia: lezioni individuali, in duetto e in piccolo gruppo. Forza profonda, mobilità e postura. Selvazzano Dentro, Padova.",
+    "Pilates Studio Reformer alla Montecchia: lezioni individuali, in duetto e in piccolo gruppo. Forza profonda, mobilità e postura. Selvazzano Dentro, Padova.",
   alternates: {
     canonical: "https://www.montecchiaperformancecenter.it/pilates",
   },
   openGraph: {
-    title: "Studio Pilates Reformer alla Montecchia",
+    title: "Pilates Studio Reformer alla Montecchia",
     description:
       "Lezioni di Pilates sul Reformer, individuali e in piccolo gruppo. Selvazzano Dentro, Padova.",
     url: "https://www.montecchiaperformancecenter.it/pilates",
-    siteName: "Studio Pilates Reformer alla Montecchia",
+    siteName: "Pilates Studio Reformer alla Montecchia",
     locale: "it_IT",
     type: "website",
     images: ["/images/yoga-prato.jpg"],
@@ -83,14 +83,8 @@ export default function StudioPilatesPage() {
     <>
       <PageHero
         full
-        eyebrow={`Area ${meta.n} · Selvazzano Dentro, Padova`}
-        title={
-          <>
-            Il corpo impara
-            <br />
-            a muoversi meglio
-          </>
-        }
+        eyebrow="Golf Club della Montecchia · Padova"
+        title={meta.label}
         intro="Uno studio dedicato al Pilates sul Reformer. Lezioni individuali, in duetto e in piccolo gruppo, sempre con un'istruttrice accanto."
         image={{
           src: "/images/yoga-prato.jpg",

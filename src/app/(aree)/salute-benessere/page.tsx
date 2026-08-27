@@ -50,7 +50,7 @@ const steps = [
 /** Le altre aree in cui prosegue il percorso, dopo il trattamento. */
 const proseguire = [
   { href: "/palestra", label: "Palestra & Corsi" },
-  { href: "/pilates", label: "Studio Pilates Reformer" },
+  { href: "/pilates", label: "Pilates Studio Reformer" },
   { href: "/golf-indoor", label: "Golf Indoor" },
 ];
 
@@ -64,8 +64,8 @@ export default function SaluteBenesserePage() {
           data/areas.ts. Sostituirla appena il centro fornisce le sue. */}
       <PageHero
         full
-        eyebrow={`Area ${meta.n}`}
-        title="Salute e Benessere"
+        eyebrow="Golf Club della Montecchia · Padova"
+        title={meta.label}
         intro="Fisioterapia, osteopatia, nutrizione e trattamenti manuali. I professionisti dell'area lavorano a contatto con i trainer del centro: chi ti tratta e chi ti allena parlano tra loro."
         image={{
           src: "/images/salute-trattamento.jpg",

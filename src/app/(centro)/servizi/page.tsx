@@ -74,7 +74,6 @@ export default function ServiziPage() {
           >
             <div className="container-narrow">
               <SectionHeading
-                eyebrow={`Area ${meta.n}`}
                 title={meta.label}
                 intro={meta.tagline}
                 action={

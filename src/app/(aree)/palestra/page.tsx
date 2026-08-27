@@ -115,13 +115,8 @@ export default function PalestraPage() {
     <>
       <PageHero
         full
-        eyebrow={`Area ${meta.n}`}
-        title={
-          <>
-            Palestra
-            <br />e corsi di gruppo
-          </>
-        }
+        eyebrow="Golf Club della Montecchia · Padova"
+        title={meta.label}
         intro="Una sala attrezzata e un calendario settimanale di corsi. Pochi macchinari, molta attenzione: in sala c'è sempre un istruttore."
         image={{
           src: "/images/palestra-2.jpg",
@@ -321,7 +316,7 @@ export default function PalestraPage() {
                 href="/pilates"
                 className="border-b border-line pb-0.5 text-primary transition-colors hover:border-primary"
               >
-                È nello Studio Pilates
+                È nel Pilates Studio Reformer
               </Link>
               , che è un&apos;area a sé.
             </p>

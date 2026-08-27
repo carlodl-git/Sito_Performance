@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: "%s | Montecchia Performance Center",
   },
   description:
-    "Quattro aree al Golf Club della Montecchia: palestra e corsi, Studio Pilates Reformer, Golf Indoor, Salute e Benessere. Selvazzano Dentro (Padova).",
+    "Quattro aree al Golf Club della Montecchia: palestra e corsi, Pilates Studio Reformer, Salute e Benessere, Golf Indoor. Selvazzano Dentro (Padova).",
   openGraph: {
     siteName: "Montecchia Performance Center",
     locale: "it_IT",

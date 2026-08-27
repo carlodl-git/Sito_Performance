@@ -19,7 +19,7 @@
 
 export type Area = "palestra" | "pilates" | "golf" | "salute";
 
-export const areaKeys = ["palestra", "pilates", "golf", "salute"] as const;
+export const areaKeys = ["palestra", "pilates", "salute", "golf"] as const;
 
 export type AreaMeta = {
   /** Etichetta piena, usata nei titoli e nella home. */
@@ -31,8 +31,6 @@ export type AreaMeta = {
    */
   navLabel: string;
   href: string;
-  /** Numero d'ordine mostrato nella home e negli hero. */
-  n: string;
   tagline: string;
   /** Paragrafo di presentazione nella home. */
   blurb: string;
@@ -46,7 +44,6 @@ export const areaMeta: Record<Area, AreaMeta> = {
     label: "Palestra & Corsi",
     navLabel: "Palestra",
     href: "/palestra",
-    n: "01",
     tagline: "Sala attrezzata e corsi di gruppo",
     blurb:
       "Una sala attrezzata e un calendario settimanale di corsi: functional, tonificazione, core, Fit for Golf. Sempre con un istruttore in sala, sempre su prenotazione.",
@@ -57,10 +54,9 @@ export const areaMeta: Record<Area, AreaMeta> = {
     whatsapp: "Ciao! Vorrei informazioni sulla palestra e sui corsi",
   },
   pilates: {
-    label: "Studio Pilates Reformer",
+    label: "Pilates Studio Reformer",
     navLabel: "Pilates",
     href: "/pilates",
-    n: "02",
     tagline: "Individuale, in duetto o in piccolo gruppo",
     blurb:
       "Uno studio dedicato al Pilates sul Reformer: lavoro di precisione su forza profonda, mobilità e postura, seguito uno a uno dall'istruttrice.",
@@ -72,13 +68,12 @@ export const areaMeta: Record<Area, AreaMeta> = {
       src: "/images/yoga-prato.jpg",
       alt: "Lezione all'aperto sul prato del Golf Club della Montecchia",
     },
-    whatsapp: "Ciao! Vorrei informazioni sullo Studio Pilates Reformer",
+    whatsapp: "Ciao! Vorrei informazioni sul Pilates Studio Reformer",
   },
   golf: {
     label: "Golf Indoor",
     navLabel: "Golf Indoor",
     href: "/golf-indoor",
-    n: "03",
     tagline: "Simulatori, analisi dello swing e golf fitness",
     blurb:
       "Simulatori con tecnologia TrackMan, analisi biomeccanica dello swing e lezioni con maestri PGA. Si gioca e si migliora tutto l'anno, con qualsiasi meteo.",
@@ -92,7 +87,6 @@ export const areaMeta: Record<Area, AreaMeta> = {
     label: "Salute e Benessere",
     navLabel: "Salute",
     href: "/salute-benessere",
-    n: "04",
     tagline: "Fisioterapia, osteopatia, nutrizione",
     blurb:
       "I professionisti che si occupano di recupero, postura e alimentazione, in dialogo diretto con i trainer delle altre aree del centro.",

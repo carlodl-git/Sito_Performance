@@ -27,8 +27,8 @@ export function Footer({ currentArea }: { currentArea?: Area }) {
             </p>
             <p className="mt-4 text-sm leading-relaxed text-white/60">
               Quattro aree al Golf Club della Montecchia, Selvazzano Dentro
-              (PD): palestra e corsi, Studio Pilates Reformer, Golf Indoor,
-              Salute e Benessere.
+              (PD): palestra e corsi, Pilates Studio Reformer, Salute e
+              Benessere, Golf Indoor.
             </p>
             <div className="mt-6 flex gap-4">
               <a
