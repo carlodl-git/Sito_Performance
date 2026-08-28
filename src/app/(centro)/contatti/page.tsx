@@ -31,8 +31,8 @@ export default function ContattiPage() {
         title="Contatti"
         intro="Indirizzo, orari e come raggiungerci. Per informazioni e prenotazioni scrivici su WhatsApp: è il canale su cui rispondiamo più in fretta."
         image={{
-          src: "/images/esterno.jpg",
-          alt: "Il Montecchia Performance Center visto dal campo da golf",
+          src: "/images/Contatti_hero.jpg",
+          alt: "Il Montecchia Performance Center al tramonto, visto dal green",
         }}
       >
         <WhatsAppButton
