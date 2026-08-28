@@ -70,8 +70,8 @@ export default function GolfIndoorPage() {
         title={meta.label}
         intro="Simulatori con tecnologia TrackMan e maestri PGA. Si gioca e si migliora tutto l'anno, con qualsiasi meteo, e ogni colpo lascia un dato."
         image={{
-          src: "/images/golf-indoor-lezione.jpg",
-          alt: "Sala simulatori del Golf Indoor con giocatori in sessione",
+          src: "/images/GolfIndoor_hero.jpg",
+          alt: "Giocatori in sessione alle postazioni del Golf Indoor",
         }}
       >
         <a
