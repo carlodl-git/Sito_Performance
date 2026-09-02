@@ -51,9 +51,13 @@ const nextConfig = {
       { source: '/mini-group-training/', destination: '/servizi/mini-group-training', permanent: true },
 
       // ---------- WORKOUTS (vecchio custom post type Divi) → /servizi/[slug] ----------
-      // /dt_workouts/pilates-e-yoga/ → /servizi/pilates-yoga (112 clic/anno, pagina top)
-      { source: '/dt_workouts/pilates-e-yoga', destination: '/servizi/pilates-yoga', permanent: true },
-      { source: '/dt_workouts/pilates-e-yoga/', destination: '/servizi/pilates-yoga', permanent: true },
+      // /dt_workouts/pilates-e-yoga/ → /servizi/pilates (112 clic/anno, pagina top)
+      // Puntava a /servizi/pilates-yoga, che non esiste: sul nuovo sito i due
+      // corsi sono separati (/servizi/pilates e /servizi/yoga). La pagina più
+      // visitata del vecchio sito cadeva quindi su un 404. Il Pilates è il
+      // termine che portava il traffico, quindi la destinazione è quella.
+      { source: '/dt_workouts/pilates-e-yoga', destination: '/servizi/pilates', permanent: true },
+      { source: '/dt_workouts/pilates-e-yoga/', destination: '/servizi/pilates', permanent: true },
 
       // /dt_workouts/fit-for-golf/ → /servizi/fit-for-golf (6 clic)
       { source: '/dt_workouts/fit-for-golf', destination: '/servizi/fit-for-golf', permanent: true },
@@ -75,10 +79,29 @@ const nextConfig = {
       { source: '/dt_workouts/functional-tone', destination: '/servizi/functional-tone', permanent: true },
       { source: '/dt_workouts/functional-tone/', destination: '/servizi/functional-tone', permanent: true },
 
+      // /dt_workouts/power/ ("FULL BODY WORKOUT") → /palestra
+      // Era l'unico dei sette workout rimasto senza redirect. Non ha una
+      // scheda propria sul nuovo sito: Full Body Workout è un corso a
+      // calendario, quindi la destinazione giusta è l'orario in palestra.
+      { source: '/dt_workouts/power', destination: '/palestra', permanent: true },
+      { source: '/dt_workouts/power/', destination: '/palestra', permanent: true },
+
+      // L'indice dei workout → l'indice dei servizi
+      { source: '/dt_workouts', destination: '/servizi', permanent: true },
+      { source: '/dt_workouts/', destination: '/servizi', permanent: true },
+
       // ---------- GALLERIA DIVI ----------
-      // /dt_galleries/performance-center/ → /
+      // Le tre gallerie e il loro indice → home. Erano contenitori di foto
+      // senza testo: sul nuovo sito le immagini vivono dentro le pagine
+      // delle aree, non in una galleria a sé.
       { source: '/dt_galleries/performance-center', destination: '/', permanent: true },
       { source: '/dt_galleries/performance-center/', destination: '/', permanent: true },
+      { source: '/dt_galleries/performance-face', destination: '/', permanent: true },
+      { source: '/dt_galleries/performance-face/', destination: '/', permanent: true },
+      { source: '/dt_galleries/tecnologie', destination: '/golf-indoor', permanent: true },
+      { source: '/dt_galleries/tecnologie/', destination: '/golf-indoor', permanent: true },
+      { source: '/dt_galleries', destination: '/', permanent: true },
+      { source: '/dt_galleries/', destination: '/', permanent: true },
 
       // ---------- TEAM: EX-MEMBRI → pagina aggregata ----------
       // /team/niccolo-bisazza/ → /team (uscito dal team)
@@ -126,6 +149,47 @@ const nextConfig = {
       { source: '/golf-lab', destination: '/golf-indoor', permanent: true },
       { source: '/golf-lab/', destination: '/golf-indoor', permanent: true },
 
+      // ---------- PAGINE VIVE SENZA EQUIVALENTE ----------
+      // Erano nella sitemap del WordPress e rispondevano 200: senza redirect
+      // sarebbero diventate 404 vere, non deindicizzazioni naturali.
+
+      // /ingg/ → /golf-indoor. Progetto INGG (Italian Network for Golf Goal)
+      // col dott. Massimo Messina. Il testo non viene ripreso sul nuovo sito
+      // (decisione 01/09): resta solo il redirect verso l'area golf.
+      { source: '/ingg', destination: '/golf-indoor', permanent: true },
+      { source: '/ingg/', destination: '/golf-indoor', permanent: true },
+
+      // /educational*/ → /golf-indoor: storico di seminari 2016-2018
+      // (TrackMan University, Craig Davies, Bioswing), tutti di area golf.
+      { source: '/educational', destination: '/golf-indoor', permanent: true },
+      { source: '/educational/', destination: '/golf-indoor', permanent: true },
+      { source: '/educational-2', destination: '/golf-indoor', permanent: true },
+      { source: '/educational-2/', destination: '/golf-indoor', permanent: true },
+      { source: '/educational-3', destination: '/golf-indoor', permanent: true },
+      { source: '/educational-3/', destination: '/golf-indoor', permanent: true },
+
+      // /prenotazioni/ → /contatti: sul WordPress era una pagina vuota, ma
+      // l'URL è parlante ed è quello che uno si salva nei preferiti.
+      { source: '/prenotazioni', destination: '/contatti', permanent: true },
+      { source: '/prenotazioni/', destination: '/contatti', permanent: true },
+
+      // /attivita/ → /servizi: stessa cosa, indice delle attività.
+      { source: '/attivita', destination: '/servizi', permanent: true },
+      { source: '/attivita/', destination: '/servizi', permanent: true },
+
+      // /classes-scheduled-events/ → /palestra: conteneva solo uno shortcode
+      // rotto del vecchio plugin orari. L'orario vero ora è in /palestra.
+      { source: '/classes-scheduled-events', destination: '/palestra', permanent: true },
+      { source: '/classes-scheduled-events/', destination: '/palestra', permanent: true },
+
+      // /video/ → /chi-siamo: raccolta di video di presentazione del centro.
+      { source: '/video', destination: '/chi-siamo', permanent: true },
+      { source: '/video/', destination: '/chi-siamo', permanent: true },
+
+      // /category/news/ → /blog: unica categoria del vecchio blog.
+      { source: '/category/news', destination: '/blog', permanent: true },
+      { source: '/category/news/', destination: '/blog', permanent: true },
+
       // ---------- NOTE ----------
       // I PDF in /wp-content/uploads/* NON hanno redirect:
       //   sono copiati con path identica in /public/wp-content/uploads/.
@@ -133,6 +197,13 @@ const nextConfig = {
       // Le pagine /events/*, /tag/*, /shop/*, /event/* NON hanno redirect:
       //   verranno restituite come 404 e Google le deindicizzerà
       //   naturalmente in 2-3 mesi (sono thin content).
+      //
+      // Nemmeno il resto della demo Divi ha redirect, ed è voluto:
+      //   /shortcodes/*, /gallery/*, /blog/blog-*-col-*, /home/home-*,
+      //   /header-*, /forums/*, /topics/*, /groups/*, /members/*,
+      //   /register/, /activate/, /activity/, /miscellaneous/, /test-3/,
+      //   /contact1/. Sono pagine di esempio del tema, mai compilate: circa
+      //   un centinaio di URL che è giusto far cadere.
       //
       // /privacy-policy/ NON ha redirect: stessa URL sul nuovo sito.
       //
