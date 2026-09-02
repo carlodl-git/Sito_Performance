@@ -8,6 +8,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { PersonCard } from "@/components/ui/PersonCard";
 import { areaMeta } from "@/data/areas";
 import { contatti } from "@/data/contatti";
+import { SchemaArea } from "@/components/seo/DatiStrutturati";
 
 const meta = areaMeta.golf;
 
@@ -65,14 +66,17 @@ export default function GolfIndoorPage() {
 
   return (
     <>
+      <SchemaArea
+        nome="Golf Indoor"
+        descrizione={meta.tagline}
+        url="/golf-indoor"
+      />
+
       <PageHero
         full
         title={meta.label}
         intro="Simulatori con tecnologia TrackMan e maestri PGA. Si gioca e si migliora tutto l'anno, con qualsiasi meteo, e ogni colpo lascia un dato."
-        image={{
-          src: "/images/GolfIndoor_hero.jpg",
-          alt: "Giocatori in sessione alle postazioni numerate del Golf Indoor",
-        }}
+        image={meta.image}
       >
         <a
           href={contatti.booking}

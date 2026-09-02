@@ -30,7 +30,7 @@ export default function ChiSiamoPage() {
             Chi siamo
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-white/70">
-            La storia e la filosofia del Montecchia Performance Center.
+            Come è nato il centro, chi ci lavora e come mai quattro attività diverse stanno sotto lo stesso tetto.
           </p>
         </div>
       </section>
@@ -48,21 +48,19 @@ export default function ChiSiamoPage() {
               />
             </div>
             <div>
-              <h2 className="heading-section">La nostra storia</h2>
-              <p className="mt-6 text-ink-soft leading-relaxed">
-                Il Montecchia Performance Center nasce dalla volonta&apos; di creare
-                un luogo dove sport, tecnologia e professionalita&apos; si
-                incontrano. Nato nel contesto di eccellenza del Golf Club della
-                Montecchia, il centro si e&apos; evoluto per offrire non solo il
-                golf indoor con simulatori Trackman, ma una palestra completa,
-                corsi di gruppo e un team di professionisti del benessere.
+              <h2 className="heading-section">Come è nato</h2>
+              <p className="mt-6 leading-relaxed text-ink-soft">
+                Il centro è nato dentro il Golf Club della Montecchia, e
+                all&apos;inizio era soprattutto il golf indoor: i simulatori,
+                le lezioni con i maestri, l&apos;analisi dello swing.
               </p>
-              <p className="mt-6 text-ink-soft leading-relaxed">
-                Crediamo che la performance sia il risultato di allenamento,
-                alimentazione, recupero e mentalita&apos;. Per questo abbiamo riunito
-                sotto lo stesso tetto palestra, corsi, nutrizionista, osteopata
-                e maestri di golf: un ecosistema pensato per chi ha obiettivi
-                chiari e non si accontenta.
+              <p className="mt-6 leading-relaxed text-ink-soft">
+                Poi si è visto che chi veniva a migliorare lo swing aveva
+                bisogno anche d&apos;altro: forza e mobilità per reggere il
+                gesto, qualcuno che sistemasse una schiena bloccata, un modo
+                per mangiare meglio. Così sono arrivate la palestra con i
+                corsi, lo studio di Pilates sul Reformer e i professionisti
+                della salute. Quattro aree, un edificio solo.
               </p>
             </div>
           </div>
@@ -71,27 +69,27 @@ export default function ChiSiamoPage() {
 
       <section className="section-padding bg-paper-alt">
         <div className="container-narrow">
-          <h2 className="heading-section text-center">La nostra filosofia</h2>
-          <p className="mx-auto mt-8 max-w-3xl text-center text-lg text-ink-soft leading-relaxed">
-            Performance senza compromessi: offriamo strumenti, spazi e
-            professionisti di livello per permettere a ognuno di dare il
-            massimo. Ambiente curato, attrezzature all&apos;avanguardia e un team
-            di oltre 13 specialisti che ti accompagna dal primo ingresso al
-            raggiungimento dei tuoi obiettivi.
+          <h2 className="heading-section text-center">Come lavoriamo</h2>
+          <p className="mx-auto mt-8 max-w-3xl text-center text-lg leading-relaxed text-ink-soft">
+            Tredici professionisti che lavorano nello stesso posto e si
+            parlano. Se il fisioterapista trova un problema, il trainer lo
+            sa prima della lezione dopo: è la differenza fra quattro
+            specialisti e quattro appuntamenti scollegati in tre indirizzi
+            diversi.
           </p>
           <div className="mt-16 grid gap-8 sm:grid-cols-3">
             {[
               {
-                title: "Qualita'",
-                text: "Struttura e attrezzature all'avanguardia, inclusi simulatori Trackman e tecnologia di analisi biomeccanica.",
+                title: "Si comincia guardando",
+                text: "Prima lezione o prima visita, si guarda come ti muovi. Il programma viene dopo, non prima.",
               },
               {
-                title: "Professionalita'",
-                text: "Oltre 13 professionisti tra trainer, maestri PGA, nutrizionisti e specialisti del recupero.",
+                title: "Gruppi piccoli",
+                text: "I corsi e le lezioni sono tenuti contenuti apposta: chi conduce deve poter correggere ognuno.",
               },
               {
-                title: "Integrazione",
-                text: "Un unico centro dove fitness, golf, nutrizione e riabilitazione lavorano insieme per la tua performance.",
+                title: "Le misure, dove servono",
+                text: "TrackMan, pedane di forza e sensori sul corpo al golf indoor. Non per fare scena: per sapere su cosa lavorare.",
               },
             ].map((item) => (
               <div key={item.title} className="border-t border-line bg-transparent pt-7">
@@ -110,7 +108,7 @@ export default function ChiSiamoPage() {
         <div className="container-narrow">
           <h2 className="heading-section text-center">La struttura</h2>
           <p className="mx-auto mt-4 max-w-xl text-center text-ink-soft">
-            Il Golf Indoor, i simulatori e gli spazi del centro.
+            Il golf indoor, la palestra e gli spazi comuni.
           </p>
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {[

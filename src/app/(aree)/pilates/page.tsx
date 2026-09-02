@@ -5,6 +5,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { areaMeta } from "@/data/areas";
 import { contatti } from "@/data/contatti";
+import { SchemaArea } from "@/components/seo/DatiStrutturati";
 
 // TODO (da confermare col centro): numero di Reformer, nome
 // dell'istruttrice, orari delle lezioni, listino.
@@ -81,14 +82,17 @@ const aChi = [
 export default function StudioPilatesPage() {
   return (
     <>
+      <SchemaArea
+        nome="Pilates Studio Reformer"
+        descrizione={meta.tagline}
+        url="/pilates"
+      />
+
       <PageHero
         full
         title={meta.label}
         intro="Uno studio dedicato al Pilates sul Reformer. Lezioni individuali, in duetto e in piccolo gruppo, sempre con un'istruttrice accanto."
-        image={{
-          src: "/images/yoga-prato.jpg",
-          alt: "Lezione all'aperto sul prato del Golf Club della Montecchia",
-        }}
+        image={meta.image}
       >
         <WhatsAppButton message={meta.whatsapp} variant="light">
           Scrivici su WhatsApp

@@ -7,6 +7,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { PersonCard } from "@/components/ui/PersonCard";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { areaMeta } from "@/data/areas";
+import { SchemaArea } from "@/components/seo/DatiStrutturati";
 
 const meta = areaMeta.salute;
 
@@ -60,21 +61,77 @@ export default function SaluteBenesserePage() {
 
   return (
     <>
+      <SchemaArea
+        nome="Salute e Benessere"
+        descrizione={meta.tagline}
+        url="/salute-benessere"
+      />
+
       {/* La foto è generata, non è il nostro studio: vedi la nota in
           data/areas.ts. Sostituirla appena il centro fornisce le sue. */}
       <PageHero
         full
         title={meta.label}
         intro="Fisioterapia, osteopatia, nutrizione e trattamenti manuali. I professionisti dell'area lavorano a contatto con i trainer del centro: chi ti tratta e chi ti allena parlano tra loro."
-        image={{
-          src: "/images/salute-trattamento.jpg",
-          alt: "Trattamento manuale sulla schiena in sala fisioterapia",
-        }}
+        image={meta.image}
       >
         <WhatsAppButton message={meta.whatsapp} variant="light">
           Richiedi un appuntamento
         </WhatsAppButton>
       </PageHero>
+
+      {/* ============================================================
+          I SERVIZI
+          Rettangoli cliccabili, uno per prestazione: chi arriva qui vuole
+          sapere prima di tutto se facciamo la cosa che sta cercando.
+          Stanno quindi subito sotto l'hero, prima di come funziona.
+
+          Senza foto: solo la fisioterapia ne ha una sua, e ripetere la
+          stessa immagine su quattro riquadri sarebbe peggio che non
+          metterla. Il colore dell'area e i filetti bastano a farli
+          leggere come cliccabili.
+          ============================================================ */}
+      <section
+        id="prestazioni"
+        className="section-padding scroll-mt-24 bg-area-tint"
+      >
+        <div className="container-narrow">
+          <SectionHeading
+            eyebrow="I servizi"
+            title="Di cosa ci occupiamo"
+            intro="Ogni prestazione è su appuntamento, con il professionista che la segue."
+          />
+
+          <div className="mt-12 grid gap-5 sm:grid-cols-2">
+            {services.map((service) => (
+              <Link
+                key={service.slug}
+                href={`/servizi/${service.slug}`}
+                className="group flex flex-col rounded-sm border border-line bg-paper p-7 outline-none transition-colors hover:border-area focus-visible:border-area focus-visible:ring-2 focus-visible:ring-area focus-visible:ring-offset-2 sm:p-8"
+              >
+                <h3 className="heading-sub transition-colors group-hover:text-area">
+                  {service.title}
+                </h3>
+                {service.professional && (
+                  <p className="eyebrow mt-2">{service.professional.name}</p>
+                )}
+                <p className="mt-4 flex-1 text-sm leading-relaxed text-ink-soft">
+                  {service.shortDescription}
+                </p>
+                <span className="link-area mt-6">
+                  Scopri
+                  <span
+                    className="transition-transform group-hover:translate-x-1"
+                    aria-hidden
+                  >
+                    →
+                  </span>
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Il percorso */}
       <section id="percorso" className="section-padding scroll-mt-24">
@@ -95,44 +152,6 @@ export default function SaluteBenesserePage() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Le prestazioni */}
-      <section
-        id="prestazioni"
-        className="section-padding scroll-mt-24 bg-area-tint"
-      >
-        <div className="container-narrow">
-          <SectionHeading
-            eyebrow="Le prestazioni"
-            title="Di cosa ci occupiamo"
-            intro="Ogni prestazione è su appuntamento, con il professionista di riferimento."
-          />
-          <ul className="mt-12">
-            {services.map((service) => (
-              <li key={service.slug}>
-                <Link
-                  href={`/servizi/${service.slug}`}
-                  className="group grid gap-3 border-t border-line py-8 transition-colors hover:border-area sm:grid-cols-[16rem_1fr] sm:gap-10"
-                >
-                  <div>
-                    <h3 className="heading-sub transition-colors group-hover:text-area">
-                      {service.title}
-                    </h3>
-                    {service.professional && (
-                      <p className="eyebrow mt-2">
-                        {service.professional.name}
-                      </p>
-                    )}
-                  </div>
-                  <p className="max-w-[62ch] text-sm text-ink-soft">
-                    {service.shortDescription}
-                  </p>
-                </Link>
-              </li>
-            ))}
-          </ul>
         </div>
       </section>
 

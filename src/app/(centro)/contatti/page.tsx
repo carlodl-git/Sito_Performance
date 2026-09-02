@@ -2,6 +2,8 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { PageHero } from "@/components/ui/PageHero";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
+import { MappaConsenso } from "@/components/cookie/MappaConsenso";
+import { SchemaCentro } from "@/components/seo/DatiStrutturati";
 import { allAreas } from "@/data/areas";
 import { contatti, indirizzoBreve, mapsEmbed, mapsLink } from "@/data/contatti";
 
@@ -25,6 +27,8 @@ export const metadata: Metadata = {
 export default function ContattiPage() {
   return (
     <>
+      <SchemaCentro />
+
       <PageHero
         full
         eyebrow="Il centro"
@@ -76,33 +80,50 @@ export default function ContattiPage() {
                 </p>
               </address>
 
-              <div className="mt-10">
-                <p className="eyebrow">Orari</p>
-                <ul className="mt-4 space-y-1 text-ink-soft">
-                  {contatti.orari.map((o) => (
-                    <li key={o.giorni}>
-                      <span className="inline-block w-24 text-primary">
-                        {o.giorni}
-                      </span>
-                      {o.ore}
-                    </li>
-                  ))}
-                </ul>
+              {/* Palestra e segreteria hanno orari diversi: la sala è aperta
+                  fino alle 21, ma al telefono non risponde più nessuno dalle
+                  16. Separarli evita la chiamata a vuoto. */}
+              <div className="mt-10 grid gap-8 sm:grid-cols-2">
+                <div>
+                  <p className="eyebrow">Palestra</p>
+                  <ul className="mt-4 space-y-1 text-ink-soft">
+                    {contatti.orari.palestra.map((o) => (
+                      <li key={o.giorni}>
+                        <span className="inline-block w-24 text-primary">
+                          {o.giorni}
+                        </span>
+                        {o.ore}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <p className="eyebrow">Segreteria</p>
+                  <ul className="mt-4 space-y-1 text-ink-soft">
+                    {contatti.orari.segreteria.map((o) => (
+                      <li key={o.giorni}>
+                        <span className="inline-block w-24 text-primary">
+                          {o.giorni}
+                        </span>
+                        {o.ore}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
 
+              <p className="mt-6 text-sm text-ink-soft">
+                I professionisti ricevono anche la mattina presto e la sera,
+                fuori dagli orari di segreteria.
+              </p>
+
               <div className="mt-10">
-                <div className="overflow-hidden border border-line">
-                  <iframe
-                    src={mapsEmbed}
-                    width="100%"
-                    height="320"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title={`Mappa di ${contatti.nome}`}
-                  />
-                </div>
+                <MappaConsenso
+                  src={mapsEmbed}
+                  link={mapsLink}
+                  titolo={`Mappa di ${contatti.nome}`}
+                  indirizzo={`${contatti.via}, ${contatti.cap} ${contatti.citta} (${contatti.provincia})`}
+                />
                 <a
                   href={mapsLink}
                   target="_blank"

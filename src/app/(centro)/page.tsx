@@ -7,6 +7,7 @@ import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { allAreas } from "@/data/areas";
 import { contatti, indirizzoBreve, whatsappLink } from "@/data/contatti";
+import { SchemaCentro } from "@/components/seo/DatiStrutturati";
 
 export const metadata: Metadata = {
   title: {
@@ -29,27 +30,6 @@ export const metadata: Metadata = {
     type: "website",
     images: ["/images/performance-esterno-tramonto.jpg"],
   },
-};
-
-const localBusinessSchema = {
-  "@context": "https://schema.org",
-  "@type": "HealthAndBeautyBusiness",
-  name: "Montecchia Performance Center",
-  url: "https://www.montecchiaperformancecenter.it/",
-  description:
-    "Palestra con corsi di gruppo, Pilates Studio Reformer, Salute e Benessere e Golf Indoor al Golf Club della Montecchia.",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: contatti.via,
-    addressLocality: contatti.citta,
-    addressRegion: contatti.provincia,
-    postalCode: contatti.cap,
-    addressCountry: "IT",
-  },
-  telephone: contatti.telefono,
-  email: contatti.email,
-  areaServed: { "@type": "City", name: "Padova" },
-  sameAs: [contatti.facebook, contatti.instagram],
 };
 
 /** Pagine che valgono per tutte e quattro le aree. */
@@ -79,10 +59,7 @@ const centro = [
 export default function HomePage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-      />
+      <SchemaCentro />
 
       <PageHero
         full

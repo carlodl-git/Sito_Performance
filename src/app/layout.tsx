@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Fraunces, DM_Sans } from "next/font/google";
 import "./globals.css";
+import { BannerCookie } from "@/components/cookie/BannerCookie";
 
 // Serif per i titoli: dà al sito il registro editoriale che il geometrico
 // precedente (Outfit) non aveva.
@@ -57,7 +58,12 @@ export default function RootLayout({
     // La chrome (header/footer) è definita dai layout dei gruppi:
     // (main) per il sito principale, (studio) per lo Studio Pilates.
     <html lang="it" className={`${fraunces.variable} ${dmSans.variable}`}>
-      <body className="min-h-screen">{children}</body>
+      <body className="min-h-screen">
+        {children}
+        {/* Ultimo nel body: il banner non deve entrare nel primo paint,
+            e nessuno script di misurazione parte prima della scelta. */}
+        <BannerCookie />
+      </body>
     </html>
   );
 }

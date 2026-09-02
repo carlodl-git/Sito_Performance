@@ -8,6 +8,7 @@ import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { CourseTimetable } from "@/components/ui/CourseTimetable";
 import { areaMeta } from "@/data/areas";
 import { contatti } from "@/data/contatti";
+import { SchemaArea } from "@/components/seo/DatiStrutturati";
 
 const meta = areaMeta.palestra;
 
@@ -113,14 +114,17 @@ export default function PalestraPage() {
 
   return (
     <>
+      <SchemaArea
+        nome="Palestra & Corsi"
+        descrizione={meta.tagline}
+        url="/palestra"
+      />
+
       <PageHero
         full
         title={meta.label}
         intro="Una sala attrezzata e un calendario settimanale di corsi. Pochi macchinari, molta attenzione: in sala c'è sempre un istruttore."
-        image={{
-          src: "/images/Palestra_hero.jpg",
-          alt: "La sala della palestra: soffitto in travi di legno, cardio, sacco da boxe e attrezzatura funzionale",
-        }}
+        image={meta.image}
       >
         <WhatsAppButton message={meta.whatsapp} variant="light">
           Scrivici su WhatsApp

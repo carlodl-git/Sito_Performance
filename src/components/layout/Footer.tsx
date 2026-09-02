@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { allAreas, type Area } from "@/data/areas";
 import { contatti } from "@/data/contatti";
+import { PreferenzeCookie } from "@/components/cookie/PreferenzeCookie";
 
 const centroLinks = [
   { href: "/servizi", label: "Tutte le attività" },
@@ -141,9 +142,18 @@ export function Footer({ currentArea }: { currentArea?: Area }) {
           </div>
 
           <div>
-            <p className="eyebrow text-white/50">Orari</p>
+            <p className="eyebrow text-white/50">Palestra</p>
             <ul className="mt-5 space-y-1 text-sm text-white/70">
-              {contatti.orari.map((o) => (
+              {contatti.orari.palestra.map((o) => (
+                <li key={o.giorni}>
+                  {o.giorni}: {o.ore}
+                </li>
+              ))}
+            </ul>
+
+            <p className="eyebrow mt-8 text-white/50">Segreteria</p>
+            <ul className="mt-5 space-y-1 text-sm text-white/70">
+              {contatti.orari.segreteria.map((o) => (
                 <li key={o.giorni}>
                   {o.giorni}: {o.ore}
                 </li>
@@ -152,17 +162,32 @@ export function Footer({ currentArea }: { currentArea?: Area }) {
           </div>
         </div>
 
+        {/* Riga legale. La ragione sociale e la partita IVA stanno qui e non
+            solo dentro la privacy policy: vanno rese accessibili in modo
+            diretto e permanente (D.Lgs 70/2003 art. 7), ed è dove il
+            vecchio sito le teneva. */}
         <div className="mt-16 flex flex-col items-center gap-3 border-t border-white/15 pt-8 text-sm text-white/50 sm:flex-row sm:justify-between">
-          <p>
-            © {new Date().getFullYear()} Montecchia Performance Center. Tutti i
-            diritti riservati.
+          <p className="text-center sm:text-left">
+            © {new Date().getFullYear()} {contatti.ragioneSociale} · P.IVA{" "}
+            {contatti.piva}
           </p>
-          <Link
-            href="/privacy-policy"
-            className="transition-colors hover:text-white"
-          >
-            Privacy Policy
-          </Link>
+          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+            <Link
+              href="/privacy-policy"
+              className="transition-colors hover:text-white"
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              href="/cookie-policy"
+              className="transition-colors hover:text-white"
+            >
+              Cookie Policy
+            </Link>
+            {/* Revocare il consenso deve costare quanto darlo: il pannello
+                si riapre da qui, su ogni pagina. */}
+            <PreferenzeCookie className="transition-colors hover:text-white" />
+          </div>
         </div>
       </div>
     </footer>

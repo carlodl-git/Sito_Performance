@@ -60,16 +60,21 @@ export function PageHero({
             className="object-cover"
           />
           {/* Sfumatura neutra concentrata nella metà bassa, dove sta il
-              testo: sopra l'82% la foto è pulita del tutto. Prima era una
-              tinta del colore dell'area, densa al 95% in basso e ancora al
-              30% in cima: copriva la fotografia invece di limitarsi a
-              renderla leggibile.
+              testo. Prima era una tinta del colore dell'area, densa al 95%
+              in basso e ancora al 30% in cima: copriva la fotografia invece
+              di limitarsi a renderla leggibile.
 
-              I valori non sono a occhio: sono quelli che tengono titolo,
-              occhiello e sommario sopra soglia sul pixel più chiaro di ogni
+              La curva è ripida in basso e molle in alto, ed è lì che è stata
+              alleggerita: sotto il testo tiene quasi i valori di prima, ma
+              a metà foto scende dal 55% al 44% e si spegne al 74% invece che
+              all'82%. Sulle due foto più scure — la palestra e il golf
+              indoor — era la parte alta a farle leggere cupe, non il fondo.
+
+              Toccare i due stop bassi è un'altra cosa: sono quelli che
+              tengono il sommario sopra 4.5:1 sul pixel più chiaro di ogni
               foto usata negli hero, comprese quelle delle schede servizio,
               che sono le più chiare. */}
-          <div className="absolute inset-0 bg-[linear-gradient(to_top,rgb(0_0_0/0.88)_0%,rgb(0_0_0/0.78)_25%,rgb(0_0_0/0.55)_50%,transparent_82%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(to_top,rgb(0_0_0/0.86)_0%,rgb(0_0_0/0.74)_25%,rgb(0_0_0/0.44)_50%,transparent_74%)]" />
         </>
       )}
 

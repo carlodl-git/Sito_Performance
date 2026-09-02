@@ -34,6 +34,11 @@ export type AreaMeta = {
   tagline: string;
   /** Paragrafo di presentazione nella home. */
   blurb: string;
+  /**
+   * La foto dell'area: la stessa nel riquadro della home e nell'hero
+   * della pagina, così chi clicca ritrova l'immagine su cui ha cliccato.
+   * Una copia sola: la pagina dell'area legge da qui.
+   */
   image: { src: string; alt: string };
   /** Messaggio precompilato per il WhatsApp dell'area. */
   whatsapp: string;
@@ -48,8 +53,8 @@ export const areaMeta: Record<Area, AreaMeta> = {
     blurb:
       "Una sala attrezzata e un calendario settimanale di corsi: functional, tonificazione, core, Fit for Golf. Sempre con un istruttore in sala, sempre su prenotazione.",
     image: {
-      src: "/images/palestra-2.jpg",
-      alt: "La sala della palestra del Montecchia Performance Center",
+      src: "/images/Palestra_hero.jpg",
+      alt: "La sala della palestra: soffitto in travi di legno, cardio, sacco da boxe e attrezzatura funzionale",
     },
     whatsapp: "Ciao! Vorrei informazioni sulla palestra e sui corsi",
   },
@@ -78,8 +83,8 @@ export const areaMeta: Record<Area, AreaMeta> = {
     blurb:
       "Simulatori con tecnologia TrackMan, analisi biomeccanica dello swing e lezioni con maestri PGA. Si gioca e si migliora tutto l'anno, con qualsiasi meteo.",
     image: {
-      src: "/images/golf-indoor-lezione.jpg",
-      alt: "Sala simulatori del Golf Indoor con giocatori in sessione",
+      src: "/images/GolfIndoor_hero.jpg",
+      alt: "Giocatori in sessione alle postazioni numerate del Golf Indoor",
     },
     whatsapp: "Ciao! Vorrei informazioni sul Golf Indoor",
   },

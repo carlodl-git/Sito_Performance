@@ -4,15 +4,22 @@
    compariva sia come "Via Montecchia" sia come "Via della Montecchia".
    Qui c'è una copia sola, così una correzione si fa una volta.
 
-   ⚠️ DA CONFERMARE COL CENTRO: la forma dell'indirizzo. Quella usata
-   qui è quella della privacy policy, testo legale di Golf della
-   Montecchia Srl e la fonte più autorevole che abbiamo in repo, ma va
-   verificata contro l'Impressum del club prima del lancio, insieme a
-   orari e numero di telefono.
+   INDIRIZZO VERIFICATO (01/09/2026): golfmontecchia.it pubblica
+   "VIA MONTECCHIA, 12 — 35030 SELVAZZANO DENTRO — PADOVA", che coincide
+   con la privacy policy di Golf della Montecchia Srl. Due fonti
+   indipendenti, nessuna divergenza: la forma qui sotto è quella buona.
    ============================================================ */
 
 export const contatti = {
   nome: "Montecchia Performance Center",
+  /**
+   * La società che gestisce il centro. Serve in footer insieme alla
+   * partita IVA: il D.Lgs 70/2003 art. 7 vuole i dati identificativi
+   * "facilmente accessibili in modo diretto e permanente", e il vecchio
+   * sito li teneva in fondo a ogni pagina.
+   */
+  ragioneSociale: "Golf della Montecchia S.r.l.",
+  piva: "IT 02294260282",
   via: "Via Montecchia, 12",
   cap: "35030",
   citta: "Selvazzano Dentro",
@@ -25,11 +32,42 @@ export const contatti = {
   booking: "https://booking.montecchiaperformancecenter.it",
   facebook: "https://www.facebook.com/montecchiaperformancecenter",
   instagram: "https://www.instagram.com/montecchiaperformancecenter",
-  orari: [
-    { giorni: "Lun–Ven", ore: "7:00 – 22:00" },
-    { giorni: "Sab", ore: "8:00 – 18:00" },
-    { giorni: "Dom", ore: "chiuso" },
-  ],
+  /**
+   * Due orari, non uno. La palestra sta aperta molto più a lungo della
+   * segreteria, e tenerli uniti faceva credere che alle 20:30 ci fosse
+   * qualcuno al telefono. Il vecchio sito li teneva distinti ed è giusto
+   * così.
+   *
+   * ⚠️ DA CONFERMARE COL CENTRO. Questi valori sono ripresi dal
+   * WordPress in produzione (letto il 01/09/2026), che è la fonte più
+   * aggiornata disponibile. I precedenti (7:00–22:00, Sab 8:00–18:00)
+   * non corrispondevano a niente di pubblicato e mandavano gente davanti
+   * a una porta chiusa.
+   */
+  orari: {
+    palestra: [
+      {
+        giorni: "Lun–Ven",
+        ore: "7:30 – 21:00",
+        // Gli stessi orari in forma leggibile dalla macchina, per il
+        // JSON-LD. Stanno qui e non in un secondo file perché la
+        // versione scritta e quella per Google devono per forza dire la
+        // stessa cosa: separarle è come si crea una divergenza.
+        schema: { giorni: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], apre: "07:30", chiude: "21:00" },
+      },
+      {
+        giorni: "Sab",
+        ore: "7:30 – 16:00",
+        schema: { giorni: ["Saturday"], apre: "07:30", chiude: "16:00" },
+      },
+      { giorni: "Dom", ore: "chiuso", schema: null },
+    ],
+    segreteria: [
+      { giorni: "Lun–Gio", ore: "9:30 – 16:00" },
+      { giorni: "Ven", ore: "9:30 – 15:30" },
+      { giorni: "Sab e Dom", ore: "chiusa" },
+    ],
+  },
 } as const;
 
 /** Indirizzo su una riga, per i meta e i testi correnti. */

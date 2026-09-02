@@ -12,7 +12,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Pagine statiche principali
   const staticPages: MetadataRoute.Sitemap = [
     {
-      url: `${BASE_URL}/`,
+      // Senza slash finale: Next normalizza il canonical della home a
+      // questa forma, e sitemap e canonical devono indicare la stessa
+      // URL o Google le considera due pagine.
+      url: BASE_URL,
       lastModified: now,
       changeFrequency: "weekly",
       priority: 1.0,
@@ -57,6 +60,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE_URL}/privacy-policy`,
+      lastModified: now,
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+    {
+      url: `${BASE_URL}/cookie-policy`,
       lastModified: now,
       changeFrequency: "yearly",
       priority: 0.3,
