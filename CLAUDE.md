@@ -43,7 +43,7 @@ opacità di Tailwind (`bg-area/10`) funzionano.
 |---|---|
 | `areas.ts` | Anagrafica delle 4 aree: etichette, URL, sezioni della nav, foto, messaggio WhatsApp. Letto da home, header, footer, sitemap e dalle pagine. |
 | `contatti.ts` | Indirizzo, telefono, email, orari, booking, social, link mappa. **Unico posto** dove modificarli. |
-| `services.ts` | I 17 servizi. Ogni servizio appartiene a un'area (`serviceArea`). |
+| `services.ts` | I 15 servizi. Ogni servizio appartiene a un'area (`serviceArea`). |
 | `team.ts` | Le persone. `teamByArea()` per le sezioni delle aree. |
 | `courses.ts` | Orario corsi 2025/26. |
 | `blog.ts` | I post. |
@@ -80,6 +80,26 @@ duplicate per area: un centro solo, non quattro rubriche.
 - Classi condivise in `globals.css`: `heading-display/section/sub`,
   `eyebrow`, `lead`, `manifesto`, `row-rule`, `area-num`, `link-area`.
 
+## Cookie e analytics
+
+Il sito non deposita niente di suo. I due soli elementi che scrivono sul
+dispositivo sono Google Analytics 4 e la mappa Google in `/contatti`, e
+**nessuno dei due parte senza consenso**.
+
+- `components/cookie/BannerCookie.tsx` — vanilla-cookieconsent v3 (MIT).
+  Tre categorie: `necessari`, `analisi` (GA4), `funzionali` (la mappa).
+  GA4 viene iniettato in `onAccept`; `onReject` imposta il flag
+  `ga-disable-<ID>` e cancella i cookie `_ga*`.
+- `components/cookie/MappaConsenso.tsx` — senza consenso mostra un
+  segnaposto con l'indirizzo e il link a Maps. **Attenzione**: gli eventi
+  della libreria (`cc:onConsent`, `cc:onChange`) si ascoltano su
+  `window`, non su `document`.
+- L'ID di GA4 sta in `NEXT_PUBLIC_GA_ID` (vedi `.env.example`). Se non è
+  impostata, Analytics non viene mai caricato. La property del vecchio
+  WordPress è `G-5SB29CK9V0`.
+- Toccando le categorie vanno aggiornate **tutte e tre** le copie: il
+  banner, `/cookie-policy` e il paragrafo cookie della privacy policy.
+
 ## Prima di dire che è fatto
 
 ```bash
@@ -98,10 +118,12 @@ pagina: sono i due controlli che hanno pescato più errori.
    L'area Salute non ha foto degli studi (l'hero è tipografico di
    proposito: la vecchia immagine era uno stock di massaggio con oli).
    Cercare `TODO FOTO` nel codice.
-2. **Indirizzo da confermare.** `contatti.ts` usa "Via Montecchia, 12",
-   la forma della privacy policy di Golf della Montecchia Srl. Va
-   verificata contro l'Impressum del club prima del lancio, insieme a
-   orari e telefono.
+2. **Orari da confermare col centro.** Quelli in `contatti.ts` sono
+   ripresi dal WordPress in produzione (palestra 7.30-21, sab 7.30-16;
+   segreteria lun-gio 9.30-16, ven 9.30-15.30): vanno confermati. Da
+   decidere anche se pubblicare il secondo numero (+39 049 8055550, sul
+   vecchio sito etichettato "Golf"). L'indirizzo invece è verificato:
+   golfmontecchia.it e la privacy policy dicono la stessa cosa.
 3. **Listini e orari** dello Studio Pilates e dell'area Salute: mancano.
 4. **Deploy.** Nessun ambiente. Va su Vercel **sotto l'org `scailetech`**,
    mai su account personali, e la produzione richiede sign-off.

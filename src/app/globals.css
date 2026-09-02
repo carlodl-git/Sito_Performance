@@ -78,8 +78,13 @@
     @apply font-display text-xl font-normal leading-snug text-primary sm:text-2xl;
   }
   /* Occhiello sopra i titoli di sezione. */
+  /* 0.75rem = 12px. Era 0.6875rem (11px): in maiuscolo, spaziato e in
+     grigio è la combinazione meno leggibile del sito, e su mobile
+     scendeva sotto la soglia in cui l'occhio smette di leggere e inizia
+     a indovinare. Il passo è piccolo di proposito: l'etichetta deve
+     restare secondaria rispetto al titolo che introduce. */
   .eyebrow {
-    @apply text-[0.6875rem] font-medium uppercase tracking-[0.2em] text-muted;
+    @apply text-[0.75rem] font-medium uppercase tracking-[0.2em] text-muted;
   }
   /* Misura di riga leggibile per i testi lunghi. */
   .prose-body {
@@ -105,8 +110,13 @@
   .btn-area-light {
     @apply inline-flex items-center justify-center rounded-sm border border-white/40 px-7 py-3.5 text-sm font-medium text-white transition-colors hover:bg-white hover:text-area-deep focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent;
   }
+  /* `min-h-[24px]`: senza, questi link erano alti 20px, sotto il minimo
+     di 24×24 del criterio WCAG 2.2 AA 2.5.8 (Target Size Minimum). Non
+     sono link dentro un paragrafo — quelli sarebbero esentati — ma
+     rimandi a sé stanti in fondo alle schede, dove il dito deve
+     arrivare. L'altezza cresce, la linea di base del testo no. */
   .link-area {
-    @apply inline-flex items-center gap-2 text-sm font-medium text-area transition-opacity hover:opacity-75;
+    @apply inline-flex min-h-[24px] items-center gap-2 text-sm font-medium text-area transition-opacity hover:opacity-75;
   }
 
   /* Numero d'ordine (01, 02, …): scandisce gli elenchi lunghi senza

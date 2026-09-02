@@ -76,11 +76,12 @@ export default function ServiziPage() {
               <SectionHeading
                 title={meta.label}
                 intro={meta.tagline}
+                // `link-area` invece delle utility a mano: erano le stesse,
+                // tranne `hover:text-accent-dark`, che non esiste nel tema
+                // (accent ha DEFAULT e light, non dark) e quindi lasciava il
+                // link senza stato hover.
                 action={
-                  <Link
-                    href={meta.href}
-                    className="inline-flex items-center gap-2 text-sm font-medium text-accent hover:text-accent-dark"
-                  >
+                  <Link href={meta.href} className="link-area">
                     Vai all&apos;area
                     <span aria-hidden>→</span>
                   </Link>
