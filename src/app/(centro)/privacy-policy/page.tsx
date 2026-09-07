@@ -1,5 +1,5 @@
-import Link from "next/link";
 import type { Metadata } from "next";
+import { PageHero } from "@/components/ui/PageHero";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -27,23 +27,11 @@ export const metadata: Metadata = {
 export default function PrivacyPolicyPage() {
   return (
     <>
-      <section className="relative bg-area-deep py-20 sm:py-24">
-        <div className="container-narrow">
-          <Link
-            href="/"
-            className="text-sm font-medium text-accent hover:text-accent-light"
-          >
-            ← Home
-          </Link>
-          <h1 className="mt-4 font-display text-4xl font-normal tracking-tight text-white sm:text-5xl">
-            Privacy Policy
-          </h1>
-          <p className="mt-4 max-w-2xl text-lg text-white/70">
-            Informativa sul trattamento dei dati personali ai sensi del
-            Regolamento UE 2016/679 (GDPR).
-          </p>
-        </div>
-      </section>
+      <PageHero
+        backLink={{ href: "/", label: "← Home" }}
+        title="Privacy Policy"
+        intro="Informativa sul trattamento dei dati personali ai sensi del Regolamento UE 2016/679 (GDPR)."
+      />
 
       <section className="section-padding bg-white">
         <article

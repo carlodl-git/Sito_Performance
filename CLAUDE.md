@@ -127,5 +127,6 @@ pagina: sono i due controlli che hanno pescato più errori.
 3. **Listini e orari** dello Studio Pilates e dell'area Salute: mancano.
 4. **Deploy.** Nessun ambiente. Va su Vercel **sotto l'org `scailetech`**,
    mai su account personali, e la produzione richiede sign-off.
-5. Gli hero delle pagine `(centro)` sono ancora markup a mano invece di
-   `PageHero`: duplicazione da riassorbire.
+5. ~~Hero delle pagine `(centro)` a mano~~ — fatto. Tutte usano
+   `PageHero`; l'unico `<h1>` scritto a mano resta in `not-found.tsx`,
+   che non è un hero. Il prop `backLink` copre i rimandi "← Home".

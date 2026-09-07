@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { PageHero } from "@/components/ui/PageHero";
 
 export const metadata: Metadata = {
   title: "Chi Siamo",
@@ -24,16 +25,10 @@ export const metadata: Metadata = {
 export default function ChiSiamoPage() {
   return (
     <>
-      <section className="relative bg-area-deep py-24 sm:py-32">
-        <div className="container-narrow">
-          <h1 className="font-display text-4xl font-normal tracking-tight text-white sm:text-5xl lg:text-6xl">
-            Chi siamo
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg text-white/70">
-            Come è nato il centro, chi ci lavora e come mai quattro attività diverse stanno sotto lo stesso tetto.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        title="Chi siamo"
+        intro="Come è nato il centro, chi ci lavora e come mai quattro attività diverse stanno sotto lo stesso tetto."
+      />
 
       <section className="section-padding bg-white">
         <div className="container-narrow">

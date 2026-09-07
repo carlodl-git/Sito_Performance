@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getTeamMember, getAllTeamSlugs, team } from "@/data/team";
+import { PageHero } from "@/components/ui/PageHero";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -71,23 +72,12 @@ export default async function TeamMemberPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
       />
 
-      <section className="relative bg-area-deep py-24 sm:py-32">
-        <div className="container-narrow">
-          <Link
-            href="/team"
-            className="text-sm font-medium text-accent hover:text-accent-light"
-          >
-            ← Tutto il team
-          </Link>
-          <p className="mt-6 text-sm font-medium uppercase tracking-wide text-accent">
-            {member.category}
-          </p>
-          <h1 className="mt-2 font-display text-4xl font-normal tracking-tight text-white sm:text-5xl lg:text-6xl">
-            {member.name}
-          </h1>
-          <p className="mt-4 text-xl text-white/70">{member.role}</p>
-        </div>
-      </section>
+      <PageHero
+        backLink={{ href: "/team", label: "← Tutto il team" }}
+        eyebrow={member.category}
+        title={member.name}
+        intro={member.role}
+      />
 
       <section className="section-padding bg-white">
         <div className="container-narrow">

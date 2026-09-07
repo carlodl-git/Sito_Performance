@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { contatti } from "@/data/contatti";
 import { PreferenzeCookie } from "@/components/cookie/PreferenzeCookie";
+import { PageHero } from "@/components/ui/PageHero";
 
 /* ============================================================
    COOKIE POLICY
@@ -55,18 +56,11 @@ const categorie = [
 export default function CookiePolicyPage() {
   return (
     <>
-      <section className="bg-primary py-24 text-white sm:py-32">
-        <div className="container-narrow">
-          <Link href="/" className="eyebrow text-white/60 hover:text-white">
-            ← Home
-          </Link>
-          <h1 className="heading-display mt-6 text-white">Cookie Policy</h1>
-          <p className="lead mt-6 max-w-2xl text-white/70">
-            Cosa viene salvato sul tuo dispositivo quando visiti questo sito, e
-            come cambiare idea in qualsiasi momento.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        backLink={{ href: "/", label: "← Home" }}
+        title="Cookie Policy"
+        intro="Cosa viene salvato sul tuo dispositivo quando visiti questo sito, e come cambiare idea in qualsiasi momento."
+      />
 
       <section className="section-padding">
         <div className="container-narrow max-w-3xl">

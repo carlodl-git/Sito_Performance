@@ -1,6 +1,18 @@
 import Image from "next/image";
+import Link from "next/link";
 
 type PageHeroProps = {
+  /**
+   * Rimando alla pagina di partenza, sopra il titolo: "← Tutti gli
+   * articoli", "← Home". Esiste come prop e non come children perché va
+   * sopra il titolo, mentre i children stanno sotto il sommario.
+   *
+   * Il colore è bianco e non `text-accent` come nelle versioni scritte a
+   * mano che questo prop sostituisce: l'accento è calibrato sul fondo
+   * avorio e sul blu profondo dell'hero dava 2.5:1, sotto il minimo di
+   * 4.5:1. Sui fondi scuri il bianco è l'unica scelta sicura.
+   */
+  backLink?: { href: string; label: string };
   /** Sopratitolo in maiuscoletto, es. "Area 02" o la località. */
   eyebrow?: string;
   title: React.ReactNode;
@@ -28,6 +40,7 @@ type PageHeroProps = {
 };
 
 export function PageHero({
+  backLink,
   eyebrow,
   title,
   intro,
@@ -83,6 +96,14 @@ export function PageHero({
           image ? "pb-16 pt-36 sm:pb-20" : ""
         }`}
       >
+        {backLink && (
+          <Link
+            href={backLink.href}
+            className="mb-6 inline-flex min-h-[24px] items-center text-sm text-white/70 transition-colors hover:text-white"
+          >
+            {backLink.label}
+          </Link>
+        )}
         {/* Bianco pieno e non al 70%: a 11px l'occhiello sta in alto
             nell'hero, dove la sfumatura è ancora debole, e con la
             trasparenza restava sotto 4.5:1 su quasi tutte le foto. */}

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { getBlogPostsSorted } from "@/data/blog";
+import { PageHero } from "@/components/ui/PageHero";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -32,17 +33,10 @@ export default function BlogPage() {
 
   return (
     <>
-      <section className="relative bg-area-deep py-24 sm:py-32">
-        <div className="container-narrow">
-          <h1 className="font-display text-4xl font-normal tracking-tight text-white sm:text-5xl lg:text-6xl">
-            Blog
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg text-white/70">
-            Articoli su allenamento, golf, salute, nutrizione e benessere dal
-            team del Montecchia Performance Center.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        title="Blog"
+        intro="Articoli su allenamento, golf, salute, nutrizione e benessere dal team del Montecchia Performance Center."
+      />
 
       <section className="section-padding bg-white">
         <div className="container-narrow">

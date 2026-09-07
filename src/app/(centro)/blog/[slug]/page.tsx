@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { PageHero } from "@/components/ui/PageHero";
 import {
   getBlogPost,
   getAllBlogSlugs,
@@ -88,28 +89,15 @@ export default async function BlogPostPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
 
-      <section className="relative bg-area-deep py-24 sm:py-32">
-        <div className="container-narrow">
-          <Link
-            href="/blog"
-            className="text-sm font-medium text-accent hover:text-accent-light"
-          >
-            ← Tutti gli articoli
-          </Link>
-          <p className="mt-6 text-sm font-medium uppercase tracking-wide text-accent">
-            {post.category}
-          </p>
-          <h1 className="mt-2 font-display text-4xl font-normal tracking-tight text-white sm:text-5xl">
-            {post.title}
-          </h1>
-          <time
-            dateTime={post.publishedAt}
-            className="mt-6 block text-sm text-neutral-400"
-          >
-            {dateFormatter.format(new Date(post.publishedAt))}
-          </time>
-        </div>
-      </section>
+      <PageHero
+        backLink={{ href: "/blog", label: "← Tutti gli articoli" }}
+        eyebrow={post.category}
+        title={post.title}
+      >
+        <time dateTime={post.publishedAt} className="block text-sm text-white/70">
+          {dateFormatter.format(new Date(post.publishedAt))}
+        </time>
+      </PageHero>
 
       <article className="section-padding bg-white">
         <div className="container-narrow max-w-3xl">
