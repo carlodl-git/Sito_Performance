@@ -112,7 +112,7 @@ export default function ChiSiamoPage() {
           </p>
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { src: "/images/palestra-1.jpg", alt: "Sala palestra principale" },
+              { src: "/images/palestra-1.jpg", alt: "La sala corsi della palestra" },
               { src: "/images/golf-indoor-1.jpg", alt: "Golf Indoor, postazioni dei simulatori" },
               { src: "/images/yoga-esterno.jpg", alt: "Sessione yoga all'aperto" },
               { src: "/images/trackman_io_immagine.webp", alt: "Trackman in azione" },

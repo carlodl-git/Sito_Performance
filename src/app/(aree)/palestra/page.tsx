@@ -95,7 +95,7 @@ const corsi = [
 const corsiSlugs = corsi.map((c) => c.slug);
 
 const gallery = [
-  { src: "/images/palestra-1.jpg", alt: "Sala palestra principale" },
+  { src: "/images/palestra-1.jpg", alt: "La sala corsi della palestra" },
   { src: "/images/palestra-2.jpg", alt: "Area pesi e macchinari" },
   { src: "/images/palestra-3.jpg", alt: "Zona allenamento funzionale" },
 ];
@@ -123,7 +123,7 @@ export default function PalestraPage() {
       <PageHero
         full
         title={meta.label}
-        intro="Una sala attrezzata e un calendario settimanale di corsi. Pochi macchinari, molta attenzione: in sala c'è sempre un istruttore."
+        intro="Una grande sala corsi e una saletta per il personal training, con un calendario settimanale fisso. Gruppi contenuti: ai corsi c'è sempre un istruttore che guarda come ti muovi."
         image={meta.image}
       >
         <WhatsAppButton message={meta.whatsapp} variant="light">
@@ -162,11 +162,23 @@ export default function PalestraPage() {
           <div className="mt-20 grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
             <div>
               <p className="eyebrow">Gli spazi</p>
-              <h3 className="heading-sub mt-4">La sala</h3>
+              <h3 className="heading-sub mt-4">Due sale, più lo studio</h3>
               <p className="mt-5 max-w-[46ch] text-ink-soft">
-                Macchinari, pesi liberi e una zona ampia per il lavoro
-                funzionale. È dimensionata per gruppi contenuti: non ci si
-                aspetta la coda a un attrezzo.
+                Una grande sala corsi, con i macchinari e gli attrezzi per il
+                lavoro a corpo libero, e una saletta riservata al personal
+                training, dove si lavora uno a uno senza spettatori. Sono
+                dimensionate per gruppi contenuti: non ci si aspetta la coda a
+                un attrezzo.
+              </p>
+              <p className="mt-4 max-w-[46ch] text-ink-soft">
+                La terza sala del centro è lo{" "}
+                <Link
+                  href="/pilates"
+                  className="text-area underline underline-offset-4"
+                >
+                  studio Pilates
+                </Link>
+                , con il Reformer: ha spazi e istruttrice sue.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-3">

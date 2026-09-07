@@ -49,12 +49,14 @@ export const areaMeta: Record<Area, AreaMeta> = {
     label: "Palestra & Corsi",
     navLabel: "Palestra",
     href: "/palestra",
-    tagline: "Sala attrezzata e corsi di gruppo",
+    tagline: "Sala corsi attrezzata e personal training",
+    // Il centro ha tre sale, ma una è lo studio Pilates, che qui è
+    // un'area a sé: la palestra ne descrive due e rimanda alla terza.
     blurb:
-      "Una sala attrezzata e un calendario settimanale di corsi: functional, tonificazione, core, Fit for Golf. Sempre con un istruttore in sala, sempre su prenotazione.",
+      "Una grande sala corsi, con macchinari e attrezzi per il lavoro a corpo libero, e una saletta riservata al personal training. Il calendario settimanale copre functional, tonificazione, core e Fit for Golf: ai corsi c'è sempre un istruttore, sempre su prenotazione.",
     image: {
       src: "/images/Palestra_hero.jpg",
-      alt: "La sala della palestra: soffitto in travi di legno, cardio, sacco da boxe e attrezzatura funzionale",
+      alt: "La sala corsi: soffitto in travi di legno, cardio, sacco da boxe e attrezzatura funzionale",
     },
     whatsapp: "Ciao! Vorrei informazioni sulla palestra e sui corsi",
   },

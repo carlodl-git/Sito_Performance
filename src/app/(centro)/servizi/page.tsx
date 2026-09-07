@@ -35,7 +35,7 @@ export default function ServiziPage() {
         intro="L'elenco completo di ciò che trovi al centro, diviso nelle quattro aree. Se sai già dove vuoi andare, parti dall'area."
         image={{
           src: "/images/palestra-1.jpg",
-          alt: "La sala attrezzi del Montecchia Performance Center",
+          alt: "La sala corsi del Montecchia Performance Center",
         }}
       >
         <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
