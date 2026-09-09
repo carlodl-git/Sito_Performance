@@ -54,6 +54,42 @@
     --area-tint: 235 239 242; /* #EBEFF2 */
     --area-glow: 127 160 180; /* #7FA0B4 */
   }
+
+  /* ==========================================================
+     LE FAMIGLIE DI CORSI
+     Stesso meccanismo delle aree: il componente del calendario
+     mette `data-famiglia` sulla cella e da lì in giù i token
+     cambiano valore da soli. Le famiglie sono in data/courses.ts.
+
+     Tre colori su quattro sono gli accenti delle aree, e non per
+     comodità: un corso di Pilates in calendario è salvia perché
+     salvia è il colore dello Studio Pilates, e Fit for Golf è
+     ottone perché ottone è il Golf Indoor. Chi ha già navigato
+     il sito riconosce il rimando senza che nessuno glielo
+     spieghi. Il cardio non ha un'area sua, e prende l'unico
+     colore aggiunto: indaco, distinto dagli altri tre e lontano
+     dal rosso, che qui è riservato alla prova gratuita.
+
+     Il colore non porta mai da solo l'informazione: il nome del
+     corso è sempre scritto, e la legenda nomina le famiglie.
+     Serve a raggruppare a colpo d'occhio, non a codificare.
+     ========================================================== */
+  [data-famiglia="forza"] {
+    --famiglia: 29 110 108; /* #1D6E6C, petrolio */
+    --famiglia-tint: 234 241 240; /* #EAF1F0 */
+  }
+  [data-famiglia="cardio"] {
+    --famiglia: 90 84 128; /* #5A5480, indaco: 6.4:1 sull'avorio */
+    --famiglia-tint: 237 236 243; /* #EDECF3 */
+  }
+  [data-famiglia="corpo-mente"] {
+    --famiglia: 95 107 84; /* #5F6B54, salvia */
+    --famiglia-tint: 237 239 232; /* #EDEFE8 */
+  }
+  [data-famiglia="golf"] {
+    --famiglia: 138 98 52; /* #8A6234, ottone */
+    --famiglia-tint: 243 237 227; /* #F3EDE3 */
+  }
 }
 
 @layer components {

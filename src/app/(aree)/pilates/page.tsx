@@ -2,6 +2,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { PageHero } from "@/components/ui/PageHero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { CourseTimetable } from "@/components/ui/CourseTimetable";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { areaMeta } from "@/data/areas";
 import { contatti } from "@/data/contatti";
@@ -160,10 +161,35 @@ export default function StudioPilatesPage() {
           </div>
 
           <p className="mt-14 text-sm text-muted">
-            Orari e tariffe aggiornati su richiesta:{" "}
+            Tariffe aggiornate su richiesta:{" "}
             <a href={`tel:${contatti.telefono}`} className="link-area">
               {contatti.telefonoLeggibile}
             </a>
+          </p>
+        </div>
+      </section>
+
+      {/* ============================================================
+          IL PILATES A CALENDARIO
+          Solo le lezioni di gruppo: sono le uniche con un orario fisso,
+          e sono quelle che stanno nel calendario del centro. Individuale
+          e duetto si concordano, quindi una griglia non li
+          rappresenterebbe — dirlo è più utile che lasciare intendere che
+          esista un orario anche per loro.
+          ============================================================ */}
+      <section id="orario" className="section-padding scroll-mt-24">
+        <div className="container-narrow">
+          <SectionHeading
+            eyebrow="Calendario"
+            title="Le lezioni di gruppo"
+            intro="Stagione 2025/2026. Il gruppo è l'unico formato con un orario fisso: individuale e duetto si concordano volta per volta, sull'agenda dell'istruttrice."
+          />
+          <div className="mt-12">
+            <CourseTimetable soloCorsi={["Pilates"]} />
+          </div>
+          <p className="mt-8 text-sm text-muted">
+            Solo su prenotazione. Per un individuale o un duetto, scrivici su
+            WhatsApp e troviamo l&apos;orario.
           </p>
         </div>
       </section>

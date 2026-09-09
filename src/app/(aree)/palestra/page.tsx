@@ -283,8 +283,7 @@ export default function PalestraPage() {
           <div className="mt-8 flex flex-col gap-1">
             <p className="text-sm text-muted">
               Corsi <span className="text-ink">solo su prenotazione</span>:
-              WhatsApp {contatti.telefonoLeggibile}. Il pallino indica i corsi
-              golf-specific.
+              WhatsApp {contatti.telefonoLeggibile}.
             </p>
             <p className="text-sm text-muted">
               AcquaGym attiva solo nei mesi estivi (giugno, luglio, agosto).

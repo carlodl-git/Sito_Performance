@@ -90,6 +90,14 @@ const config: Config = {
           tint: "rgb(var(--area-tint) / <alpha-value>)",
           glow: "rgb(var(--area-glow) / <alpha-value>)",
         },
+        /* Colore della famiglia di corsi, con lo stesso meccanismo di
+           `area`: i valori arrivano da `[data-famiglia="..."]`. Serve solo
+           al calendario, ma passa da un token perché il componente non
+           deve sapere che esiste il Pilates o il golf. */
+        famiglia: {
+          DEFAULT: "rgb(var(--famiglia) / <alpha-value>)",
+          tint: "rgb(var(--famiglia-tint) / <alpha-value>)",
+        },
       },
       fontFamily: {
         display: ["var(--font-display)", "Georgia", "serif"],
